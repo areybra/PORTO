@@ -1,0 +1,64 @@
+{% with active=request.resolver_match.url_name %}
+<header class="fixed top-4 sm:top-6 left-1/2 -translate-x-1/2 z-50 w-[96%] sm:w-[92%] max-w-4xl">
+  <div class="bg-surface-container-lowest/85 backdrop-blur-xl border border-outline-variant/30 shadow-[0_8px_30px_rgb(0,0,0,0.06)] rounded-full px-3 sm:px-6 py-2 sm:py-2.5 flex items-center justify-between gap-2 sm:gap-4 transition-all duration-300">
+    <a class="flex items-center gap-2 sm:gap-2.5 group shrink-0" href="{% url 'landing' %}">
+      <img alt="AREYBRA Logo" class="h-7 w-7 rounded-full object-contain shadow-xs group-hover:scale-105 transition-transform" src="https://lh3.googleusercontent.com/aida/AEtjO1XnXhfVVqxaZAeEGyaoT2LfLEv04NVX37MK3j5WVhT8YJDLUG9DKpvdlJGAF2sPWQG0WK3eO2kTGLGKrR_XvxmCJTKhAV7wwFnx2jorEVcj0ZWC4fGUistSj2z4hG4Bz4Wp5r6v87PoI4noQvxp3eEMhFj-xgqJs_FwAMIvS4vgBQIyWG7iLL5UTLThMV8YgjuVzH-BgjrmXB5Ls0p1AbVdR4GtF8uj9uyQ-Lgs_b5HXZs-L1uWVEsoylU6">
+      <span class="font-headline font-semibold text-sm sm:text-base tracking-tight text-on-surface">{{ site_profile.site_name|default:"AREYBRA" }}</span>
+      {% if site_profile.availability_active %}
+      <span class="hidden sm:inline-flex items-center gap-1.5 ml-1.5 pl-2.5 border-l border-outline-variant/30">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+      </span>
+      {% endif %}
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden lg:flex items-center gap-1 sm:gap-2">
+      <a class="px-3 py-1.5 rounded-full text-xs font-label uppercase tracking-wider font-semibold transition-colors {% if active == 'landing' %}bg-surface-container-high text-primary shadow-xs{% else %}text-on-surface-variant hover:text-on-surface hover:bg-surface-container/60{% endif %}" href="{% url 'landing' %}">Beranda</a>
+      <div class="relative group">
+        <button class="px-3 py-1.5 rounded-full text-xs font-label uppercase tracking-wider {% if active == 'tentang_saya' or active == 'project_list' or active == 'project_detail' %}bg-surface-container-high text-primary shadow-xs{% else %}text-on-surface-variant hover:text-on-surface hover:bg-surface-container/60{% endif %} transition-colors flex items-center gap-1" type="button">
+          <span>Profil</span>
+          <span class="material-symbols-outlined text-xs transition-transform duration-200 group-hover:rotate-180 {% if active == 'tentang_saya' or active == 'project_list' %}text-primary{% else %}text-outline{% endif %}">expand_more</span>
+        </button>
+        <div class="absolute top-full left-0 sm:left-1/2 sm:-translate-x-1/2 mt-3 w-48 py-2 bg-surface-container-lowest/95 backdrop-blur-xl rounded-2xl shadow-xl border border-outline-variant/25 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 flex flex-col">
+          <a class="px-4 py-2.5 text-xs font-label uppercase tracking-wider hover:text-primary hover:bg-surface-container-low transition-colors flex items-center justify-between group/item {% if active == 'tentang_saya' %}text-primary bg-surface-container-low{% else %}text-on-surface{% endif %}" href="{% url 'tentang_saya' %}">
+            <span class="flex items-center gap-2"><span class="material-symbols-outlined text-sm {% if active == 'tentang_saya' %}text-primary{% else %}text-secondary group-hover/item:text-primary{% endif %}">person</span> Tentang Saya</span>
+            <span class="material-symbols-outlined text-xs text-outline group-hover/item:translate-x-0.5 transition-transform">east</span>
+          </a>
+          <a class="px-4 py-2.5 text-xs font-label uppercase tracking-wider hover:text-primary hover:bg-surface-container-low transition-colors flex items-center justify-between group/item {% if active == 'project_list' or active == 'project_detail' %}text-primary bg-surface-container-low{% else %}text-on-surface{% endif %}" href="{% url 'project_list' %}">
+            <span class="flex items-center gap-2"><span class="material-symbols-outlined text-sm {% if active == 'project_list' %}text-primary{% else %}text-secondary group-hover/item:text-primary{% endif %}">grid_view</span> Proyek</span>
+            <span class="material-symbols-outlined text-xs text-outline group-hover/item:translate-x-0.5 transition-transform">east</span>
+          </a>
+        </div>
+      </div>
+      <a class="px-3 py-1.5 rounded-full text-xs font-label uppercase tracking-wider transition-colors {% if active == 'blog_list' or active == 'blog_detail' %}bg-surface-container-high text-primary shadow-xs font-semibold{% else %}text-on-surface-variant hover:text-on-surface hover:bg-surface-container/60{% endif %}" href="{% url 'blog_list' %}">Blog</a>
+      <a class="px-3 py-1.5 rounded-full text-xs font-label uppercase tracking-wider transition-colors {% if active == 'contact' %}bg-surface-container-high text-primary shadow-xs font-semibold{% else %}text-on-surface-variant hover:text-on-surface hover:bg-surface-container/60{% endif %}" href="{% url 'contact' %}">Kontak</a>
+    </nav>
+
+    <!-- Hamburger (mobile/tablet) -->
+    <button id="hamburgerBtn" aria-label="Buka menu" aria-expanded="false" class="lg:hidden p-2 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors">
+      <span class="material-symbols-outlined text-xl" id="hamburgerIcon">menu</span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile modal / drawer -->
+<div id="mobileNavOverlay" class="fixed inset-0 bg-on-surface/40 backdrop-blur-sm z-40 hidden opacity-0 transition-opacity duration-300"></div>
+<div id="mobileNavDrawer" class="fixed inset-x-3 top-20 sm:top-24 z-50 hidden">
+  <div class="bg-surface-container-lowest rounded-3xl shadow-2xl border border-outline-variant/20 overflow-hidden max-w-md mx-auto">
+    <div class="p-2">
+      <nav class="flex flex-col gap-1 p-2">
+        <a class="flex items-center justify-between px-4 py-3 rounded-2xl text-sm font-label font-medium transition-colors {% if active == 'landing' %}bg-primary text-on-primary{% else %}text-on-surface hover:bg-surface-container{% endif %}" href="{% url 'landing' %}"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-lg">home</span> Beranda</span><span class="material-symbols-outlined text-sm opacity-60">chevron_right</span></a>
+        <div class="px-4 py-2 text-[10px] font-label tracking-widest uppercase text-outline font-semibold">Profil</div>
+        <a class="flex items-center justify-between px-4 py-3 rounded-2xl text-sm font-label font-medium transition-colors {% if active == 'tentang_saya' %}bg-primary text-on-primary{% else %}bg-surface-container-low text-on-surface hover:bg-surface-container{% endif %}" href="{% url 'tentang_saya' %}"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-lg">person</span> Tentang Saya</span><span class="material-symbols-outlined text-sm opacity-60">east</span></a>
+        <a class="flex items-center justify-between px-4 py-3 rounded-2xl text-sm font-label font-medium transition-colors {% if active == 'project_list' or active == 'project_detail' %}bg-primary text-on-primary{% else %}bg-surface-container-low text-on-surface hover:bg-surface-container{% endif %}" href="{% url 'project_list' %}"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-lg">grid_view</span> Proyek</span><span class="material-symbols-outlined text-sm opacity-60">east</span></a>
+        <a class="flex items-center justify-between px-4 py-3 rounded-2xl text-sm font-label font-medium transition-colors {% if active == 'blog_list' or active == 'blog_detail' %}bg-primary text-on-primary{% else %}text-on-surface hover:bg-surface-container{% endif %}" href="{% url 'blog_list' %}"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-lg">article</span> Blog</span><span class="material-symbols-outlined text-sm opacity-60">chevron_right</span></a>
+        <a class="flex items-center justify-between px-4 py-3 rounded-2xl text-sm font-label font-medium transition-colors {% if active == 'contact' %}bg-primary text-on-primary{% else %}text-on-surface hover:bg-surface-container{% endif %}" href="{% url 'contact' %}"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-lg">mail</span> Kontak</span><span class="material-symbols-outlined text-sm opacity-60">chevron_right</span></a>
+      </nav>
+      <div class="mx-4 mb-4 mt-2 p-4 rounded-2xl bg-surface-container-low flex items-center justify-between">
+        <div class="flex items-center gap-2.5"><span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span><span class="font-label text-xs font-medium text-on-surface">{{ site_profile.availability_text|default:"Tersedia untuk proyek baru" }}</span></div>
+        <a href="https://wa.me/{{ site_profile.whatsapp_number|default:'6282142961010' }}" target="_blank" class="p-2 rounded-xl bg-emerald-500 text-white hover:bg-emerald-600 transition-colors"><span class="material-symbols-outlined text-base">chat</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endwith %}

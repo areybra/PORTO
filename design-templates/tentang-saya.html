@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_standard" name="shell-type"/>
+<title>AREYBRA — Desainer Produk &amp; Creative Technologist</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Noto+Serif:ital,wght@0,400;0,600;1,400&amp;family=Public+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+@layer base {
+  html, body { margin: 0; padding: 0; }
+  body { overscroll-behavior: none; }
+}
+::-webkit-scrollbar { display: none; }
+</style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "secondary-fixed-dim": "#c2c7cc",
+        "on-secondary": "#ffffff",
+        "surface-bright": "#faf9fa",
+        "on-primary": "#ffffff",
+        "background": "#faf9fa",
+        "on-error-container": "#93000a",
+        "on-primary-container": "#e7ebff",
+        "inverse-primary": "#b1c5ff",
+        "surface-container-high": "#e9e8e9",
+        "on-secondary-container": "#606569",
+        "on-tertiary": "#ffffff",
+        "on-error": "#ffffff",
+        "outline-variant": "#c3c6d5",
+        "surface-variant": "#e3e2e3",
+        "tertiary-container": "#bfab49",
+        "primary-fixed-dim": "#b1c5ff",
+        "surface-container-highest": "#e3e2e3",
+        "on-primary-fixed": "#001946",
+        "on-tertiary-fixed": "#211b00",
+        "tertiary-fixed": "#f9e37a",
+        "primary": "#094cb2",
+        "on-surface-variant": "#434653",
+        "surface-container-low": "#f5f3f4",
+        "on-background": "#1b1c1d",
+        "primary-fixed": "#d9e2ff",
+        "inverse-on-surface": "#f2f0f1",
+        "surface-container": "#efedee",
+        "error-container": "#ffdad6",
+        "tertiary": "#6d5e00",
+        "inverse-surface": "#303031",
+        "on-tertiary-container": "#4a3f00",
+        "surface-dim": "#dbdadb",
+        "on-primary-fixed-variant": "#00419d",
+        "surface": "#faf9fa",
+        "on-surface": "#1b1c1d",
+        "surface-container-lowest": "#ffffff",
+        "on-secondary-fixed": "#171c20",
+        "surface-tint": "#2259bf",
+        "outline": "#737784",
+        "secondary-container": "#dfe3e8",
+        "tertiary-fixed-dim": "#dcc661",
+        "secondary": "#5a5f63",
+        "primary-container": "#3366cc",
+        "on-tertiary-fixed-variant": "#524600",
+        "error": "#ba1a1a",
+        "secondary-fixed": "#dfe3e8",
+        "on-secondary-fixed-variant": "#42474b"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.125rem",
+        "lg": "0.25rem",
+        "xl": "0.5rem",
+        "full": "0.75rem"
+      },
+      "fontFamily": {
+        "headline": ["Noto Serif"],
+        "display": ["Noto Serif"],
+        "body": ["Inter"],
+        "label": ["Public Sans"]
+      }
+    }
+  }
+}
+</script>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased relative selection:bg-primary-fixed selection:text-primary">
+<!-- Ambient Dynamic Background -->
+<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+<div class="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-primary-fixed/35 to-transparent blur-3xl"></div>
+<div class="absolute top-[28%] -right-48 w-[650px] h-[650px] rounded-full bg-gradient-to-bl from-tertiary-fixed/20 to-transparent blur-3xl"></div>
+<div class="absolute top-[65%] -left-36 w-[550px] h-[550px] rounded-full bg-gradient-to-tr from-primary-container/10 via-transparent to-transparent blur-3xl"></div>
+<div class="absolute bottom-0 right-10 w-[700px] h-[500px] rounded-full bg-gradient-to-t from-primary-fixed/25 to-transparent blur-3xl"></div>
+<svg class="absolute inset-0 w-full h-full opacity-[0.035]" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="64" id="editorialGrid" patternunits="userSpaceOnUse" width="64">
+<path d="M 64 0 L 0 0 0 64" fill="none" stroke="#1b1c1d" stroke-width="1"></path>
+<circle cx="0" cy="0" fill="#094cb2" r="1.5"></circle>
+</pattern>
+</defs>
+<rect fill="url(#editorialGrid)" height="100%" width="100%"></rect>
+</svg>
+</div>
+<!-- FLOATING CENTERED NAVBAR -->
+<header class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-4xl">
+<div class="h-14 bg-surface-container-lowest/85 backdrop-blur-xl border border-outline-variant/30 shadow-[0_8px_30px_rgb(0,0,0,0.06)] rounded-full px-4 sm:px-6 flex items-center justify-between gap-4 transition-all duration-300">
+<!-- Brand Monogram & Name -->
+<a class="flex items-center gap-2.5 group shrink-0" data-path="home" href="#">
+<img alt="Alexandria Logo" class="h-7 w-7 rounded-full object-contain shadow-xs group-hover:scale-105 transition-transform" src="https://lh3.googleusercontent.com/aida/AEtjO1XnXhfVVqxaZAeEGyaoT2LfLEv04NVX37MK3j5WVhT8YJDLUG9DKpvdlJGAF2sPWQG0WK3eO2kTGLGKrR_XvxmCJTKhAV7wwFnx2jorEVcj0ZWC4fGUistSj2z4hG4Bz4Wp5r6v87PoI4noQvxp3eEMhFj-xgqJs_FwAMIvS4vgBQIyWG7iLL5UTLThMV8YgjuVzH-BgjrmXB5Ls0p1AbVdR4GtF8uj9uyQ-Lgs_b5HXZs-L1uWVEsoylU6"/>
+<span class="font-headline font-semibold text-base tracking-tight text-on-surface">AREYBRA</span>
+<span class="hidden sm:inline-flex items-center gap-1.5 ml-1.5 pl-2.5 border-l border-outline-variant/30">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+</span>
+</a>
+<!-- Navigation Menu Items -->
+<nav class="flex items-center gap-1 sm:gap-1.5 overflow-x-auto" data-active-classes="bg-surface-container-high text-primary shadow-xs font-semibold">
+<a class="px-3 py-1.5 rounded-full text-xs font-label uppercase tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container/60 transition-colors whitespace-nowrap" data-path="home" href="#">
+Beranda
+</a>
+<a aria-current="page" class="px-3 py-1.5 rounded-full uppercase tracking-wider transition-colors whitespace-nowrap bg-surface-container-high text-primary shadow-xs font-semibold" data-path="tentang-saya" href="#">
+Tentang Saya
+</a>
+<a class="px-3 py-1.5 rounded-full text-xs font-label uppercase tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container/60 transition-colors whitespace-nowrap" data-path="proyek" href="#">
+Proyek
+</a>
+<a class="px-3 py-1.5 rounded-full text-xs font-label uppercase tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container/60 transition-colors whitespace-nowrap" data-path="blog" href="#">
+Blog
+</a>
+<a class="px-3 py-1.5 rounded-full text-xs font-label uppercase tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container/60 transition-colors whitespace-nowrap" data-path="kontak" href="#">
+Kontak
+</a>
+</nav>
+<div class="hidden md:flex items-center">
+</div>
+</div>
+</header>
+<main class="w-full pt-20 relative z-10 min-h-screen"><div class="flex flex-col w-full">
+<!-- SECTION 1: HERO / PORTRAIT EDITORIAL -->
+<section class="relative w-full max-w-6xl mx-auto px-6 lg:px-12 pt-6 pb-20 lg:pb-28">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+<!-- Text Column (7 cols) -->
+<div class="lg:col-span-7 flex flex-col items-start text-left order-2 lg:order-1">
+<!-- Badges Bar -->
+<div class="flex flex-wrap items-center gap-2 mb-6">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high text-[11px] font-label font-medium uppercase tracking-wider text-primary">
+<span class="material-symbols-outlined text-xs">school</span>
+            SMK Nurul Jadid RPL
+          </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-low text-[11px] font-label font-medium uppercase tracking-wider text-on-surface-variant">
+<span class="material-symbols-outlined text-xs">location_on</span>
+            Kab. Probolinggo
+          </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary-fixed/40 text-[11px] font-label font-semibold uppercase tracking-wider text-tertiary">
+<span class="material-symbols-outlined text-xs">query_stats</span>
+            Aspirasi: Data Analyst
+          </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-fixed/50 text-[11px] font-label font-medium uppercase tracking-wider text-on-secondary-fixed">
+<span class="material-symbols-outlined text-xs">shield</span>
+            Web Dev &amp; Cyber Security
+          </span>
+</div>
+<!-- Archival Index Marker -->
+<div class="flex items-center gap-3 mb-4">
+<span class="font-label text-xs tracking-widest text-outline uppercase font-semibold">Profil Akademik &amp; Rekayasa</span>
+<span class="w-8 h-px bg-outline-variant/40"></span>
+<span class="font-label text-[11px] text-tertiary font-medium">Vol. 01 — 2025</span>
+</div>
+<!-- Headline -->
+<h1 class="font-headline text-3xl sm:text-5xl lg:text-6xl text-on-surface font-normal leading-[1.15] tracking-tight">
+          Menyulam Logika Kode, Mengamankan Masa Depan Data.
+        </h1>
+<!-- Subheading -->
+<p class="font-body text-base sm:text-lg text-on-surface-variant mt-6 leading-relaxed max-w-2xl">
+<strong class="font-semibold text-on-surface">Areta Y. Radjawali</strong> — Siswa Rekayasa Perangkat Lunak di SMK Nurul Jadid, Kab. Probolinggo. Menggabungkan ketelitian rekayasa <span class="text-primary font-medium">Web Development</span> dengan kewaspadaan proaktif <span class="text-primary font-medium">Cyber Security</span>, bertekad mendedikasikan presisi analitik demi wawasan data masa depan.
+        </p>
+<!-- Signature Metadata Strip -->
+<div class="mt-8 pt-6 border-t border-outline-variant/25 w-full flex flex-wrap items-center gap-6 sm:gap-10 font-label text-xs text-on-surface-variant">
+<div>
+<div class="text-outline uppercase text-[10px] tracking-wider mb-0.5">Konsentrasi Utama</div>
+<div class="font-medium text-on-surface">RPL &amp; Keamanan Jaringan</div>
+</div>
+<div>
+<div class="text-outline uppercase text-[10px] tracking-wider mb-0.5">Fokus Studi Lanjutan</div>
+<div class="font-medium text-on-surface">Sains Data &amp; Forensik Digital</div>
+</div>
+<div>
+<div class="text-outline uppercase text-[10px] tracking-wider mb-0.5">Basis Operasional</div>
+<div class="font-medium text-on-surface">Jawa Timur, Indonesia</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="mt-8 flex flex-wrap items-center gap-4">
+<a class="px-6 py-3 rounded-full bg-primary text-on-primary font-label text-xs font-semibold tracking-wider uppercase shadow-xs hover:bg-primary-container transition-all flex items-center gap-2 group" href="#narasi">
+<span>Pelajari Filosofi Saya</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-y-0.5 transition-transform">arrow_downward</span>
+</a>
+<a class="px-6 py-3 rounded-full bg-surface-container text-on-surface font-label text-xs font-semibold tracking-wider uppercase hover:bg-surface-container-high transition-all flex items-center gap-2" href="#proyek">
+<span>Eksplorasi Karya</span>
+<span class="material-symbols-outlined text-sm text-primary">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Image Column (5 cols) with Bespoke Architectural Framing -->
+<div class="lg:col-span-5 relative order-1 lg:order-2 flex justify-center">
+<div class="relative w-full max-w-sm sm:max-w-md">
+<!-- Geometric Background Echo -->
+<div class="absolute -top-4 -right-4 w-full h-full rounded-3xl bg-secondary-container/40 -z-10 transform rotate-2"></div>
+<div class="absolute -bottom-4 -left-4 w-full h-full rounded-3xl bg-tertiary-fixed/30 -z-10 transform -rotate-2"></div>
+<!-- Main Portrait Card Frame -->
+<div class="relative rounded-3xl overflow-hidden bg-surface-container-lowest shadow-[0_20px_50px_rgba(9,76,178,0.08)]">
+<!-- Archival Tag Overlay -->
+<div class="absolute top-4 left-4 z-20">
+<span class="px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-[10px] font-label uppercase tracking-widest text-on-surface font-semibold shadow-xs">
+                Archival Folio 01
+              </span>
+</div>
+<!-- Portrait Photo -->
+<div class="aspect-square w-full overflow-hidden bg-surface-container-low flex items-center justify-center relative">
+<img alt="Areta Y. Radjawali - Profil Siswa Rekayasa Perangkat Lunak SMK Nurul Jadid" class="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1UEoiyjmRKUBIc9t_Fndn02qah9zD4YxMOclwvCsw3RgF04tBa7qBJtB3e-J04xQLKcvUDjFs3W9OGpRH2ONio9YqP3AFOlbnf_VADprquwDe9nBnqaSBN4w2LlKcPBqpkEODL3pzu4GkgxG44ucGQRBvUR2HQGWMBjGgDsHFLRA1U1NAfAjAKRmAirn9ZaUcwEP-OH1rfpqF-1S_JV3Za18csDTh8B6C7BX43cPLUS05jJpemociIHRQPo"/>
+<!-- Subtle Scrim for Depth -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/40 via-transparent to-transparent pointer-events-none"></div>
+</div>
+<!-- Bottom Availability Panel -->
+<div class="p-5 bg-surface-container-lowest">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+</span>
+<span class="font-label text-xs font-semibold text-on-surface">Tersedia untuk Kolaborasi &amp; Proyek</span>
+</div>
+<span class="font-label text-[11px] text-outline font-medium">Q2/Q3 2025</span>
+</div>
+<p class="font-body text-xs text-on-surface-variant mt-2 leading-relaxed">
+                Menerima inisiatif riset perangkat lunak, evaluasi celah keamanan, dan arsitektur analitika web.
+              </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: NARASI & VISI MISI (ASIMETRIS SPLIT LAYOUT) -->
+<section class="w-full bg-surface-container-low/40 py-20 lg:py-24" id="narasi">
+<div class="max-w-6xl mx-auto px-6 lg:px-12">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+<div>
+<div class="inline-flex items-center gap-2 font-label text-xs font-semibold uppercase tracking-widest text-primary mb-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+            Manifesto &amp; Visi Masa Depan
+          </div>
+<h2 class="font-headline text-3xl sm:text-4xl text-on-surface font-normal tracking-tight">
+            Fondasi Intelektual &amp; Panggilan Profesi
+          </h2>
+</div>
+<p class="font-body text-xs sm:text-sm text-on-surface-variant max-w-sm leading-relaxed">
+          Refleksi perjalanan akademis dari pesantren teknologi menuju lanskap komputasi modern yang aman dan berintegritas.
+        </p>
+</div>
+<!-- Asymmetrical Split Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+<!-- Left Column: Verbatim Narrative with Editorial Craft (7 cols) -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-3xl p-8 sm:p-12 shadow-[0_4px_24px_rgba(0,0,0,0.03)] flex flex-col justify-between h-full">
+<div>
+<div class="flex items-center gap-2 text-tertiary mb-6">
+<span class="material-symbols-outlined text-lg">format_quote</span>
+<span class="font-label text-[11px] uppercase tracking-widest font-semibold">Catatan Diri Perjalanan</span>
+</div>
+<!-- Narrative Excerpt Large Serif -->
+<blockquote class="font-headline text-xl sm:text-2xl text-on-surface font-normal leading-relaxed italic mb-8">
+              "Berasal dari Kab. Probolinggo, kini menempuh pendidikan SLTA di SMK Nurul Jadid dalam bidang keahlian Rekayasa Perangkat Lunak. Selain meminati Web Development juga tertarik dengan Cyber Security. Memiliki dorongan tak henti untuk menjadi lebih baik dari sebelumnya, menjunjung kepemimpinan, kolaborasi erat, dan antusiasme belajar hal-hal baru."
+            </blockquote>
+<!-- Deeper Context Breakdown -->
+<div class="space-y-4 font-body text-sm text-on-surface-variant leading-relaxed">
+<p>
+                Menjalani proses pembelajaran di lingkungan SMK Nurul Jadid menanamkan etos kedisiplinan ganda: ketahanan spiritual yang kokoh serta ketajaman nalar komputasional. Pemahaman bahwa kode bukan sekadar deretan sintaks fungsional, melainkan tanggung jawab terhadap keamanan data pengguna yang mempercayainya.
+              </p>
+<p>
+                Kombinasi antara perancangan aplikasi web (arsitektur modular Django &amp; frontend presisi) serta audit pertahanan siber membentuk paradigma rekayasa yang komprehensif: membangun sistem yang tidak hanya indah dan cepat, namun juga kebal terhadap ancaman eksploitasi data.
+              </p>
+</div>
+</div>
+<!-- Signature Footer inside Narrative Card -->
+<div class="pt-8 mt-8 border-t border-outline-variant/20 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-headline font-semibold text-sm">
+                AYR
+              </div>
+<div>
+<div class="font-headline text-sm font-semibold text-on-surface">Areta Y. Radjawali</div>
+<div class="font-label text-[11px] text-outline">Siswa Kejuruan RPL — Angkatan 2023/2026</div>
+</div>
+</div>
+<span class="font-label text-xs uppercase tracking-widest text-tertiary font-semibold">Probolinggo, Jatim</span>
+</div>
+</div>
+<!-- Right Column: Clean Minimalist Vision & Mission Cards (5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-6">
+<!-- Vision Card -->
+<div class="bg-surface-container-lowest rounded-3xl p-8 shadow-[0_4px_24px_rgba(0,0,0,0.03)] relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary-fixed/30 rounded-bl-full pointer-events-none"></div>
+<div class="flex items-center gap-2 mb-3">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label text-xs uppercase tracking-widest text-primary font-semibold">Visi Jangka Panjang</span>
+</div>
+<h3 class="font-headline text-xl text-on-surface font-semibold leading-snug mb-3">
+              Kedaulatan Wawasan &amp; Ketahanan Siber
+            </h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">
+              "Menjadi arsitek solusi digital dan Data Analyst yang mampu mengurai kompleksitas data menjadi keputusan bernilai, aman dari celah siber."
+            </p>
+</div>
+<!-- Mission Cards Vertical Stack -->
+<div class="bg-surface-container-lowest rounded-3xl p-8 shadow-[0_4px_24px_rgba(0,0,0,0.03)]">
+<div class="flex items-center gap-2 mb-6">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-label text-xs uppercase tracking-widest text-tertiary font-semibold">Misi Strategis &amp; Dedikasi</span>
+</div>
+<div class="space-y-6">
+<!-- Misi 1 -->
+<div class="flex items-start gap-4">
+<span class="font-headline text-xl text-primary font-semibold shrink-0 w-7">01</span>
+<div>
+<h4 class="font-headline text-sm font-semibold text-on-surface">Arsitektur Web Tangguh &amp; Efisien</h4>
+<p class="font-body text-xs text-on-surface-variant mt-1 leading-relaxed">
+                    Mengembangkan ekosistem aplikasi berbasis standar industri dengan performa optimal, struktur data teratur, dan pengalaman interaksi intuitif.
+                  </p>
+</div>
+</div>
+<!-- Misi 2 -->
+<div class="flex items-start gap-4">
+<span class="font-headline text-xl text-primary font-semibold shrink-0 w-7">02</span>
+<div>
+<h4 class="font-headline text-sm font-semibold text-on-surface">Riset Keamanan Siber Proaktif</h4>
+<p class="font-body text-xs text-on-surface-variant mt-1 leading-relaxed">
+                    Mendalami pengujian penetrasi etis, konfigurasi perlindungan peladen Linux, dan mitigasi dini terhadap kebocoran integritas data digital.
+                  </p>
+</div>
+</div>
+<!-- Misi 3 -->
+<div class="flex items-start gap-4">
+<span class="font-headline text-xl text-primary font-semibold shrink-0 w-7">03</span>
+<div>
+<h4 class="font-headline text-sm font-semibold text-on-surface">Kepemimpinan Adaptif &amp; Sinergi Lintas Bidang</h4>
+<p class="font-body text-xs text-on-surface-variant mt-1 leading-relaxed">
+                    Mengasah kapasitas koordinasi tim, mengedepankan komunikasi empatik, serta menjembatani gagasan teknis dengan realitas kebutuhan sosial.
+                  </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: NILAI KARAKTER & KEPEMIMPINAN (TRAIT CARDS) -->
+<section class="w-full max-w-6xl mx-auto px-6 lg:px-12 py-20 lg:py-24">
+<!-- Header -->
+<div class="max-w-2xl mb-14 text-left">
+<div class="inline-flex items-center gap-2 font-label text-xs font-semibold uppercase tracking-widest text-tertiary mb-2">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+        Etos Kerja &amp; Karakteristik Personal
+      </div>
+<h2 class="font-headline text-3xl sm:text-4xl text-on-surface font-normal tracking-tight">
+        Prinsip Panduan Bertumbuh
+      </h2>
+<p class="font-body text-sm text-on-surface-variant mt-3 leading-relaxed">
+        Pilar kepribadian yang menuntun setiap baris instruksi program, dinamika kepengurusan proyek, dan pengambilan keputusan di lapangan.
+      </p>
+</div>
+<!-- 4 Linear Trait Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Trait 1: Leadership -->
+<div class="bg-surface-container-low/60 rounded-3xl p-6 transition-all duration-300 hover:bg-surface-container-lowest hover:shadow-[0_12px_32px_rgba(9,76,178,0.06)] flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-2xl bg-surface-container-lowest flex items-center justify-center text-primary mb-5 shadow-xs">
+<span class="material-symbols-outlined text-2xl">flag</span>
+</div>
+<span class="font-label text-[10px] tracking-widest uppercase text-outline font-semibold">Pilar I</span>
+<h3 class="font-headline text-lg font-semibold text-on-surface mt-1 mb-2.5">
+            Kepemimpinan &amp; Inisiatif
+          </h3>
+<p class="font-body text-xs text-on-surface-variant leading-relaxed">
+            Mengambil tanggung jawab pada situasi genting, merancang alur kerja yang terstruktur, dan memotivasi rekan setim mencapai sasaran bersama secara bermartabat.
+          </p>
+</div>
+<div class="mt-6 pt-4 border-t border-outline-variant/15 flex items-center justify-between font-label text-[11px] text-primary font-medium">
+<span>Tingkat Adaptasi</span>
+<span>Tinggi / Proaktif</span>
+</div>
+</div>
+<!-- Trait 2: Collaboration -->
+<div class="bg-surface-container-low/60 rounded-3xl p-6 transition-all duration-300 hover:bg-surface-container-lowest hover:shadow-[0_12px_32px_rgba(9,76,178,0.06)] flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-2xl bg-surface-container-lowest flex items-center justify-center text-primary mb-5 shadow-xs">
+<span class="material-symbols-outlined text-2xl">groups</span>
+</div>
+<span class="font-label text-[10px] tracking-widest uppercase text-outline font-semibold">Pilar II</span>
+<h3 class="font-headline text-lg font-semibold text-on-surface mt-1 mb-2.5">
+            Kolaborasi &amp; Kerja Tim
+          </h3>
+<p class="font-body text-xs text-on-surface-variant leading-relaxed">
+            Menghargai keragaman perspektif rekan pengembang, mengedepankan telaah kode (code review) yang konstruktif, serta menyelaraskan ritme kerja kolektif.
+          </p>
+</div>
+<div class="mt-6 pt-4 border-t border-outline-variant/15 flex items-center justify-between font-label text-[11px] text-primary font-medium">
+<span>Orientasi Tim</span>
+<span>Sinergis &amp; Empatik</span>
+</div>
+</div>
+<!-- Trait 3: Continuous Learning -->
+<div class="bg-surface-container-low/60 rounded-3xl p-6 transition-all duration-300 hover:bg-surface-container-lowest hover:shadow-[0_12px_32px_rgba(9,76,178,0.06)] flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-2xl bg-surface-container-lowest flex items-center justify-center text-tertiary mb-5 shadow-xs">
+<span class="material-symbols-outlined text-2xl">menu_book</span>
+</div>
+<span class="font-label text-[10px] tracking-widest uppercase text-outline font-semibold">Pilar III</span>
+<h3 class="font-headline text-lg font-semibold text-on-surface mt-1 mb-2.5">
+            Riset Mandiri &amp; Keingintahuan
+          </h3>
+<p class="font-body text-xs text-on-surface-variant leading-relaxed">
+            Nafsu eksplorasi tak henti terhadap dokumentasi resmi, jurnal kerentanan CVE terbaru, dan metodologi optimasi algoritma pengolahan data terkini.
+          </p>
+</div>
+<div class="mt-6 pt-4 border-t border-outline-variant/15 flex items-center justify-between font-label text-[11px] text-tertiary font-medium">
+<span>Frekuensi Belajar</span>
+<span>Berkelanjutan</span>
+</div>
+</div>
+<!-- Trait 4: Problem Solving -->
+<div class="bg-surface-container-low/60 rounded-3xl p-6 transition-all duration-300 hover:bg-surface-container-lowest hover:shadow-[0_12px_32px_rgba(9,76,178,0.06)] flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-2xl bg-surface-container-lowest flex items-center justify-center text-primary mb-5 shadow-xs">
+<span class="material-symbols-outlined text-2xl">psychology</span>
+</div>
+<span class="font-label text-[10px] tracking-widest uppercase text-outline font-semibold">Pilar IV</span>
+<h3 class="font-headline text-lg font-semibold text-on-surface mt-1 mb-2.5">
+            Ketahanan Mental &amp; Solusi
+          </h3>
+<p class="font-body text-xs text-on-surface-variant leading-relaxed">
+            Menghadapi galat dan anomali server dengan ketenangan sistematis. Mengisolasi akar permasalahan melalui metodologi debugging yang ilmiah.
+          </p>
+</div>
+<div class="mt-6 pt-4 border-t border-outline-variant/15 flex items-center justify-between font-label text-[11px] text-primary font-medium">
+<span>Penyelesaian Masalah</span>
+<span>Analitis Presisi</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: KEAHLIAN TEKNIS & PERKAKAS (MATRIX) -->
+<section class="w-full bg-surface-container-low/40 py-20 lg:py-24">
+<div class="max-w-6xl mx-auto px-6 lg:px-12">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+<div>
+<div class="inline-flex items-center gap-2 font-label text-xs font-semibold uppercase tracking-widest text-primary mb-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+            Matriks Pengetahuan &amp; Perkakas
+          </div>
+<h2 class="font-headline text-3xl sm:text-4xl text-on-surface font-normal tracking-tight">
+            Kompetensi Rekayasa Terapan
+          </h2>
+</div>
+<p class="font-body text-xs sm:text-sm text-on-surface-variant max-w-sm leading-relaxed">
+          Kombinasi teknologi yang dikuasai secara praktis melalui kurikulum RPL, riset laboratorium mandiri, serta simulasi pengujian proyek.
+        </p>
+</div>
+<!-- 3-Column Structured Matrix Cards -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Pillar 1: Backend & Core -->
+<div class="bg-surface-container-lowest rounded-3xl p-8 shadow-[0_4px_24px_rgba(0,0,0,0.03)] flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-6">
+<div class="w-12 h-12 rounded-2xl bg-primary-fixed/40 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">dns</span>
+</div>
+<span class="font-label text-[11px] uppercase tracking-wider text-outline font-semibold">Domain 01</span>
+</div>
+<h3 class="font-headline text-xl font-semibold text-on-surface mb-2">
+              Backend &amp; Core Systems
+            </h3>
+<p class="font-body text-xs text-on-surface-variant leading-relaxed mb-6">
+              Fondasi komputasi logika peladen, pengelolaan basis data relasional, dan administrasi lingkungan Linux produksi.
+            </p>
+<ul class="space-y-4">
+<li class="p-3.5 rounded-2xl bg-surface-container-low flex items-start justify-between gap-3">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-base">code</span>
+<div>
+<span class="font-label text-xs font-semibold text-on-surface block">Django (Python)</span>
+<span class="font-body text-[11px] text-on-surface-variant">Arsitektur MVT, ORM, REST API</span>
+</div>
+</div>
+<span class="font-label text-[10px] font-semibold text-primary px-2 py-0.5 rounded-full bg-surface-container-lowest">Mahir</span>
+</li>
+<li class="p-3.5 rounded-2xl bg-surface-container-low flex items-start justify-between gap-3">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-base">database</span>
+<div>
+<span class="font-label text-xs font-semibold text-on-surface block">MySQL Relational DB</span>
+<span class="font-body text-[11px] text-on-surface-variant">Normalisasi, Indeksasi, Relasi Kompleks</span>
+</div>
+</div>
+<span class="font-label text-[10px] font-semibold text-primary px-2 py-0.5 rounded-full bg-surface-container-lowest">Kompeten</span>
+</li>
+<li class="p-3.5 rounded-2xl bg-surface-container-low flex items-start justify-between gap-3">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-base">terminal</span>
+<div>
+<span class="font-label text-xs font-semibold text-on-surface block">Linux Operation &amp; Bash</span>
+<span class="font-body text-[11px] text-on-surface-variant">Server Config, SSH, Scripting Otomasi</span>
+</div>
+</div>
+<span class="font-label text-[10px] font-semibold text-primary px-2 py-0.5 rounded-full bg-surface-container-lowest">Kompeten</span>
+</li>
+</ul>
+</div>
+<div class="mt-8 pt-4 border-t border-outline-variant/15 flex items-center justify-between font-label text-[11px] text-outline">
+<span>Perkakas Terkait:</span>
+<span class="text-on-surface font-medium">Postman, Docker, Git Bash</span>
+</div>
+</div>
+<!-- Pillar 2: Frontend & UI -->
+<div class="bg-surface-container-lowest rounded-3xl p-8 shadow-[0_4px_24px_rgba(0,0,0,0.03)] flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-6">
+<div class="w-12 h-12 rounded-2xl bg-primary-fixed/40 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">web</span>
+</div>
+<span class="font-label text-[11px] uppercase tracking-wider text-outline font-semibold">Domain 02</span>
+</div>
+<h3 class="font-headline text-xl font-semibold text-on-surface mb-2">
+              Frontend &amp; User Interface
+            </h3>
+<p class="font-body text-xs text-on-surface-variant leading-relaxed mb-6">
+              Penerjemahan konsep visual menjadi antarmuka interaktif yang responsif, aksesibel, dan berkecepatan tinggi.
+            </p>
+<ul class="space-y-4">
+<li class="p-3.5 rounded-2xl bg-surface-container-low flex items-start justify-between gap-3">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-base">css</span>
+<div>
+<span class="font-label text-xs font-semibold text-on-surface block">Tailwind CSS Framework</span>
+<span class="font-body text-[11px] text-on-surface-variant">Design Tokens, Editorial Styling, Glassmorphism</span>
+</div>
+</div>
+<span class="font-label text-[10px] font-semibold text-primary px-2 py-0.5 rounded-full bg-surface-container-lowest">Mahir</span>
+</li>
+<li class="p-3.5 rounded-2xl bg-surface-container-low flex items-start justify-between gap-3">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-base">javascript</span>
+<div>
+<span class="font-label text-xs font-semibold text-on-surface block">Modern JavaScript (ES6+)</span>
+<span class="font-body text-[11px] text-on-surface-variant">Async/Await, Manipulasi DOM, Fetch API</span>
+</div>
+</div>
+<span class="font-label text-[10px] font-semibold text-primary px-2 py-0.5 rounded-full bg-surface-container-lowest">Kompeten</span>
+</li>
+<li class="p-3.5 rounded-2xl bg-surface-container-low flex items-start justify-between gap-3">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-base">devices</span>
+<div>
+<span class="font-label text-xs font-semibold text-on-surface block">Responsive Architecture</span>
+<span class="font-body text-[11px] text-on-surface-variant">Mobile-First, Tipografi Skalabilitas, Semantic HTML</span>
+</div>
+</div>
+<span class="font-label text-[10px] font-semibold text-primary px-2 py-0.5 rounded-full bg-surface-container-lowest">Mahir</span>
+</li>
+</ul>
+</div>
+<div class="mt-8 pt-4 border-t border-outline-variant/15 flex items-center justify-between font-label text-[11px] text-outline">
+<span>Perkakas Terkait:</span>
+<span class="text-on-surface font-medium">Figma, Vite, Chrome DevTools</span>
+</div>
+</div>
+<!-- Pillar 3: Cyber Security & Data Analysis -->
+<div class="bg-surface-container-lowest rounded-3xl p-8 shadow-[0_4px_24px_rgba(0,0,0,0.03)] flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-6">
+<div class="w-12 h-12 rounded-2xl bg-tertiary-fixed/40 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-2xl">shield_person</span>
+</div>
+<span class="font-label text-[11px] uppercase tracking-wider text-outline font-semibold">Domain 03</span>
+</div>
+<h3 class="font-headline text-xl font-semibold text-on-surface mb-2">
+              Keamanan &amp; Analisis Data
+            </h3>
+<p class="font-body text-xs text-on-surface-variant leading-relaxed mb-6">
+              Investigasi keamanan sistem informasi terpadu dan pengolahan data mentah menuju wawasan prediktif.
+            </p>
+<ul class="space-y-4">
+<li class="p-3.5 rounded-2xl bg-surface-container-low flex items-start justify-between gap-3">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary text-base">security</span>
+<div>
+<span class="font-label text-xs font-semibold text-on-surface block">Prinsip Cyber Security</span>
+<span class="font-body text-[11px] text-on-surface-variant">OWASP Top 10, Auth Flow, Enkripsi Simetris</span>
+</div>
+</div>
+<span class="font-label text-[10px] font-semibold text-tertiary px-2 py-0.5 rounded-full bg-surface-container-lowest">Riset Aktif</span>
+</li>
+<li class="p-3.5 rounded-2xl bg-surface-container-low flex items-start justify-between gap-3">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary text-base">policy</span>
+<div>
+<span class="font-label text-xs font-semibold text-on-surface block">Ethical Auditing &amp; Recon</span>
+<span class="font-body text-[11px] text-on-surface-variant">Nmap, Wireshark, Audit Hak Akses Peladen</span>
+</div>
+</div>
+<span class="font-label text-[10px] font-semibold text-tertiary px-2 py-0.5 rounded-full bg-surface-container-lowest">Menengah</span>
+</li>
+<li class="p-3.5 rounded-2xl bg-surface-container-low flex items-start justify-between gap-3">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary text-base">insights</span>
+<div>
+<span class="font-label text-xs font-semibold text-on-surface block">Analisis &amp; Visualisasi Data</span>
+<span class="font-body text-[11px] text-on-surface-variant">Pandas, NumPy, Matplotlib, SQL Aggregation</span>
+</div>
+</div>
+<span class="font-label text-[10px] font-semibold text-tertiary px-2 py-0.5 rounded-full bg-surface-container-lowest">Aspirasi Utama</span>
+</li>
+</ul>
+</div>
+<div class="mt-8 pt-4 border-t border-outline-variant/15 flex items-center justify-between font-label text-[11px] text-outline">
+<span>Perkakas Terkait:</span>
+<span class="text-on-surface font-medium">Jupyter, Burp Suite, Kali Linux</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: AKTIVITAS GITHUB & KONTRIBUSI KODE -->
+<section class="w-full max-w-6xl mx-auto px-6 lg:px-12 py-20 lg:py-24">
+<!-- Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+<div>
+<div class="inline-flex items-center gap-2 font-label text-xs font-semibold uppercase tracking-widest text-primary mb-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+          Telemetri Git &amp; Bukti Kerja Nyata
+        </div>
+<h2 class="font-headline text-3xl sm:text-4xl text-on-surface font-normal tracking-tight">
+          Aktivitas Repositori &amp; Dedikasi Terbuka
+        </h2>
+</div>
+<div class="flex items-center gap-3">
+<a class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-low hover:bg-surface-container text-xs font-label text-on-surface font-semibold transition-colors" href="https://github.com" rel="noreferrer" target="_blank">
+<span>Kunjungi Profil GitHub</span>
+<span class="material-symbols-outlined text-xs">north_east</span>
+</a>
+</div>
+</div>
+<!-- Main GitHub Activity Card -->
+<div class="bg-surface-container-lowest rounded-3xl p-6 sm:p-10 shadow-[0_6px_30px_rgba(0,0,0,0.03)]">
+<!-- Top Metrics Bar -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pb-8 mb-8 border-b border-outline-variant/20">
+<div class="flex flex-col">
+<span class="font-label text-[11px] uppercase tracking-wider text-outline">Total Kontribusi</span>
+<span class="font-headline text-2xl sm:text-3xl font-semibold text-primary mt-1">1,420+</span>
+<span class="font-body text-[11px] text-on-surface-variant mt-0.5">Sepanjang tahun berjalan</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-[11px] uppercase tracking-wider text-outline">Streak Terpanjang</span>
+<span class="font-headline text-2xl sm:text-3xl font-semibold text-on-surface mt-1">48 Hari</span>
+<span class="font-body text-[11px] text-emerald-600 font-medium mt-0.5">Konsistensi aktif</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-[11px] uppercase tracking-wider text-outline">Repositori Publik</span>
+<span class="font-headline text-2xl sm:text-3xl font-semibold text-on-surface mt-1">26 Proyek</span>
+<span class="font-body text-[11px] text-on-surface-variant mt-0.5">RPL, Tools, &amp; Riset</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-[11px] uppercase tracking-wider text-outline">Total Star Diterima</span>
+<span class="font-headline text-2xl sm:text-3xl font-semibold text-tertiary mt-1">180+</span>
+<span class="font-body text-[11px] text-on-surface-variant mt-0.5">Apresiasi komunitas</span>
+</div>
+</div>
+<!-- Interactive Contribution Graph (Editorial Replica) -->
+<div class="mb-8">
+<div class="flex items-center justify-between mb-4">
+<span class="font-headline text-sm font-semibold text-on-surface">Peta Panas Komitmen Kode (Heatmap Tahunan)</span>
+<span class="font-label text-xs text-outline hidden sm:inline">Senin — Minggu (52 Pekan)</span>
+</div>
+<!-- Heatmap Grid Container (Scrollable on small devices) -->
+<div class="overflow-x-auto pb-2">
+<div class="inline-flex flex-col gap-1 min-w-[720px]">
+<!-- Month Labels -->
+<div class="flex justify-between text-[10px] font-label text-outline px-1 mb-1">
+<span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>Mei</span><span>Jun</span>
+<span>Jul</span><span>Agu</span><span>Sep</span><span>Okt</span><span>Nov</span><span>Des</span>
+</div>
+<!-- SVG Heatmap representation for precise clean vectors without heavy DOM -->
+<svg class="w-full h-28" fill="none" viewbox="0 0 720 88" xmlns="http://www.w3.org/2000/svg">
+<!-- Inline script-driven or statically rendered stylized commits -->
+<defs>
+<pattern height="12" id="ghLegendGrid" patternunits="userSpaceOnUse" width="14">
+<rect fill="#efedee" height="10" rx="2" width="10"></rect>
+</pattern>
+</defs>
+<!-- 7 rows of weeks simulated with elegant primary/accent tones -->
+<!-- Row 1 -->
+<g class="transition-opacity">
+<!-- Group of weeks with realistic frequency distribution -->
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="0" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="14" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="28" y="0"></rect>
+<rect fill="#b1c5ff" height="10" rx="2" width="10" x="42" y="0"></rect>
+<rect fill="#efedee" height="10" rx="2" width="10" x="56" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="70" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="84" y="0"></rect>
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="98" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="112" y="0"></rect>
+<rect fill="#b1c5ff" height="10" rx="2" width="10" x="126" y="0"></rect>
+<rect fill="#efedee" height="10" rx="2" width="10" x="140" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="154" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="168" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="182" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="196" y="0"></rect>
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="210" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="224" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="238" y="0"></rect>
+<rect fill="#b1c5ff" height="10" rx="2" width="10" x="252" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="266" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="280" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="294" y="0"></rect>
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="308" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="322" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="336" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="350" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="364" y="0"></rect>
+<rect fill="#efedee" height="10" rx="2" width="10" x="378" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="392" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="406" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="420" y="0"></rect>
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="434" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="448" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="462" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="476" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="490" y="0"></rect>
+<rect fill="#b1c5ff" height="10" rx="2" width="10" x="504" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="518" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="532" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="546" y="0"></rect>
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="560" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="574" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="588" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="602" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="616" y="0"></rect>
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="630" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="644" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="658" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="672" y="0"></rect>
+<rect fill="#b1c5ff" height="10" rx="2" width="10" x="686" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="700" y="0"></rect>
+</g>
+<!-- Row 2 -->
+<g transform="translate(0, 12)">
+<rect fill="#3366cc" height="10" rx="2" width="10" x="0" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="14" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="28" y="0"></rect>
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="42" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="56" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="70" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="84" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="98" y="0"></rect>
+<rect fill="#efedee" height="10" rx="2" width="10" x="112" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="126" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="140" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="154" y="0"></rect>
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="168" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="182" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="196" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="210" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="224" y="0"></rect>
+<rect fill="#b1c5ff" height="10" rx="2" width="10" x="238" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="252" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="266" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="280" y="0"></rect>
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="294" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="308" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="322" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="336" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="350" y="0"></rect>
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="364" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="378" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="392" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="406" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="420" y="0"></rect>
+<rect fill="#efedee" height="10" rx="2" width="10" x="434" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="448" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="462" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="476" y="0"></rect>
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="490" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="504" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="518" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="532" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="546" y="0"></rect>
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="560" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="574" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="588" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="602" y="0"></rect>
+<rect fill="#b1c5ff" height="10" rx="2" width="10" x="616" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="630" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="644" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="658" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="672" y="0"></rect>
+<rect fill="#efedee" height="10" rx="2" width="10" x="686" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="700" y="0"></rect>
+</g>
+<!-- Row 3 -->
+<g transform="translate(0, 24)">
+<rect fill="#094cb2" height="10" rx="2" width="10" x="0" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="14" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="28" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="42" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="56" y="0"></rect>
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="70" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="84" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="98" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="112" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="126" y="0"></rect>
+<rect fill="#b1c5ff" height="10" rx="2" width="10" x="140" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="154" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="168" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="182" y="0"></rect>
+<rect fill="#efedee" height="10" rx="2" width="10" x="196" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="210" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="224" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="238" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="252" y="0"></rect>
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="266" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="280" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="294" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="308" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="322" y="0"></rect>
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="336" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="350" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="364" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="378" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="392" y="0"></rect>
+<rect fill="#b1c5ff" height="10" rx="2" width="10" x="406" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="420" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="434" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="448" y="0"></rect>
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="462" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="476" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="490" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="504" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="518" y="0"></rect>
+<rect fill="#efedee" height="10" rx="2" width="10" x="532" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="546" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="560" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="574" y="0"></rect>
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="588" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="602" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="616" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="630" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="644" y="0"></rect>
+<rect fill="#b1c5ff" height="10" rx="2" width="10" x="658" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="672" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="686" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="700" y="0"></rect>
+</g>
+<!-- Row 4 -->
+<g transform="translate(0, 36)">
+<rect fill="#3366cc" height="10" rx="2" width="10" x="0" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="14" y="0"></rect>
+<rect fill="#b1c5ff" height="10" rx="2" width="10" x="28" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="42" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="56" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="70" y="0"></rect>
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="84" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="98" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="112" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="126" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="140" y="0"></rect>
+<rect fill="#efedee" height="10" rx="2" width="10" x="154" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="168" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="182" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="196" y="0"></rect>
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="210" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="224" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="238" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="252" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="266" y="0"></rect>
+<rect fill="#b1c5ff" height="10" rx="2" width="10" x="280" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="294" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="308" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="322" y="0"></rect>
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="336" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="350" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="364" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="378" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="392" y="0"></rect>
+<rect fill="#efedee" height="10" rx="2" width="10" x="406" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="420" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="434" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="448" y="0"></rect>
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="462" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="476" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="490" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="504" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="518" y="0"></rect>
+<rect fill="#b1c5ff" height="10" rx="2" width="10" x="532" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="546" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="560" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="574" y="0"></rect>
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="588" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="602" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="616" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="630" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="644" y="0"></rect>
+<rect fill="#efedee" height="10" rx="2" width="10" x="658" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="672" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="686" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="700" y="0"></rect>
+</g>
+<!-- Row 5 -->
+<g transform="translate(0, 48)">
+<rect fill="#094cb2" height="10" rx="2" width="10" x="0" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="14" y="0"></rect>
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="28" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="42" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="56" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="70" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="84" y="0"></rect>
+<rect fill="#efedee" height="10" rx="2" width="10" x="98" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="112" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="126" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="140" y="0"></rect>
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="154" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="168" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="182" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="196" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="210" y="0"></rect>
+<rect fill="#b1c5ff" height="10" rx="2" width="10" x="224" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="238" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="252" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="266" y="0"></rect>
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="280" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="294" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="308" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="322" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="336" y="0"></rect>
+<rect fill="#efedee" height="10" rx="2" width="10" x="350" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="364" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="378" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="392" y="0"></rect>
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="406" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="420" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="434" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="448" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="462" y="0"></rect>
+<rect fill="#b1c5ff" height="10" rx="2" width="10" x="476" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="490" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="504" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="518" y="0"></rect>
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="532" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="546" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="560" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="574" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="588" y="0"></rect>
+<rect fill="#efedee" height="10" rx="2" width="10" x="602" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="616" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="630" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="644" y="0"></rect>
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="658" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="672" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="686" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="700" y="0"></rect>
+</g>
+<!-- Row 6 -->
+<g transform="translate(0, 60)">
+<rect fill="#efedee" height="10" rx="2" width="10" x="0" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="14" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="28" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="42" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="56" y="0"></rect>
+<rect fill="#b1c5ff" height="10" rx="2" width="10" x="70" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="84" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="98" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="112" y="0"></rect>
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="126" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="140" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="154" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="168" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="182" y="0"></rect>
+<rect fill="#efedee" height="10" rx="2" width="10" x="196" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="210" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="224" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="238" y="0"></rect>
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="252" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="266" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="280" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="294" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="308" y="0"></rect>
+<rect fill="#b1c5ff" height="10" rx="2" width="10" x="322" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="336" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="350" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="364" y="0"></rect>
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="378" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="392" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="406" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="420" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="434" y="0"></rect>
+<rect fill="#efedee" height="10" rx="2" width="10" x="448" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="462" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="476" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="490" y="0"></rect>
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="504" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="518" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="532" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="546" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="560" y="0"></rect>
+<rect fill="#b1c5ff" height="10" rx="2" width="10" x="574" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="588" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="602" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="616" y="0"></rect>
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="630" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="644" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="658" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="672" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="686" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="700" y="0"></rect>
+</g>
+<!-- Row 7 -->
+<g transform="translate(0, 72)">
+<rect fill="#3366cc" height="10" rx="2" width="10" x="0" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="14" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="28" y="0"></rect>
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="42" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="56" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="70" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="84" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="98" y="0"></rect>
+<rect fill="#efedee" height="10" rx="2" width="10" x="112" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="126" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="140" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="154" y="0"></rect>
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="168" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="182" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="196" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="210" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="224" y="0"></rect>
+<rect fill="#b1c5ff" height="10" rx="2" width="10" x="238" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="252" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="266" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="280" y="0"></rect>
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="294" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="308" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="322" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="336" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="350" y="0"></rect>
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="364" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="378" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="392" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="406" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="420" y="0"></rect>
+<rect fill="#efedee" height="10" rx="2" width="10" x="434" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="448" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="462" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="476" y="0"></rect>
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="490" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="504" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="518" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="532" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="546" y="0"></rect>
+<rect fill="#d9e2ff" height="10" rx="2" width="10" x="560" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="574" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="588" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="602" y="0"></rect>
+<rect fill="#b1c5ff" height="10" rx="2" width="10" x="616" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="630" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="644" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="658" y="0"></rect>
+<rect fill="#3366cc" height="10" rx="2" width="10" x="672" y="0"></rect>
+<rect fill="#efedee" height="10" rx="2" width="10" x="686" y="0"></rect>
+<rect fill="#094cb2" height="10" rx="2" width="10" x="700" y="0"></rect>
+</g>
+</svg>
+</div>
+</div>
+<!-- Heatmap Legend -->
+<div class="flex items-center justify-between text-xs font-label text-outline pt-2">
+<span>Aktivitas komit dihitung otomatis via Git hooks</span>
+<div class="flex items-center gap-1.5">
+<span>Sedikit</span>
+<span class="w-2.5 h-2.5 rounded-xs bg-surface-container"></span>
+<span class="w-2.5 h-2.5 rounded-xs bg-primary-fixed"></span>
+<span class="w-2.5 h-2.5 rounded-xs bg-primary-container"></span>
+<span class="w-2.5 h-2.5 rounded-xs bg-primary"></span>
+<span>Banyak</span>
+</div>
+</div>
+</div>
+<!-- Breakdown of Top Languages & Popular Repositories -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-6 border-t border-outline-variant/20 items-center">
+<!-- Top Languages (5 cols) -->
+<div class="lg:col-span-5">
+<span class="font-label text-[11px] uppercase tracking-wider text-outline font-semibold block mb-3">Distribusi Bahasa Utama</span>
+<div class="space-y-2.5">
+<div>
+<div class="flex items-center justify-between font-label text-xs mb-1">
+<span class="font-medium text-on-surface">Python (Django Core &amp; Automation)</span>
+<span class="text-primary font-semibold">52%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 52%"></div>
+</div>
+</div>
+<div>
+<div class="flex items-center justify-between font-label text-xs mb-1">
+<span class="font-medium text-on-surface">JavaScript &amp; Tailwind CSS</span>
+<span class="text-primary-container font-semibold">33%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 33%"></div>
+</div>
+</div>
+<div>
+<div class="flex items-center justify-between font-label text-xs mb-1">
+<span class="font-medium text-on-surface">Shell (Bash), SQL &amp; Dockerfile</span>
+<span class="text-tertiary font-semibold">15%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-tertiary-container rounded-full" style="width: 15%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Featured Highlights / Repositories (7 cols) -->
+<div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Repo 1 -->
+<div class="p-4 rounded-2xl bg-surface-container-low flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">folder_open</span>
+<span class="font-label text-xs font-semibold text-on-surface">django-sentinel-auth</span>
+</div>
+<span class="font-label text-[10px] px-2 py-0.5 rounded-full bg-surface-container-lowest text-outline">Publik</span>
+</div>
+<p class="font-body text-[11px] text-on-surface-variant line-clamp-2">
+                Modul autentikasi Django dengan mitigasi brute-force bertingkat dan audit logging terenkripsi.
+              </p>
+</div>
+<div class="mt-3 flex items-center gap-4 text-[11px] font-label text-outline">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary"></span> Python</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs">star</span> 94</span>
+</div>
+</div>
+<!-- Repo 2 -->
+<div class="p-4 rounded-2xl bg-surface-container-low flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">folder_open</span>
+<span class="font-label text-xs font-semibold text-on-surface">recon-suite-bash</span>
+</div>
+<span class="font-label text-[10px] px-2 py-0.5 rounded-full bg-surface-container-lowest text-outline">Publik</span>
+</div>
+<p class="font-body text-[11px] text-on-surface-variant line-clamp-2">
+                Skrip otomatisasi pengumpulan jejak jaringan lokal dan pengecekan kepatuhan port terbuka.
+              </p>
+</div>
+<div class="mt-3 flex items-center gap-4 text-[11px] font-label text-outline">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-tertiary"></span> Shell</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs">star</span> 52</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 6: CALL TO ACTION HALUS & RESMI -->
+<section class="w-full bg-surface-container-lowest py-20 border-t border-outline-variant/20">
+<div class="max-w-4xl mx-auto px-6 text-center flex flex-col items-center">
+<span class="font-label text-xs uppercase tracking-widest text-primary font-semibold mb-3">Langkah Selanjutnya</span>
+<h2 class="font-headline text-3xl sm:text-4xl text-on-surface font-normal leading-tight max-w-xl">
+        Karya Berkualitas Lahir dari Kolaborasi yang Tepat
+      </h2>
+<p class="font-body text-sm text-on-surface-variant mt-4 leading-relaxed max-w-lg">
+        Tertarik mendiskusikan arsitektur sistem, membedah proyek web, atau menjajaki sinergi analitik data bersama saya?
+      </p>
+<div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+<a class="px-8 py-3.5 rounded-full bg-primary text-on-primary font-label text-xs font-semibold tracking-wider uppercase shadow-xs hover:bg-primary-container transition-all flex items-center gap-2" href="#proyek">
+<span>Eksplorasi Proyek Saya</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+<a class="px-8 py-3.5 rounded-full bg-surface-container-high hover:bg-surface-dim text-on-surface font-label text-xs font-semibold tracking-wider uppercase transition-all flex items-center gap-2" href="mailto:aretaradjawali@gmail.com">
+<span class="material-symbols-outlined text-sm text-primary">mail</span>
+<span>Buka Jejaring Kolaborasi</span>
+</a>
+</div>
+</div>
+</section>
+</div></main>
+<!-- FOOTER PROFESIONAL BERGAYA STUDIO -->
+<footer class="w-full bg-surface-container-lowest border-t border-outline-variant/20 relative z-10 pt-20 pb-12" id="contact">
+<div class="max-w-6xl mx-auto px-6 lg:px-12">
+<div class="rounded-3xl bg-surface-container-low/70 border border-outline-variant/30 p-8 sm:p-12 lg:p-16 relative overflow-hidden mb-20">
+<div class="absolute -top-20 -right-20 w-80 h-80 bg-primary-fixed/40 rounded-full filter blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-20 -left-20 w-80 h-80 bg-tertiary-fixed/30 rounded-full filter blur-3xl pointer-events-none"></div>
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+<div class="lg:col-span-7 text-left">
+<div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-surface-container-lowest border border-outline-variant/20 text-xs font-label uppercase tracking-widest text-primary font-semibold mb-4">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+Mulai Diskusi &amp; Kolaborasi
+</div>
+<h3 class="font-headline text-3xl sm:text-4xl lg:text-5xl font-normal text-on-surface leading-tight">
+Mari wujudkan karya bermakna bersama studio kami.
+</h3>
+<p class="font-body text-sm sm:text-base text-on-surface-variant mt-4 leading-relaxed max-w-xl">
+Menerima proyek komisi terpilih, konsultasi arsitektur sistem desain, serta kemitraan rekayasa kreatif untuk kuartal Q2/Q3 2025.
+</p>
+</div>
+<div class="lg:col-span-5 flex flex-col gap-3">
+<form class="flex flex-col gap-3" onsubmit="event.preventDefault(); alert('Terima kasih! Pesan singkat Anda telah terkirim.');">
+<input class="w-full px-4 py-3.5 rounded-xl bg-surface-container-lowest border border-outline-variant/40 text-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Masukkan alamat email Anda" required="" type="email"/>
+<div class="flex items-center gap-2">
+<button class="flex-1 px-6 py-3.5 rounded-xl font-label text-xs uppercase tracking-widest font-semibold text-on-primary bg-primary hover:bg-primary-container shadow-xs hover:shadow-md transition-all flex items-center justify-center gap-2" type="submit">
+<span>Mulai Konsultasi</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<button class="p-3.5 rounded-xl bg-surface-container-lowest border border-outline-variant/40 hover:bg-surface-container-high transition-colors text-on-surface-variant hover:text-primary flex items-center justify-center" onclick="navigator.clipboard.writeText('aretaradjawali@gmail.com'); alert('Email disalin ke clipboard!');" title="Salin Email Studio" type="button">
+<span class="material-symbols-outlined text-base">content_copy</span>
+</button>
+</div>
+</form>
+<span class="font-label text-[11px] text-outline text-center lg:text-left mt-1">
+Respon resmi dalam 24-48 jam kerja studio.
+</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-16 border-b border-outline-variant/20">
+<div class="lg:col-span-4 flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<img alt="Alexandria Logo" class="h-7 w-7 rounded-full object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XnXhfVVqxaZAeEGyaoT2LfLEv04NVX37MK3j5WVhT8YJDLUG9DKpvdlJGAF2sPWQG0WK3eO2kTGLGKrR_XvxmCJTKhAV7wwFnx2jorEVcj0ZWC4fGUistSj2z4hG4Bz4Wp5r6v87PoI4noQvxp3eEMhFj-xgqJs_FwAMIvS4vgBQIyWG7iLL5UTLThMV8YgjuVzH-BgjrmXB5Ls0p1AbVdR4GtF8uj9uyQ-Lgs_b5HXZs-L1uWVEsoylU6"/>
+<span class="font-headline font-semibold text-lg tracking-tight text-on-surface">AREYBRA</span>
+</div>
+<p class="font-body text-xs text-on-surface-variant leading-relaxed max-w-sm">
+Studio desain produk independen yang memadukan keanggunan tipografi editorial, arsitektur perangkat lunak presisi, dan filosofi interaksi modern.
+</p>
+<div class="flex items-center gap-2.5 mt-2">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="font-label text-xs text-on-surface font-medium">Tersedia untuk proyek baru Q2/Q3 2025</span>
+</div>
+</div>
+<div class="lg:col-span-2 flex flex-col gap-3">
+<span class="font-label text-xs uppercase tracking-widest text-on-surface font-semibold">Navigasi</span>
+<ul class="flex flex-col gap-2 font-body text-xs text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" data-path="home" href="#">Beranda</a></li>
+<li><a class="hover:text-primary transition-colors" data-path="tentang-saya" href="#">Tentang Saya</a></li>
+<li><a class="hover:text-primary transition-colors" data-path="proyek" href="#">Proyek</a></li>
+<li><a class="hover:text-primary transition-colors" data-path="blog" href="#">Blog</a></li>
+<li><a class="hover:text-primary transition-colors" data-path="kontak" href="#">Kontak</a></li>
+</ul>
+</div>
+<div class="lg:col-span-3 flex flex-col gap-3">
+<span class="font-label text-xs uppercase tracking-widest text-on-surface font-semibold">Layanan &amp; Praktik</span>
+<ul class="flex flex-col gap-2 font-body text-xs text-on-surface-variant">
+<li>Arsitektur Design Systems</li>
+<li>Desain Antarmuka &amp; Interaksi Produk</li>
+<li>Frontend Engineering &amp; WebGL</li>
+<li>Tipografi &amp; Editorial Web Craft</li>
+<li>Audit Fidelitas &amp; Aksesibilitas</li>
+</ul>
+</div>
+<div class="lg:col-span-3 flex flex-col gap-3">
+<span class="font-label text-xs uppercase tracking-widest text-on-surface font-semibold">Jejaring Profesional</span>
+<ul class="flex flex-col gap-2 font-body text-xs text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors flex items-center justify-between" href="https://linkedin.com" rel="noreferrer" target="_blank"><span>LinkedIn</span> <span class="material-symbols-outlined text-xs">north_east</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center justify-between" href="https://github.com" rel="noreferrer" target="_blank"><span>GitHub</span> <span class="material-symbols-outlined text-xs">north_east</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center justify-between" href="https://dribbble.com" rel="noreferrer" target="_blank"><span>Dribbble</span> <span class="material-symbols-outlined text-xs">north_east</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center justify-between" href="https://read.cv" rel="noreferrer" target="_blank"><span>Read.cv</span> <span class="material-symbols-outlined text-xs">north_east</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center justify-between" href="mailto:aretaradjawali@gmail.com"><span>aretaradjawali@gmail.com</span> <span class="material-symbols-outlined text-xs">mail</span></a></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-label text-xs text-outline">
+<div class="flex items-center gap-3">
+<span>© 2025 Alexandria Studio. Seluruh hak cipta dilindungi undang-undang.</span>
+</div>
+<div class="flex items-center gap-6">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xs text-emerald-600">schedule</span>
+<span>WIB (UTC+7) · Jakarta, Indonesia</span>
+</span>
+<span class="text-outline-variant/40">|</span>
+<span class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+<span>Status Sistem Normal</span>
+</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

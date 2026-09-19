@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="flex flex-col w-full">
+<!-- HERO -->
+<section class="relative w-full overflow-hidden px-4 sm:px-6 lg:px-12 pt-6 sm:pt-8 pb-12 sm:pb-20 lg:pb-32 flex flex-col items-center justify-center">
+  <div class="absolute inset-0 pointer-events-none flex items-center justify-center overflow-hidden opacity-40 sm:opacity-60">
+    <svg class="w-full max-w-5xl h-auto hidden sm:block" fill="none" viewBox="0 0 1000 800" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient cx="50%" cy="50%" id="auroraGrad" r="50%">
+          <stop offset="0%" stop-color="#3366cc" stop-opacity="0.18"></stop>
+          <stop offset="60%" stop-color="#bfab49" stop-opacity="0.08"></stop>
+          <stop offset="100%" stop-color="#faf9fa" stop-opacity="0"></stop>
+        </radialGradient>
+        <linearGradient id="orbitStroke" x1="0%" x2="100%" y1="0%" y2="100%">
+          <stop offset="0%" stop-color="#094cb2" stop-opacity="0.28"></stop>
+          <stop offset="50%" stop-color="#bfab49" stop-opacity="0.15"></stop>
+          <stop offset="100%" stop-color="#094cb2" stop-opacity="0.04"></stop>
+        </linearGradient>
+      </defs>
+      <circle cx="500" cy="400" fill="url(#auroraGrad)" filter="blur(40px)" r="330"></circle>
+      <ellipse cx="500" cy="400" rx="370" ry="250" stroke="url(#orbitStroke)" stroke-dasharray="6 8" stroke-width="1.5"></ellipse>
+      <ellipse class="animate-pulse" cx="480" cy="420" rx="280" ry="340" stroke="url(#orbitStroke)" stroke-width="1.2" style="animation-duration: 9s;"></ellipse>
+    </svg>
+    <div class="sm:hidden absolute top-10 left-1/2 -translate-x-1/2 w-72 h-72 rounded-full bg-gradient-to-br from-primary-fixed/30 to-transparent blur-3xl"></div>
+  </div>
+  <div class="relative z-10 max-w-6xl mx-auto w-full flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-12 lg:gap-16">
+    <div class="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left reveal">
+      <h1 class="font-headline text-3xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-on-surface leading-[1.12]">{{ site_profile.hero_name|default:"Areta Y. Radjawali" }}<br><span class="block font-headline italic font-light text-secondary mt-2 text-xl sm:text-3xl tracking-normal min-h-[1.2em]" data-typing='["Junior Web Development","Django Engineer","Data Enthusiast"]'>{{ site_profile.hero_title|default:"Junior Web Development" }}</span></h1>
+      <p class="mt-4 sm:mt-6 font-body text-sm sm:text-lg text-on-surface-variant max-w-xl font-normal leading-relaxed line-clamp-3 sm:line-clamp-none">{{ site_profile.hero_description }}</p>
+      <div class="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center justify-center lg:justify-start gap-3 mt-6 sm:mt-8 w-full sm:w-auto">
+        <a class="px-6 sm:px-7 py-3 rounded-xl font-label text-xs uppercase tracking-widest text-on-primary bg-gradient-to-r from-primary to-primary-container shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all text-center" href="#selected-works">Lihat Karya Terpilih</a>
+        <a class="px-6 sm:px-7 py-3 rounded-xl font-label text-xs uppercase tracking-widest text-primary bg-surface-container-high hover:bg-surface-container-highest transition-all text-center" href="{% url 'tentang_saya' %}">Eksplorasi Profil &amp; Filosofi</a>
+      </div>
+      <div class="grid grid-cols-3 gap-4 sm:gap-10 mt-8 sm:mt-12 pt-6 sm:pt-8 w-full max-w-lg border-t border-outline-variant/20">
+        <div class="flex flex-col items-center lg:items-start"><span class="font-headline text-xl sm:text-3xl font-semibold text-on-surface">08<span class="text-tertiary text-lg font-normal">+</span></span><span class="font-label text-[10px] sm:text-[11px] tracking-widest uppercase text-on-surface-variant mt-1">Tahun Dedikasi</span></div>
+        <div class="flex flex-col items-center lg:items-start"><span class="font-headline text-xl sm:text-3xl font-semibold text-on-surface">42<span class="text-primary text-lg font-normal">pts</span></span><span class="font-label text-[10px] sm:text-[11px] tracking-widest uppercase text-on-surface-variant mt-1">Sistem Dirilis</span></div>
+        <div class="flex flex-col items-center lg:items-start"><span class="font-headline text-xl sm:text-3xl font-semibold text-on-surface">99.4<span class="text-tertiary text-lg font-normal">%</span></span><span class="font-label text-[10px] sm:text-[11px] tracking-widest uppercase text-on-surface-variant mt-1">Fidelitas Desain</span></div>
+      </div>
+    </div>
+    <div class="flex-1 flex flex-col items-center justify-center relative reveal reveal-delay-1 w-full">
+      <div class="relative group float-slow">
+        <div class="absolute -inset-6 rounded-full bg-gradient-to-tr from-primary-fixed/50 to-tertiary-fixed/40 filter blur-2xl opacity-70 group-hover:opacity-100 transition-opacity duration-700 hidden sm:block"></div>
+        <div class="relative w-56 h-56 sm:w-80 sm:h-80 rounded-full p-2 bg-surface-container-lowest shadow-xl flex items-center justify-center border border-white/80 overflow-hidden mx-auto">
+          {% if site_profile.hero_image_effective %}
+            <img alt="Portrait" class="w-full h-full object-cover rounded-full" src="{{ site_profile.hero_image_effective }}">
+          {% else %}
+            <img alt="Portrait" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida/AEtjO1UEoiyjmRKUBIc9t_Fndn02qah9zD4YxMOclwvCsw3RgF04tBa7qBJtB3e-J04xQLKcvUDjFs3W9OGpRH2ONio9YqP3AFOlbnf_VADprquwDe9nBnqaSBN4w2LlKcPBqpkEODL3pzu4GkgxG44ucGQRBvUR2HQGWMBjGgDsHFLRA1U1NAfAjAKRmAirn9ZaUcwEP-OH1rfpqF-1S_JV3Za18csDTh8B6C7BX43cPLUS05jJpemociIHRQPo">
+          {% endif %}
+        </div>
+        <div class="absolute bottom-1 -right-1 sm:bottom-2 sm:right-2 bg-surface-container-lowest/95 backdrop-blur-md px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl shadow-md flex items-center gap-2 border border-outline-variant/20"><span class="material-symbols-outlined text-primary text-sm sm:text-base">architecture</span><span class="font-label text-[10px] sm:text-[11px] font-semibold tracking-wider text-on-surface uppercase">Design Architect</span></div>
+      </div>
+      <a class="hidden sm:inline-flex mt-10 flex-col items-center text-on-surface-variant hover:text-primary transition-colors group" href="#philosophy"><span class="font-label text-[10px] uppercase tracking-widest mb-2 opacity-70 group-hover:opacity-100">Jelajahi ke Bawah</span><span class="material-symbols-outlined text-xl animate-bounce">arrow_downward</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="w-full bg-surface-container-lowest/80 backdrop-blur-xs py-12 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-12 border-y border-outline-variant/15 relative" id="philosophy">
+  <div class="max-w-6xl mx-auto flex flex-col relative z-10">
+    <div class="flex items-center gap-3 mb-6 sm:mb-10 reveal"><span class="font-label text-xs uppercase tracking-widest text-primary font-semibold">Informasi Seputar Saya</span><div class="h-px bg-outline-variant/20 flex-grow max-w-[120px]"></div></div>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-16 items-start">
+      <div class="lg:col-span-7 flex flex-col reveal">
+        <h2 class="font-headline text-2xl sm:text-4xl lg:text-5xl font-normal text-on-surface leading-[1.2]">Kesederhanaan bukanlah ketiadaan energi—melainkan <span class="italic font-light text-primary">kristalisasi</span> dari esensi intinya.</h2>
+        <p class="font-body text-sm sm:text-base lg:text-lg text-on-surface-variant leading-relaxed mt-4 sm:mt-6">Selama lebih dari delapan tahun, saya menjelajahi jembatan antara keindahan tipografi editorial, arsitektur token desain yang kokoh, serta rekayasa perangkat lunak antarmuka modern.</p>
+        <p class="hidden sm:block font-body text-base text-on-surface-variant leading-relaxed mt-4">Setiap transisi diprogram dengan penuh pertimbangan; setiap hierarki tata letak dipandu oleh disiplin editorial.</p>
+        <div class="mt-6 sm:mt-10"><a class="inline-flex items-center gap-3 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-surface-container-high text-on-surface hover:bg-primary hover:text-on-primary font-label text-xs uppercase tracking-wider font-semibold transition-all shadow-xs group" href="{% url 'contact' %}"><span>Hubungi untuk Eksplorasi Bersama</span><span class="material-symbols-outlined text-base group-hover:translate-x-1.5 transition-transform">east</span></a></div>
+      </div>
+      <div class="lg:col-span-5 flex flex-col gap-3 sm:gap-4 reveal reveal-delay-1">
+        <div class="bg-surface/90 border border-outline-variant/15 p-6 sm:p-7 rounded-2xl flex flex-col justify-between hover:border-primary/30 transition-colors shadow-xs pop-card"><div class="flex justify-between items-start mb-3 sm:mb-4"><span class="font-label text-xs uppercase tracking-wider text-secondary font-medium">Keahlian Utama</span><span class="material-symbols-outlined text-tertiary text-xl">token</span></div><h3 class="font-headline text-lg sm:text-xl text-on-surface font-semibold">Sistem Desain Modular</h3><p class="font-body text-xs text-on-surface-variant mt-2 leading-relaxed">Merancang arsitektur token multi-lapis, pustaka komponen yang dapat digubah bebas.</p></div>
+        <div class="bg-surface/90 border border-outline-variant/15 p-6 sm:p-7 rounded-2xl flex flex-col justify-between hover:border-primary/30 transition-colors shadow-xs pop-card" style="animation-delay:.1s"><div class="flex justify-between items-start mb-3 sm:mb-4"><span class="font-label text-xs uppercase tracking-wider text-secondary font-medium">Jembatan Rekayasa</span><span class="material-symbols-outlined text-primary text-xl">code_blocks</span></div><h3 class="font-headline text-lg sm:text-xl text-on-surface font-semibold">Interaksi Produksi &amp; Kode</h3><p class="font-body text-xs text-on-surface-variant mt-2 leading-relaxed">Fasih dalam ekosistem Django, Tailwind, dan animasi kinetik berbasis presisi.</p></div>
+        <div class="hidden sm:flex bg-surface/90 border border-outline-variant/15 p-6 sm:p-7 rounded-2xl flex-col justify-between hover:border-primary/30 transition-colors shadow-xs pop-card" style="animation-delay:.2s"><div class="flex justify-between items-start mb-3 sm:mb-4"><span class="font-label text-xs uppercase tracking-wider text-secondary font-medium">Pendekatan Riset</span><span class="material-symbols-outlined text-secondary text-xl">auto_stories</span></div><h3 class="font-headline text-lg sm:text-xl text-on-surface font-semibold">Alur Informasi Editorial</h3><p class="font-body text-xs text-on-surface-variant mt-2 leading-relaxed">Menerapkan proporsi tipografi Swiss klasik pada dashboard data.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="w-full py-12 sm:py-28 lg:py-36 px-4 sm:px-6 lg:px-12 bg-surface relative" id="selected-works">
+  <div class="max-w-6xl mx-auto flex flex-col relative z-10">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-16 gap-4 sm:gap-6 reveal">
+      <div><div class="flex items-center gap-3 mb-3"><span class="font-label text-xs uppercase tracking-widest text-primary font-semibold">Hasil Karya Terpilih</span><div class="h-px bg-outline-variant/20 w-12 hidden sm:block"></div></div><h2 class="font-headline text-2xl sm:text-5xl font-normal text-on-surface tracking-tight">Studi Kasus &amp; Portofolio</h2></div>
+      <p class="hidden md:block font-body text-sm text-on-surface-variant max-w-sm leading-relaxed">Kurasi terfokus atas proyek yang mencakup Django, visualisasi data, dan otomasi DevOps.</p>
+    </div>
+    <div class="flex flex-col gap-8 sm:gap-12 lg:gap-16">
+      {% for project in featured_projects %}
+      <article class="bg-surface-container-lowest rounded-2xl overflow-hidden border border-outline-variant/20 shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col {% if forloop.counter|divisibleby:2 %}lg:flex-row-reverse{% else %}lg:flex-row{% endif %} group reveal">
+        <div class="lg:w-3/5 p-8 lg:p-12 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-4 mb-5"><span class="font-label text-xs font-semibold uppercase tracking-wider text-tertiary">{{ project.category.name|default:"Sistem Desain" }}</span><span class="w-1.5 h-1.5 rounded-full bg-outline-variant/40"></span><span class="font-label text-xs text-on-surface-variant font-medium">{{ project.year }}</span></div>
+            <h3 class="font-headline text-2xl sm:text-3xl lg:text-4xl font-normal text-on-surface group-hover:text-primary transition-colors">{{ project.title }}</h3>
+            <p class="font-body text-sm sm:text-base text-on-surface-variant mt-4 leading-relaxed">{{ project.excerpt|default:project.description|truncatechars:180 }}</p>
+            <div class="flex flex-wrap gap-2 mt-6">{% for tech in project.technologies.all %}<span class="px-3 py-1 bg-surface-container rounded-md font-label text-xs text-on-surface-variant font-medium">{{ tech.name }}</span>{% empty %}<span class="px-3 py-1 bg-surface-container rounded-md font-label text-xs text-on-surface-variant font-medium">Django</span>{% endfor %}</div>
+          </div>
+          <div class="mt-8 pt-6 flex items-center justify-between border-t border-outline-variant/15"><span class="font-label text-xs tracking-wider uppercase text-on-surface-variant">Arsip {{ project.reference_code|default:"#REF-01" }}</span><a class="inline-flex items-center gap-2 font-label text-xs uppercase tracking-widest font-semibold text-primary hover:text-primary-container transition-colors" href="{% url 'project_detail' project.slug %}"><span>Lihat Studi Kasus</span><span class="material-symbols-outlined text-base">arrow_forward</span></a></div>
+        </div>
+        <div class="lg:w-2/5 bg-surface-container-high/70 relative min-h-[200px] sm:min-h-[260px] lg:min-h-full flex items-center justify-center p-6 sm:p-8 overflow-hidden">
+          {% if project.image_url %}
+            <img src="{{ project.image_url }}" alt="{{ project.title }}" class="w-full h-full object-cover rounded-xl">
+          {% else %}
+            <svg class="w-full max-w-[280px] h-auto drop-shadow-md hidden sm:block" fill="none" viewBox="0 0 320 240"><rect fill="#faf9fa" height="200" rx="12" width="280" x="20" y="20"></rect><rect fill="#094cb2" height="12" rx="3" width="70" x="36" y="36"></rect><rect fill="#e3e2e3" height="6" rx="2" width="248" x="36" y="60"></rect><rect fill="#ffffff" fill-opacity="0.9" height="105" rx="8" width="210" x="70" y="100"></rect></svg>
+            <div class="sm:hidden w-full h-32 rounded-xl bg-gradient-to-br from-primary-fixed/40 to-surface-container flex items-center justify-center"><span class="material-symbols-outlined text-4xl text-primary/50">dashboard</span></div>
+          {% endif %}
+        </div>
+      </article>
+      {% empty %}
+      <p class="text-sm text-outline text-center py-12">Belum ada proyek terpublikasi — tambahkan via Admin Jazzmin → Portfolio → Project (featured).</p>
+      {% endfor %}
+    </div>
+    <div class="mt-8 sm:mt-16 text-center reveal"><a class="inline-flex items-center gap-2 font-label text-xs uppercase tracking-widest text-on-surface hover:text-primary transition-colors py-2 border-b border-on-surface/20 hover:border-primary" href="{% url 'project_list' %}"><span>Jelajahi Seluruh Arsip Pekerjaan</span><span class="material-symbols-outlined text-sm">north_east</span></a></div>
+  </div>
+</section>
+
+<!-- BLOG ESSAYS -->
+<section class="w-full bg-surface-container-lowest/85 backdrop-blur-xs py-12 sm:py-24 lg:py-36 px-4 sm:px-6 lg:px-12 border-t border-outline-variant/15 relative" id="writing">
+  <div class="max-w-6xl mx-auto flex flex-col relative z-10">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-14 gap-4 sm:gap-6 reveal"><div><div class="flex items-center gap-3 mb-3"><span class="font-label text-xs uppercase tracking-widest text-tertiary font-semibold">Tulisan &amp; Sudut Pandang</span><div class="h-px bg-outline-variant/20 w-12 hidden sm:block"></div></div><h2 class="font-headline text-2xl sm:text-4xl lg:text-5xl font-normal text-on-surface">Esai, Catatan &amp; Refleksi</h2></div><a class="font-label text-xs uppercase tracking-widest text-primary hover:underline hidden sm:flex items-center gap-1.5" href="{% url 'blog_list' %}"><span>Baca Semua Tulisan</span><span class="material-symbols-outlined text-sm">arrow_forward</span></a></div>
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-12 gap-4 sm:gap-6">
+      {% for post in featured_posts %}
+      <article class="{% if forloop.first %}lg:col-span-7{% elif forloop.counter == 2 %}lg:col-span-5{% elif forloop.counter == 3 %}lg:col-span-5{% else %}lg:col-span-7{% endif %} bg-surface/90 border border-outline-variant/20 p-6 sm:p-8 lg:p-10 rounded-2xl flex flex-col justify-between hover:shadow-lg transition-all group reveal {% if forloop.counter > 2 %}hidden md:flex{% endif %}">
+        <div><div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4 sm:mb-6"><span class="px-3 py-1 rounded-full bg-surface-container-high font-label text-[11px] uppercase tracking-wider text-secondary font-semibold w-fit">{{ post.category.name|default:"Esai" }}</span><span class="font-label text-xs text-on-surface-variant">{{ post.read_time }} menit baca · {{ post.published_at|date:"M Y"|default:"2024" }}</span></div><h3 class="font-headline text-lg sm:text-xl lg:text-2xl font-normal text-on-surface group-hover:text-primary transition-colors leading-snug"><a href="{% url 'blog_detail' post.slug %}">{{ post.title }}</a></h3><p class="font-body text-sm text-on-surface-variant mt-3 leading-relaxed line-clamp-2 sm:line-clamp-none">{{ post.excerpt|truncatechars:140 }}</p></div>
+        <div class="mt-6 sm:mt-8 pt-4 sm:pt-6 flex items-center justify-between border-t border-outline-variant/15"><span class="font-label text-xs text-secondary font-medium">Areta Y. Radjawali</span><a class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform" href="{% url 'blog_detail' post.slug %}">east</a></div>
+      </article>
+      {% empty %}
+      <article class="lg:col-span-12 bg-surface/90 border border-outline-variant/20 p-10 rounded-2xl text-center"><p class="text-sm text-outline">Belum ada tulisan — tambahkan via Blog → Post.</p></article>
+      {% endfor %}
+      <div class="lg:col-span-7 bg-surface-container-high/80 border border-outline-variant/20 p-6 sm:p-8 lg:p-10 rounded-2xl flex flex-col justify-center relative overflow-hidden hidden sm:flex reveal"><div class="absolute -right-8 -bottom-8 opacity-10 pointer-events-none"><span class="material-symbols-outlined text-[160px] text-on-surface">format_quote</span></div><div class="relative z-10"><span class="font-label text-[11px] font-semibold uppercase tracking-widest text-tertiary">Aforisme Panduan</span><blockquote class="font-headline italic text-xl sm:text-2xl lg:text-3xl text-on-surface mt-4 leading-relaxed">“Desain adalah proses eliminasi hingga yang tersisa hanyalah niat murni.”</blockquote><p class="font-label text-xs uppercase tracking-widest text-on-surface-variant mt-6">Areta Y. Radjawali — Buku Catatan Studio</p></div></div>
+    </div>
+    <div class="mt-6 text-center sm:hidden"><a class="font-label text-xs uppercase tracking-widest text-primary flex items-center justify-center gap-1" href="{% url 'blog_list' %}"><span>Baca Semua Tulisan</span><span class="material-symbols-outlined text-sm">arrow_forward</span></a></div>
+  </div>
+</section>
+</div>
+{% endblock %}

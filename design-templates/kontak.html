@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_standard" name="shell-type"/>
+<title>AREYBRA — Areta Y. Radjawali</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Noto+Serif:ital,wght@0,400;0,600;1,400&amp;family=Public+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+@layer base {
+  html, body { margin: 0; padding: 0; }
+  body { overscroll-behavior: none; }
+}
+::-webkit-scrollbar { display: none; }
+</style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "secondary-fixed-dim": "#c2c7cc",
+        "on-secondary": "#ffffff",
+        "surface-bright": "#faf9fa",
+        "on-primary": "#ffffff",
+        "background": "#faf9fa",
+        "on-error-container": "#93000a",
+        "on-primary-container": "#e7ebff",
+        "inverse-primary": "#b1c5ff",
+        "surface-container-high": "#e9e8e9",
+        "on-secondary-container": "#606569",
+        "on-tertiary": "#ffffff",
+        "on-error": "#ffffff",
+        "outline-variant": "#c3c6d5",
+        "surface-variant": "#e3e2e3",
+        "tertiary-container": "#bfab49",
+        "primary-fixed-dim": "#b1c5ff",
+        "surface-container-highest": "#e3e2e3",
+        "on-primary-fixed": "#001946",
+        "on-tertiary-fixed": "#211b00",
+        "tertiary-fixed": "#f9e37a",
+        "primary": "#094cb2",
+        "on-surface-variant": "#434653",
+        "surface-container-low": "#f5f3f4",
+        "on-background": "#1b1c1d",
+        "primary-fixed": "#d9e2ff",
+        "inverse-on-surface": "#f2f0f1",
+        "surface-container": "#efedee",
+        "error-container": "#ffdad6",
+        "tertiary": "#6d5e00",
+        "inverse-surface": "#303031",
+        "on-tertiary-container": "#4a3f00",
+        "surface-dim": "#dbdadb",
+        "on-primary-fixed-variant": "#00419d",
+        "surface": "#faf9fa",
+        "on-surface": "#1b1c1d",
+        "surface-container-lowest": "#ffffff",
+        "on-secondary-fixed": "#171c20",
+        "surface-tint": "#2259bf",
+        "outline": "#737784",
+        "secondary-container": "#dfe3e8",
+        "tertiary-fixed-dim": "#dcc661",
+        "secondary": "#5a5f63",
+        "primary-container": "#3366cc",
+        "on-tertiary-fixed-variant": "#524600",
+        "error": "#ba1a1a",
+        "secondary-fixed": "#dfe3e8",
+        "on-secondary-fixed-variant": "#42474b"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.125rem",
+        "lg": "0.25rem",
+        "xl": "0.5rem",
+        "full": "0.75rem"
+      },
+      "fontFamily": {
+        "headline": ["Noto Serif"],
+        "display": ["Noto Serif"],
+        "body": ["Inter"],
+        "label": ["Public Sans"]
+      }
+    }
+  }
+}
+</script>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased relative selection:bg-primary-fixed selection:text-primary">
+<!-- Ambient Dynamic Background -->
+<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+<div class="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-primary-fixed/35 to-transparent blur-3xl"></div>
+<div class="absolute top-[28%] -right-48 w-[650px] h-[650px] rounded-full bg-gradient-to-bl from-tertiary-fixed/20 to-transparent blur-3xl"></div>
+<div class="absolute top-[65%] -left-36 w-[550px] h-[550px] rounded-full bg-gradient-to-tr from-primary-container/10 via-transparent to-transparent blur-3xl"></div>
+<div class="absolute bottom-0 right-10 w-[700px] h-[500px] rounded-full bg-gradient-to-t from-primary-fixed/25 to-transparent blur-3xl"></div>
+<svg class="absolute inset-0 w-full h-full opacity-[0.035]" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="64" id="editorialGrid" patternunits="userSpaceOnUse" width="64">
+<path d="M 64 0 L 0 0 0 64" fill="none" stroke="#1b1c1d" stroke-width="1"></path>
+<circle cx="0" cy="0" fill="#094cb2" r="1.5"></circle>
+</pattern>
+</defs>
+<rect fill="url(#editorialGrid)" height="100%" width="100%"></rect>
+</svg>
+</div>
+<!-- FLOATING CENTERED PILL NAVBAR -->
+<header class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-4xl">
+<div class="h-14 bg-surface-container-lowest/85 backdrop-blur-xl border border-outline-variant/30 shadow-[0_8px_30px_rgb(0,0,0,0.06)] rounded-full px-4 sm:px-6 flex items-center justify-between gap-4 transition-all duration-300">
+<!-- Brand Monogram & Name -->
+<a class="flex items-center gap-2.5 group shrink-0" data-path="beranda-areta-y-radjawali" href="#">
+<img alt="Alexandria Logo" class="h-7 w-7 rounded-full object-contain shadow-xs group-hover:scale-105 transition-transform" src="https://lh3.googleusercontent.com/aida/AEtjO1XnXhfVVqxaZAeEGyaoT2LfLEv04NVX37MK3j5WVhT8YJDLUG9DKpvdlJGAF2sPWQG0WK3eO2kTGLGKrR_XvxmCJTKhAV7wwFnx2jorEVcj0ZWC4fGUistSj2z4hG4Bz4Wp5r6v87PoI4noQvxp3eEMhFj-xgqJs_FwAMIvS4vgBQIyWG7iLL5UTLThMV8YgjuVzH-BgjrmXB5Ls0p1AbVdR4GtF8uj9uyQ-Lgs_b5HXZs-L1uWVEsoylU6"/>
+<span class="font-headline font-semibold text-base tracking-tight text-on-surface">AREYBRA</span>
+<span class="inline-flex items-center gap-1.5 ml-1.5 pl-2.5 border-l border-outline-variant/30" title="Available for projects">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+</span>
+</a>
+<!-- Navigation Menu Items -->
+<nav class="flex items-center gap-1 sm:gap-1.5 overflow-x-auto" data-active-classes="bg-inverse-surface text-inverse-on-surface shadow-xs font-semibold">
+<a class="px-3.5 py-1.5 rounded-full text-xs font-label tracking-wide text-on-surface-variant hover:text-on-surface hover:bg-surface-container/60 transition-colors whitespace-nowrap" data-path="beranda-areta-y-radjawali" href="#">
+Beranda
+</a>
+<a class="px-3.5 py-1.5 rounded-full text-xs font-label tracking-wide text-on-surface-variant hover:text-on-surface hover:bg-surface-container/60 transition-colors whitespace-nowrap" data-path="tentang-saya-areta-y-radjawali" href="#">
+Tentang Saya
+</a>
+<a class="px-3.5 py-1.5 rounded-full text-xs font-label tracking-wide text-on-surface-variant hover:text-on-surface hover:bg-surface-container/60 transition-colors whitespace-nowrap" data-path="koleksi-proyek-areta-y-radjawali" href="#">
+Proyek
+</a>
+<a class="px-3.5 py-1.5 rounded-full text-xs font-label tracking-wide text-on-surface-variant hover:text-on-surface hover:bg-surface-container/60 transition-colors whitespace-nowrap" data-path="blog-arsip-esai-areta-y-radjawali" href="#">
+Blog
+</a>
+<a class="px-3.5 py-1.5 rounded-full text-xs font-label tracking-wide text-on-surface-variant hover:text-on-surface hover:bg-surface-container/60 transition-colors whitespace-nowrap" data-path="hubungi-saya-areta-y-radjawali" href="#">
+Kontak
+</a>
+</nav>
+</div>
+</header>
+<main class="w-full pt-14 relative z-10 min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Archival Editorial Bar -->
+<div class="w-full bg-surface-container-low px-6 sm:px-12 py-3">
+<div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-4 text-xs font-label text-on-surface-variant">
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-1.5 font-medium tracking-wider uppercase text-[10px] text-tertiary">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+          Kanal Resmi 2025
+        </span>
+<span class="text-outline-variant/60">/</span>
+<span class="tracking-tight text-on-surface font-mono text-[11px]">DISPATCH PROTOCOL v2.4</span>
+</div>
+<div class="flex items-center gap-4 text-[11px] font-mono">
+<span class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
+<span>LATENCY &lt; 24h</span>
+</span>
+<span class="hidden md:inline text-outline-variant/60">·</span>
+<span class="hidden md:inline">PGP VERIFIED COMMS</span>
+</div>
+</div>
+</div>
+<!-- Hero Section -->
+<section class="relative w-full px-6 sm:px-12 pt-16 pb-20 overflow-hidden">
+<div class="max-w-6xl mx-auto relative z-10">
+<div class="max-w-4xl flex flex-col gap-6">
+<!-- Badge -->
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container-low w-fit shadow-xs">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label text-xs uppercase tracking-widest text-primary font-semibold">
+            Koneksi &amp; Diskusi Kolaboratif / Areta Y. Radjawali
+          </span>
+</div>
+<!-- Headline -->
+<h1 class="font-headline text-4xl sm:text-5xl lg:text-6xl font-normal text-on-surface leading-[1.12] tracking-tight">
+          Mari Berdiskusi, Mengembangkan Solusi, atau Menjelajahi <span class="italic text-primary">Peluang Riset</span> Bersama.
+        </h1>
+<!-- Subtitle -->
+<p class="font-body text-base sm:text-lg text-on-surface-variant leading-relaxed max-w-2xl font-light">
+          Terbuka untuk kolaborasi proyek perangkat lunak, konsultasi arsitektur web backend Django, audit keamanan dasar, maupun eksplorasi analisis data terapan.
+        </p>
+<!-- Typographic Marker Overlay -->
+<div class="flex items-center gap-6 pt-4 font-mono text-xs text-outline tracking-wider">
+<span>01. KONSULTASI</span>
+<span>//</span>
+<span>02. REKAYASA SISTEM</span>
+<span>//</span>
+<span>03. AUDIT DATA</span>
+</div>
+</div>
+</div>
+<!-- Archival Background SVG Grid & Accent Shapes -->
+<div class="absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 bg-primary-fixed/20 rounded-full blur-3xl pointer-events-none -z-10"></div>
+</section>
+<!-- Main 2-Column Workboard -->
+<section class="w-full px-6 sm:px-12 pb-24">
+<div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+<!-- LEFT COLUMN: Structured Contact Form -->
+<div class="lg:col-span-7 flex flex-col gap-8 bg-surface-container-lowest p-8 sm:p-10 rounded-3xl shadow-sm">
+<div class="flex items-center justify-between border-b-0 pb-2">
+<div>
+<span class="font-label text-xs uppercase tracking-widest text-tertiary font-semibold">Formulir Pengiriman</span>
+<h2 class="font-headline text-2xl sm:text-3xl text-on-surface mt-1">Spesifikasi Kebutuhan Proyek</h2>
+</div>
+<span class="material-symbols-outlined text-outline text-3xl">terminal</span>
+</div>
+<form class="flex flex-col gap-6" id="contact-form" onsubmit="handleFormSubmit(event)">
+<!-- Row 1: Nama & Email -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+<div class="flex flex-col gap-2">
+<label class="font-label text-xs uppercase tracking-wider text-on-surface-variant font-medium" for="full-name">
+                Nama Lengkap <span class="text-primary">*</span>
+</label>
+<input class="w-full px-4 py-3 bg-surface-container-low rounded-xl text-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 transition-all" id="full-name" name="name" placeholder="Contoh: Raden Satria" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label text-xs uppercase tracking-wider text-on-surface-variant font-medium" for="email-address">
+                Alamat Email Profesional <span class="text-primary">*</span>
+</label>
+<input class="w-full px-4 py-3 bg-surface-container-low rounded-xl text-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 transition-all" id="email-address" name="email" placeholder="nama@institusi.com" required="" type="email"/>
+</div>
+</div>
+<!-- Interest / Topic Selector -->
+<div class="flex flex-col gap-2.5">
+<label class="font-label text-xs uppercase tracking-wider text-on-surface-variant font-medium">
+              Subjek Minat &amp; Domain Kolaborasi <span class="text-primary">*</span>
+</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5" id="subject-selection">
+<label class="flex items-center gap-3 p-3 rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer transition-all">
+<input checked="" class="w-4 h-4 text-primary accent-primary" name="domain" type="radio" value="web-django"/>
+<span class="text-xs font-body text-on-surface font-medium">Pengembangan Web (Django/Tailwind)</span>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer transition-all">
+<input class="w-4 h-4 text-primary accent-primary" name="domain" type="radio" value="security-audit"/>
+<span class="text-xs font-body text-on-surface font-medium">Audit &amp; Konsultasi Keamanan</span>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer transition-all">
+<input class="w-4 h-4 text-primary accent-primary" name="domain" type="radio" value="data-analysis"/>
+<span class="text-xs font-body text-on-surface font-medium">Analisis &amp; Visualisasi Data</span>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer transition-all">
+<input class="w-4 h-4 text-primary accent-primary" name="domain" type="radio" value="academic"/>
+<span class="text-xs font-body text-on-surface font-medium">Undangan Diskusi / Kolaborasi Akademik</span>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer transition-all sm:col-span-2">
+<input class="w-4 h-4 text-primary accent-primary" name="domain" type="radio" value="other"/>
+<span class="text-xs font-body text-on-surface font-medium">Eksplorasi Ide / Diskusi Lainnya</span>
+</label>
+</div>
+</div>
+<!-- Timeline & Budget (Optional) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+<div class="flex flex-col gap-2">
+<label class="font-label text-xs uppercase tracking-wider text-on-surface-variant font-medium" for="project-timeline">
+                Estimasi Timeline (Opsional)
+              </label>
+<select class="w-full px-4 py-3 bg-surface-container-low rounded-xl text-sm text-on-surface focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 transition-all" id="project-timeline" name="timeline">
+<option value="fleksibel">Jadwal Fleksibel / Tahap Eksplorasi</option>
+<option value="segera">Segera (1-4 Minggu ke Depan)</option>
+<option value="q2-2025">Kuartal Q2 (Apr - Jun 2025)</option>
+<option value="q3-2025">Kuartal Q3 (Jul - Sep 2025)</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label text-xs uppercase tracking-wider text-on-surface-variant font-medium" for="project-scope">
+                Skala Inisiatif / Anggaran
+              </label>
+<select class="w-full px-4 py-3 bg-surface-container-low rounded-xl text-sm text-on-surface focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 transition-all" id="project-scope" name="scope">
+<option value="akademik">Riset Terbuka / Institusi Pendidikan</option>
+<option value="mvp">&lt; IDR 5M (Protipe MVP / Audit Skala Kecil)</option>
+<option value="growth">IDR 5M - 15M (Sistem Penuh / Dashboard)</option>
+<option value="enterprise">&gt; IDR 15M (Infrastruktur Komprehensif)</option>
+</select>
+</div>
+</div>
+<!-- Textarea Message -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<label class="font-label text-xs uppercase tracking-wider text-on-surface-variant font-medium" for="project-details">
+                Deskripsi Pesan atau Rincian Proyek <span class="text-primary">*</span>
+</label>
+<span class="text-[11px] font-mono text-outline" id="char-counter">0/1500</span>
+</div>
+<textarea class="w-full px-4 py-3 bg-surface-container-low rounded-xl text-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 transition-all resize-y" id="project-details" maxlength="1500" name="message" oninput="document.getElementById('char-counter').textContent = this.value.length + '/1500'" placeholder="Jelaskan gambaran umum proyek, tantangan teknis yang ingin diselesaikan, konteks sistem yang sudah ada, atau format sesi diskusi..." required="" rows="5"></textarea>
+</div>
+<!-- Submit Button & Disclaimer -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
+<button class="px-8 py-4 rounded-xl font-label text-xs uppercase tracking-widest font-semibold text-on-primary bg-gradient-to-r from-primary to-primary-container hover:opacity-95 shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 group cursor-pointer" type="submit">
+<span>Kirim Pesan Langsung</span>
+<span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+<div class="flex items-center gap-2 text-outline">
+<span class="material-symbols-outlined text-base text-emerald-600">verified</span>
+<span class="font-body text-xs">Dibalas dalam waktu maksimal 24 jam kerja.</span>
+</div>
+</div>
+</form>
+</div>
+<!-- RIGHT COLUMN: Direct Channels & Status -->
+<div class="lg:col-span-5 flex flex-col gap-6">
+<!-- Status Card -->
+<div class="bg-surface-container-lowest p-7 rounded-3xl shadow-sm flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<span class="font-label text-xs uppercase tracking-widest text-secondary font-semibold">Status Ketersediaan</span>
+<span class="flex h-2.5 w-2.5 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+</span>
+</div>
+<div class="p-4 rounded-2xl bg-surface-container-low flex flex-col gap-2">
+<span class="font-headline text-lg font-normal text-on-surface leading-snug">
+              Tersedia untuk Magang, Proyek Lepas, &amp; Kolaborasi Riset
+            </span>
+<p class="font-body text-xs text-on-surface-variant leading-relaxed">
+              Memiliki alokasi waktu aktif untuk inisiatif terpilih sepanjang kuartal Q2/Q3 2025 dengan fokus arsitektur perangkat lunak terstandarisasi.
+            </p>
+</div>
+</div>
+<!-- Direct Email Card with One-Click Copy -->
+<div class="bg-surface-container-lowest p-7 rounded-3xl shadow-sm flex flex-col gap-4">
+<span class="font-label text-xs uppercase tracking-widest text-secondary font-semibold">Saluran Email Langsung</span>
+<div class="flex items-center justify-between gap-3 p-3.5 rounded-2xl bg-surface-container-low">
+<div class="flex items-center gap-3 overflow-hidden">
+<div class="w-9 h-9 rounded-xl bg-surface-container-highest flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-lg">mail</span>
+</div>
+<span class="font-mono text-xs sm:text-sm text-on-surface font-medium truncate select-all">aretaradjawali@gmail.com</span>
+</div>
+<button class="px-3.5 py-2 rounded-xl bg-surface-container-highest hover:bg-primary-fixed hover:text-on-primary-fixed font-label text-xs font-semibold tracking-wide text-on-surface-variant transition-all shrink-0 flex items-center gap-1.5 cursor-pointer" onclick="copyToClipboard('aretaradjawali@gmail.com', this)" title="Salin alamat email">
+<span class="material-symbols-outlined text-xs">content_copy</span>
+<span class="copy-text">Salin</span>
+</button>
+</div>
+</div>
+<!-- Teleconference / Meeting Card -->
+<div class="bg-primary text-on-primary p-7 rounded-3xl shadow-md flex flex-col gap-4 relative overflow-hidden">
+<div class="absolute -right-8 -bottom-8 w-36 h-36 bg-primary-container/60 rounded-full blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-3">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-on-primary/10 backdrop-blur-md w-fit text-[11px] font-label tracking-widest uppercase text-on-primary">
+<span class="material-symbols-outlined text-sm">videocam</span>
+<span>Sync Discussion</span>
+</div>
+<h3 class="font-headline text-xl text-on-primary font-normal leading-snug">
+              Jadwalkan Teleconference / Google Meet
+            </h3>
+<p class="font-body text-xs text-on-primary-container leading-relaxed">
+              Punya ide spesifik atau butuh sync cepat? Jadwalkan sesi eksplorasi terarah 15 hingga 30 menit.
+            </p>
+<a class="mt-2 inline-flex items-center justify-between px-5 py-3 rounded-xl bg-on-primary text-primary font-label text-xs uppercase tracking-widest font-semibold hover:bg-surface-bright transition-all" href="mailto:aretaradjawali@gmail.com?subject=Permintaan%20Jadwal%20Teleconference%20-%20Areta%20Y.%20Radjawali">
+<span>Ajukan Slot Waktu</span>
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+</a>
+</div>
+</div>
+<!-- Location & Operational Coordinates -->
+<div class="bg-surface-container-lowest p-7 rounded-3xl shadow-sm flex flex-col gap-4">
+<span class="font-label text-xs uppercase tracking-widest text-secondary font-semibold">Basis Operasional &amp; Waktu</span>
+<div class="flex flex-col gap-3">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl shrink-0 mt-0.5">location_on</span>
+<div class="flex flex-col">
+<span class="font-body text-sm font-medium text-on-surface">Kabupaten Probolinggo &amp; Jawa Timur</span>
+<span class="font-body text-xs text-on-surface-variant">Indonesia (Tersedia untuk remote maupun pertemuan on-site terjadwal)</span>
+</div>
+</div>
+<div class="flex items-center gap-3 pt-2">
+<span class="material-symbols-outlined text-tertiary text-xl shrink-0">schedule</span>
+<div class="flex items-center gap-2 font-mono text-xs text-on-surface-variant">
+<span>Zona Waktu: WIB (UTC+7)</span>
+<span class="text-outline-variant/40">|</span>
+<span class="text-emerald-700 font-medium">Jam Kerja: 08.00 - 18.00</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Social & Professional Grid -->
+<div class="bg-surface-container-lowest p-7 rounded-3xl shadow-sm flex flex-col gap-4">
+<span class="font-label text-xs uppercase tracking-widest text-secondary font-semibold">Jejaring &amp; Berkas Resmi</span>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<!-- GitHub -->
+<a class="p-3.5 rounded-2xl bg-surface-container-low hover:bg-surface-container-high transition-colors flex items-center justify-between group" href="https://github.com" rel="noreferrer" target="_blank">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-base text-on-surface">code</span>
+<div class="flex flex-col">
+<span class="font-label text-xs font-semibold text-on-surface">GitHub</span>
+<span class="font-mono text-[10px] text-outline">@aretaradjawali</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-xs text-outline group-hover:text-primary transition-colors">north_east</span>
+</a>
+<!-- LinkedIn -->
+<a class="p-3.5 rounded-2xl bg-surface-container-low hover:bg-surface-container-high transition-colors flex items-center justify-between group" href="https://linkedin.com" rel="noreferrer" target="_blank">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-base text-primary">work</span>
+<div class="flex flex-col">
+<span class="font-label text-xs font-semibold text-on-surface">LinkedIn</span>
+<span class="font-body text-[10px] text-outline">Areta Y. Radjawali</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-xs text-outline group-hover:text-primary transition-colors">north_east</span>
+</a>
+<!-- WhatsApp / Telegram -->
+<a class="p-3.5 rounded-2xl bg-surface-container-low hover:bg-surface-container-high transition-colors flex items-center justify-between group" href="https://t.me" rel="noreferrer" target="_blank">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-base text-emerald-600">chat</span>
+<div class="flex flex-col">
+<span class="font-label text-xs font-semibold text-on-surface">Telegram/WA</span>
+<span class="font-body text-[10px] text-outline">Pesan Cepat</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-xs text-outline group-hover:text-primary transition-colors">north_east</span>
+</a>
+<!-- CV / Resume Download -->
+<button class="p-3.5 rounded-2xl bg-surface-container-low hover:bg-tertiary-fixed/40 transition-colors flex items-center justify-between group text-left cursor-pointer" onclick="alert('Mengunduh CV ringkasan profesional Areta Y. Radjawali...');" type="button">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-base text-tertiary">description</span>
+<div class="flex flex-col">
+<span class="font-label text-xs font-semibold text-on-surface">Curriculum Vitae</span>
+<span class="font-mono text-[10px] text-outline">PDF Ringkas (2025)</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-xs text-outline group-hover:text-tertiary transition-colors">download</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Editorial Visual Intermezzo: Interactive Quote & Data Node -->
+<section class="w-full bg-surface-container-low py-16 px-6 sm:px-12 mb-20">
+<div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
+<div class="max-w-2xl flex flex-col gap-3">
+<span class="font-label text-[11px] uppercase tracking-widest text-tertiary font-semibold">Filosofi Komunikasi Studio</span>
+<p class="font-headline text-2xl sm:text-3xl text-on-surface font-light leading-relaxed">
+          "Komunikasi yang jernih adalah fondasi rekayasa sistem yang tangguh. Setiap detail teknis dimulai dari kesepahaman yang terarah."
+        </p>
+</div>
+<!-- Small Inline SVG Visual / Data Metric -->
+<div class="flex items-center gap-8 bg-surface-container-lowest p-6 rounded-2xl shadow-xs">
+<div class="flex flex-col items-center">
+<!-- Circular Progress SVG (100% on-time metric) -->
+<svg class="w-16 h-16 transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container-high" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3"></path>
+<path class="text-primary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="98, 100" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<span class="font-mono text-xs font-bold text-on-surface mt-2">98.4%</span>
+<span class="font-label text-[10px] text-outline uppercase tracking-wider">Tingkat Respons</span>
+</div>
+<div class="w-px h-16 bg-surface-container-high"></div>
+<div class="flex flex-col gap-1.5 font-mono text-xs text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+<span>Django 5.x Ready</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span>PostgreSQL Native</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>REST &amp; API Guard</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section (Accordion Cards) -->
+<section class="w-full px-6 sm:px-12 pb-24">
+<div class="max-w-4xl mx-auto flex flex-col gap-10">
+<div class="flex flex-col gap-2 text-center items-center">
+<span class="font-label text-xs uppercase tracking-widest text-primary font-semibold">Tanya Jawab Terpilih</span>
+<h3 class="font-headline text-3xl sm:text-4xl text-on-surface">Pertanyaan yang Sering Diajukan</h3>
+<p class="font-body text-sm text-on-surface-variant max-w-lg mt-1">
+          Klarifikasi ringkas seputar metodologi kerja, estimasi waktu, serta etika penanganan data klien.
+        </p>
+</div>
+<div class="flex flex-col gap-4" id="faq-container">
+<!-- FAQ Item 1 -->
+<div class="faq-item bg-surface-container-lowest rounded-2xl transition-all duration-200 overflow-hidden shadow-xs">
+<button class="w-full px-6 py-5 flex items-center justify-between text-left cursor-pointer hover:bg-surface-container-low/50 transition-colors" onclick="toggleFaq(this)" type="button">
+<div class="flex items-center gap-4">
+<span class="font-mono text-xs text-tertiary font-bold">01</span>
+<span class="font-headline text-base sm:text-lg text-on-surface">Berapa lama estimasi waktu pengerjaan sebuah sistem web?</span>
+</div>
+<span class="material-symbols-outlined text-outline transition-transform duration-300 transform icon-chevron">expand_more</span>
+</button>
+<div class="faq-content hidden px-6 pb-6 pt-1">
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">
+              Jadwal pengerjaan bergantung pada cakupan arsitektur sistem. Untuk prototipe atau Minimum Viable Product (MVP) berbasis Django &amp; Tailwind CSS, pengerjaan biasanya berkisar antara <strong>2 hingga 4 pekan</strong>. Sistem berskala penuh dengan autentikasi kompleks, integrasi basis data analitik, dan panel manajemen memerlukan waktu <strong>6 hingga 10 pekan</strong>, mencakup fase testing, audit keamanan dasar, dan dokumentasi API.
+            </p>
+</div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="faq-item bg-surface-container-lowest rounded-2xl transition-all duration-200 overflow-hidden shadow-xs">
+<button class="w-full px-6 py-5 flex items-center justify-between text-left cursor-pointer hover:bg-surface-container-low/50 transition-colors" onclick="toggleFaq(this)" type="button">
+<div class="flex items-center gap-4">
+<span class="font-mono text-xs text-tertiary font-bold">02</span>
+<span class="font-headline text-base sm:text-lg text-on-surface">Apakah melayani konsultasi keamanan siber dan pembenahan server Linux?</span>
+</div>
+<span class="material-symbols-outlined text-outline transition-transform duration-300 transform icon-chevron">expand_more</span>
+</button>
+<div class="faq-content hidden px-6 pb-6 pt-1">
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">
+              Ya, saya melayani <em>security posture review</em> dasar untuk aplikasi web, penataan hak akses file, hardening konfigurasi Nginx/Gunicorn pada distribusi Debian/Ubuntu, sanitasi input terhadap ancaman umum (SQLi/XSS/CSRF), serta evaluasi arsitektur penyimpanan kredensial dan manajemen environment variables sesuai standar keamanan industri.
+            </p>
+</div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="faq-item bg-surface-container-lowest rounded-2xl transition-all duration-200 overflow-hidden shadow-xs">
+<button class="w-full px-6 py-5 flex items-center justify-between text-left cursor-pointer hover:bg-surface-container-low/50 transition-colors" onclick="toggleFaq(this)" type="button">
+<div class="flex items-center gap-4">
+<span class="font-mono text-xs text-tertiary font-bold">03</span>
+<span class="font-headline text-base sm:text-lg text-on-surface">Bagaimana proses peninjauan dan komitmen terhadap kerahasiaan data?</span>
+</div>
+<span class="material-symbols-outlined text-outline transition-transform duration-300 transform icon-chevron">expand_more</span>
+</button>
+<div class="faq-content hidden px-6 pb-6 pt-1">
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">
+              Kerahasiaan dan integritas data klien adalah prioritas utama. Sebelum rincian proyek proprietary dibagikan, saya terbuka untuk menandatangani <strong>Non-Disclosure Agreement (NDA)</strong> standar. Semua repositori kode privat diisolasi, audit kunci rahasia dijaga menggunakan manajemen vault lokal, dan data pengujian tidak pernah dipublikasikan tanpa izin tertulis eksplisit.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Client-side Script -->
+<script>
+    function toggleFaq(btn) {
+      const container = btn.closest('.faq-item');
+      const content = container.querySelector('.faq-content');
+      const icon = btn.querySelector('.icon-chevron');
+      const isHidden = content.classList.contains('hidden');
+
+      // Close all other FAQs first
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.querySelector('.faq-content').classList.add('hidden');
+        item.querySelector('.icon-chevron').classList.remove('rotate-180');
+      });
+
+      if (isHidden) {
+        content.classList.remove('hidden');
+        icon.classList.add('rotate-180');
+      }
+    }
+
+    function copyToClipboard(text, btnElement) {
+      navigator.clipboard.writeText(text).then(() => {
+        const textSpan = btnElement.querySelector('.copy-text');
+        const originalText = textSpan.textContent;
+        textSpan.textContent = 'Tersalin!';
+        btnElement.classList.add('bg-primary-fixed', 'text-primary');
+        
+        setTimeout(() => {
+          textSpan.textContent = originalText;
+          btnElement.classList.remove('bg-primary-fixed', 'text-primary');
+        }, 2000);
+      }).catch(err => {
+        alert('Gagal menyalin. Silakan gunakan: ' + text);
+      });
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const form = e.target;
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalContent = submitBtn.innerHTML;
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `
+        <span class="material-symbols-outlined animate-spin text-sm">progress_activity</span>
+        <span>Mengirim Pesan...</span>
+      `;
+
+      setTimeout(() => {
+        alert('Terima kasih! Pesan dan spesifikasi inisiatif Anda telah berhasil diterima. Areta akan meninjau dan membalas melalui email dalam waktu 24 jam kerja.');
+        form.reset();
+        document.getElementById('char-counter').textContent = '0/1500';
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalContent;
+      }, 1000);
+    }
+  </script>
+</div></main>
+<!-- FOOTER PROFESIONAL BERGAYA STUDIO -->
+<footer class="w-full bg-surface-container-lowest border-t border-outline-variant/20 relative z-10 pt-20 pb-12" id="contact">
+<div class="max-w-6xl mx-auto px-6 lg:px-12">
+<div class="rounded-3xl bg-surface-container-low/70 border border-outline-variant/30 p-8 sm:p-12 lg:p-16 relative overflow-hidden mb-20">
+<div class="absolute -top-20 -right-20 w-80 h-80 bg-primary-fixed/40 rounded-full filter blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-20 -left-20 w-80 h-80 bg-tertiary-fixed/30 rounded-full filter blur-3xl pointer-events-none"></div>
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+<div class="lg:col-span-7 text-left">
+<div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-surface-container-lowest border border-outline-variant/20 text-xs font-label uppercase tracking-widest text-primary font-semibold mb-4">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+Mulai Diskusi &amp; Kolaborasi
+</div>
+<h3 class="font-headline text-3xl sm:text-4xl lg:text-5xl font-normal text-on-surface leading-tight">
+Mari wujudkan karya bermakna bersama studio kami.
+</h3>
+<p class="font-body text-sm sm:text-base text-on-surface-variant mt-4 leading-relaxed max-w-xl">
+Menerima proyek komisi terpilih, konsultasi arsitektur sistem desain, serta kemitraan rekayasa kreatif untuk kuartal Q2/Q3 2025.
+</p>
+</div>
+<div class="lg:col-span-5 flex flex-col gap-3">
+<form class="flex flex-col gap-3" onsubmit="event.preventDefault(); alert('Terima kasih! Pesan singkat Anda telah terkirim.');">
+<input class="w-full px-4 py-3.5 rounded-xl bg-surface-container-lowest border border-outline-variant/40 text-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Masukkan alamat email Anda" required="" type="email"/>
+<div class="flex items-center gap-2">
+<button class="flex-1 px-6 py-3.5 rounded-xl font-label text-xs uppercase tracking-widest font-semibold text-on-primary bg-primary hover:bg-primary-container shadow-xs hover:shadow-md transition-all flex items-center justify-center gap-2" type="submit">
+<span>Mulai Konsultasi</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<button class="p-3.5 rounded-xl bg-surface-container-lowest border border-outline-variant/40 hover:bg-surface-container-high transition-colors text-on-surface-variant hover:text-primary flex items-center justify-center" onclick="navigator.clipboard.writeText('aretaradjawali@gmail.com'); alert('Email disalin ke clipboard!');" title="Salin Email Studio" type="button">
+<span class="material-symbols-outlined text-base">content_copy</span>
+</button>
+</div>
+</form>
+<span class="font-label text-[11px] text-outline text-center lg:text-left mt-1">
+Respon resmi dalam 24-48 jam kerja studio.
+</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-16 border-b border-outline-variant/20">
+<div class="lg:col-span-4 flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<img alt="Alexandria Logo" class="h-7 w-7 rounded-full object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XnXhfVVqxaZAeEGyaoT2LfLEv04NVX37MK3j5WVhT8YJDLUG9DKpvdlJGAF2sPWQG0WK3eO2kTGLGKrR_XvxmCJTKhAV7wwFnx2jorEVcj0ZWC4fGUistSj2z4hG4Bz4Wp5r6v87PoI4noQvxp3eEMhFj-xgqJs_FwAMIvS4vgBQIyWG7iLL5UTLThMV8YgjuVzH-BgjrmXB5Ls0p1AbVdR4GtF8uj9uyQ-Lgs_b5HXZs-L1uWVEsoylU6"/>
+<span class="font-headline font-semibold text-lg tracking-tight text-on-surface">AREYBRA</span>
+</div>
+<p class="font-body text-xs text-on-surface-variant leading-relaxed max-w-sm">
+Studio desain produk independen yang memadukan keanggunan tipografi editorial, arsitektur perangkat lunak presisi, dan filosofi interaksi modern.
+</p>
+<div class="flex items-center gap-2.5 mt-2">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="font-label text-xs text-on-surface font-medium">Tersedia untuk proyek baru Q2/Q3 2025</span>
+</div>
+</div>
+<div class="lg:col-span-2 flex flex-col gap-3">
+<span class="font-label text-xs uppercase tracking-widest text-on-surface font-semibold">Navigasi</span>
+<ul class="flex flex-col gap-2 font-body text-xs text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" data-path="beranda-areta-y-radjawali" href="#">Beranda</a></li>
+<li><a class="hover:text-primary transition-colors" data-path="tentang-saya-areta-y-radjawali" href="#">Tentang Saya</a></li>
+<li><a class="hover:text-primary transition-colors" data-path="koleksi-proyek-areta-y-radjawali" href="#">Proyek</a></li>
+<li><a class="hover:text-primary transition-colors" data-path="blog-arsip-esai-areta-y-radjawali" href="#">Blog</a></li>
+<li><a class="hover:text-primary transition-colors" data-path="hubungi-saya-areta-y-radjawali" href="#">Kontak</a></li>
+</ul>
+</div>
+<div class="lg:col-span-3 flex flex-col gap-3">
+<span class="font-label text-xs uppercase tracking-widest text-on-surface font-semibold">Layanan &amp; Praktik</span>
+<ul class="flex flex-col gap-2 font-body text-xs text-on-surface-variant">
+<li>Arsitektur Design Systems</li>
+<li>Desain Antarmuka &amp; Interaksi Produk</li>
+<li>Frontend Engineering &amp; WebGL</li>
+<li>Tipografi &amp; Editorial Web Craft</li>
+<li>Audit Fidelitas &amp; Aksesibilitas</li>
+</ul>
+</div>
+<div class="lg:col-span-3 flex flex-col gap-3">
+<span class="font-label text-xs uppercase tracking-widest text-on-surface font-semibold">Jejaring Profesional</span>
+<ul class="flex flex-col gap-2 font-body text-xs text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors flex items-center justify-between" href="https://linkedin.com" rel="noreferrer" target="_blank"><span>LinkedIn</span> <span class="material-symbols-outlined text-xs">north_east</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center justify-between" href="https://github.com" rel="noreferrer" target="_blank"><span>GitHub</span> <span class="material-symbols-outlined text-xs">north_east</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center justify-between" href="https://dribbble.com" rel="noreferrer" target="_blank"><span>Dribbble</span> <span class="material-symbols-outlined text-xs">north_east</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center justify-between" href="https://read.cv" rel="noreferrer" target="_blank"><span>Read.cv</span> <span class="material-symbols-outlined text-xs">north_east</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center justify-between" href="mailto:aretaradjawali@gmail.com"><span>aretaradjawali@gmail.com</span> <span class="material-symbols-outlined text-xs">mail</span></a></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-label text-xs text-outline">
+<div class="flex items-center gap-3">
+<span>© 2025 Areta Y. Radjawali. Seluruh hak cipta dilindungi undang-undang.</span>
+</div>
+<div class="flex items-center gap-6">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xs text-emerald-600">schedule</span>
+<span>WIB (UTC+7) · Jakarta, Indonesia</span>
+</span>
+<span class="text-outline-variant/40">|</span>
+<span class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+<span>Status Sistem Normal</span>
+</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

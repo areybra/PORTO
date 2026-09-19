@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="flex flex-col w-full">
+<section class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 pt-8 sm:pt-12 pb-8 sm:pb-16">
+  <div class="flex flex-col gap-4 sm:gap-6 reveal">
+    <div class="flex items-center gap-3"><span class="inline-block w-2.5 h-2.5 rounded-full bg-tertiary-container"></span><span class="font-label text-[11px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] text-on-surface-variant font-medium line-clamp-1">Arsip Pemikiran — Areta Y. Radjawali</span></div>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-8 items-end">
+      <div class="lg:col-span-8"><h1 class="font-headline text-2xl sm:text-5xl lg:text-6xl text-on-surface font-normal tracking-tight leading-[1.15]"><span data-typing='["Wawasan Kode,","Telaah Arsitektur","Eksplorasi Data"]'>Wawasan Kode,</span> Telaah Arsitektur &amp; Eksplorasi Data</h1></div>
+      <div class="hidden sm:flex lg:col-span-4 lg:justify-end pb-2"><div class="px-4 py-2 rounded-xl bg-surface-container-low text-on-surface-variant font-label text-xs tracking-wider uppercase flex items-center gap-2.5 shadow-sm"><span class="material-symbols-outlined text-sm text-primary">auto_stories</span><span>Edisi Kolektif Vol. III • {{ total_count }} Naskah</span></div></div>
+    </div>
+    <p class="font-body text-sm sm:text-lg text-on-surface-variant max-w-3xl leading-relaxed font-light mt-1 sm:mt-2 line-clamp-2 sm:line-clamp-none">Kumpulan tulisan teknis, catatan riset kerentanan siber, optimasi framework Django, hingga refleksi metodologi data analitis.</p>
+    <form method="get" class="mt-4 sm:mt-8 pt-4 sm:pt-8 bg-surface-container-low/60 rounded-2xl p-4 sm:p-6 shadow-sm flex flex-col gap-4 sm:gap-6">
+      <div class="relative w-full"><span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-lg">search</span><input name="q" value="{{ q }}" class="w-full pl-12 pr-4 py-3 sm:py-3.5 rounded-xl bg-surface-container-lowest text-on-surface text-sm placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/40 shadow-xs transition-all" placeholder="Cari artikel (Django, SQLi, Linux)..." type="text"/></div>
+      <div class="flex flex-wrap items-center gap-2 pt-1 font-label text-xs"><span class="text-outline uppercase tracking-wider text-[11px] mr-2 hidden sm:inline">Topik Bahasan:</span>
+        <a href="?category=all{% if q %}&q={{ q }}{% endif %}" class="px-3 sm:px-4 py-2 rounded-full font-medium tracking-wide shadow-xs transition-transform active:scale-95 text-xs {% if category_slug == 'all' %}bg-primary text-on-primary{% else %}bg-surface-container-lowest text-on-surface-variant hover:text-on-surface{% endif %}">Semua ({{ total_count }})</a>
+        {% for cat in categories %}
+        <a href="?category={{ cat.slug }}{% if q %}&q={{ q }}{% endif %}" class="px-3 sm:px-4 py-2 rounded-full transition-all text-xs {% if category_slug == cat.slug %}bg-primary text-on-primary font-medium shadow-xs{% else %}bg-surface-container-lowest text-on-surface-variant hover:text-on-surface hover:bg-surface-container{% endif %}">{{ cat.name }} ({{ cat.posts.count }})</a>
+        {% endfor %}
+      </div>
+    </form>
+  </div>
+</section>
+
+{% if featured %}
+<section class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 pb-12 sm:pb-20">
+  <div class="rounded-3xl bg-surface-container-lowest shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group reveal pop-card">
+    <div class="grid grid-cols-1 lg:grid-cols-12">
+      <div class="lg:col-span-7 p-8 sm:p-12 lg:p-14 flex flex-col justify-between">
+        <div class="flex flex-col gap-5"><div class="flex flex-wrap items-center gap-3"><span class="px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label text-xs uppercase tracking-wider font-semibold">Esai Unggulan</span><span class="text-xs font-label text-outline flex items-center gap-1.5"><span class="material-symbols-outlined text-xs">schedule</span> {{ featured.read_time }} Menit Membaca</span><span class="text-xs font-label text-primary font-medium">{{ featured.category.name|default:"Esai" }}</span></div><h2 class="font-headline text-2xl sm:text-3xl lg:text-4xl text-on-surface font-normal leading-snug group-hover:text-primary transition-colors"><a href="{% url 'blog_detail' featured.slug %}">{{ featured.title }}</a></h2><p class="font-body text-sm sm:text-base text-on-surface-variant leading-relaxed font-light">{{ featured.excerpt|truncatechars:200 }}</p></div>
+        <div class="pt-10 mt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-headline font-semibold text-sm">AR</div><div class="flex flex-col"><span class="font-label text-xs text-on-surface font-medium">Areta Y. Radjawali</span><span class="font-label text-[11px] text-outline">{{ featured.published_at|date:"F Y"|default:"Oktober 2024" }} • {{ featured.views_count }} Pembaca</span></div></div><a class="inline-flex items-center gap-2 font-label text-xs uppercase tracking-wider font-semibold text-primary hover:text-primary-container group/link transition-colors" href="{% url 'blog_detail' featured.slug %}"><span>Buka Dokumen Riset</span><span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span></a></div>
+      </div>
+      <div class="lg:col-span-5 bg-surface-container-high p-8 sm:p-12 flex flex-col justify-between relative overflow-hidden">
+        <div class="absolute -right-12 -bottom-12 w-64 h-64 rounded-full bg-primary-fixed/20 blur-2xl pointer-events-none"></div>
+        <div class="relative z-10 flex flex-col gap-4"><div class="p-4 rounded-xl bg-inverse-surface text-inverse-on-surface text-xs font-mono leading-relaxed overflow-x-auto shadow-inner"><div class="text-outline-variant text-[11px]">// Adaptive Sliding Window Redis</div><p><span class="text-tertiary-fixed font-semibold">class</span> <span class="text-primary-fixed">BruteForceGuard</span>:</p><p class="pl-4">def __call__(self, request):</p><p class="pl-8">ip = request.META.get(<span class="text-tertiary-fixed">'HTTP_X_REAL_IP'</span>)</p></div></div>
+        <div class="relative z-10 mt-8 pt-6 grid grid-cols-2 gap-4"><div class="p-3.5 rounded-xl bg-surface-container-lowest/80 backdrop-blur-sm"><span class="font-label text-[10px] uppercase tracking-wider text-outline block">Latensi Tambahan</span><span class="font-headline text-lg text-primary font-semibold">1.8 ms</span></div><div class="p-3.5 rounded-xl bg-surface-container-lowest/80 backdrop-blur-sm"><span class="font-label text-[10px] uppercase tracking-wider text-outline block">Efektivitas Blokir</span><span class="font-headline text-lg text-on-surface font-semibold">99.8%</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 pb-12 sm:pb-24">
+  <div class="flex items-center justify-between pb-6 sm:pb-8 reveal"><div class="flex items-center gap-3"><span class="font-headline text-lg sm:text-xl text-on-surface font-normal">Katalog Esai &amp; Catatan Teknis</span><span class="hidden sm:inline px-2.5 py-0.5 rounded-full bg-surface-container-high text-[11px] font-label font-medium text-on-surface-variant">Terkurasi</span></div><span class="font-label text-xs text-outline hidden sm:inline-block">Mengurutkan: Kronologis Terbaru</span></div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 sm:gap-6">
+    {% for post in page_obj %}
+    <article data-searchable class="lg:col-span-6 rounded-2xl bg-surface-container-lowest p-6 sm:p-8 shadow-sm hover:shadow-md transition-all group flex flex-col justify-between reveal {% if forloop.counter > 4 %}hidden md:flex{% endif %}" style="transition-delay: {{ forloop.counter0 }}00ms">
+      <div class="flex flex-col gap-4"><div class="flex items-center justify-between"><span class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-fixed font-label text-[11px] font-semibold uppercase tracking-wider">{{ post.category.name|default:"Esai" }}</span><span class="text-xs font-label text-outline">{{ post.read_time }} Menit Baca • {{ post.published_at|date:"M Y"|default:"2024" }}</span></div><h3 class="font-headline text-xl sm:text-2xl text-on-surface group-hover:text-primary transition-colors leading-snug"><a href="{% url 'blog_detail' post.slug %}">{{ post.title }}</a></h3><p class="font-body text-xs sm:text-sm text-on-surface-variant leading-relaxed font-light">{{ post.excerpt|truncatechars:140 }}</p></div>
+      <div class="pt-8 mt-6 flex items-center justify-between"><span class="font-label text-xs text-outline">Areta Y. Radjawali</span><a class="inline-flex items-center gap-1.5 font-label text-xs uppercase tracking-wider font-semibold text-primary group-hover:translate-x-1 transition-transform" href="{% url 'blog_detail' post.slug %}"><span>Baca Selengkapnya</span><span class="material-symbols-outlined text-sm">arrow_forward</span></a></div>
+    </article>
+    {% empty %}
+    <p class="col-span-12 text-center py-12 text-sm text-outline">Tidak ada artikel untuk filter ini.</p>
+    {% endfor %}
+  </div>
+  <div class="mt-8 flex justify-center gap-2">
+    {% if page_obj.has_previous %}<a href="?page={{ page_obj.previous_page_number }}&category={{ category_slug }}&q={{ q }}" class="px-4 py-2 rounded-xl bg-surface-container-low text-xs">Sebelumnya</a>{% endif %}
+    <span class="px-4 py-2 text-xs text-outline">Hal {{ page_obj.number }} / {{ page_obj.paginator.num_pages }}</span>
+    {% if page_obj.has_next %}<a href="?page={{ page_obj.next_page_number }}&category={{ category_slug }}&q={{ q }}" class="px-4 py-2 rounded-xl bg-primary text-on-primary text-xs">Berikutnya</a>{% endif %}
+  </div>
+</section>
+
+<section class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 pb-12 sm:pb-24">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
+    <div class="lg:col-span-7 rounded-3xl bg-surface-container-lowest p-6 sm:p-8 lg:p-12 shadow-sm flex flex-col justify-between relative overflow-hidden reveal">
+      <div class="relative z-10 flex flex-col gap-4"><div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container text-xs font-label uppercase tracking-widest text-primary font-semibold self-start"><span class="material-symbols-outlined text-xs">mail</span> Buletin Esai Berkala</div><h3 class="font-headline text-xl sm:text-2xl lg:text-3xl text-on-surface font-normal leading-tight">Dapatkan kiriman catatan riset dan telaah arsitektur langsung ke surel Anda.</h3><p class="font-body text-sm text-on-surface-variant leading-relaxed font-light">Dipublikasikan sekali atau dua kali sebulan. Tanpa spam, murni naskah komputasi.</p>
+      <form class="mt-4 flex flex-col sm:flex-row gap-3" method="post" action="{% url 'contact' %}">{% csrf_token %}<input type="hidden" name="footer_subscribe" value="1"><input name="email" class="flex-1 px-4 py-3 rounded-xl bg-surface-container-low text-on-surface text-sm placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/40 shadow-xs" placeholder="nama@domain.com" required type="email"/><button class="px-6 py-3 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label text-xs uppercase tracking-wider font-semibold shadow-xs hover:shadow-md transition-all shrink-0" type="submit">Langganan Buletin</button></form><span class="font-label text-[11px] text-outline mt-1">Dapat berhenti berlangganan kapan saja.</span></div>
+    </div>
+    <div class="lg:col-span-5 rounded-3xl bg-surface-container-low p-6 sm:p-8 lg:p-10 shadow-sm flex flex-col gap-6 hidden sm:flex reveal reveal-delay-1"><div class="flex items-center justify-between pb-2"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-base text-primary">folder_open</span><span class="font-headline text-lg text-on-surface font-normal">Indeks Arsip Tahunan</span></div><span class="font-label text-[11px] text-outline uppercase tracking-wider">Arsip Total</span></div>
+      <div class="flex flex-col gap-3">
+        {% for a in archive %}
+        <div class="p-4 rounded-xl bg-surface-container-lowest flex items-center justify-between shadow-xs"><div class="flex items-center gap-3"><span class="font-headline text-lg font-semibold text-on-surface">{{ a.year|default:"—" }}</span></div><div class="flex items-center gap-2 text-outline"><span class="font-label text-xs">{{ a.count }} Artikel</span><span class="material-symbols-outlined text-sm">arrow_forward</span></div></div>
+        {% empty %}
+        <div class="p-4 rounded-xl bg-surface-container-lowest text-xs text-outline">Belum ada arsip tahunan.</div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+{% endblock %}

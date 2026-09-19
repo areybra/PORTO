@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="flex flex-col w-full">
+<section class="relative w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 pt-6 pb-12 sm:pb-20 lg:pb-28">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-16 items-center">
+    <div class="lg:col-span-7 flex flex-col items-start text-left order-2 lg:order-1 reveal">
+      <div class="flex flex-wrap items-center gap-2 mb-4 sm:mb-6">
+        <span class="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full bg-surface-container-high text-[10px] sm:text-[11px] font-label font-medium uppercase tracking-wider text-primary"><span class="material-symbols-outlined text-xs">school</span> SMK Nurul Jadid RPL</span>
+        <span class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-low text-[11px] font-label font-medium uppercase tracking-wider text-on-surface-variant"><span class="material-symbols-outlined text-xs">location_on</span> Kab. Probolinggo</span>
+        <span class="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full bg-tertiary-fixed/40 text-[10px] sm:text-[11px] font-label font-semibold uppercase tracking-wider text-tertiary"><span class="material-symbols-outlined text-xs">query_stats</span> Aspirasi: Data Analyst</span>
+      </div>
+      <div class="flex items-center gap-3 mb-3 sm:mb-4"><span class="font-label text-xs tracking-widest text-outline uppercase font-semibold">Profil Akademik &amp; Rekayasa</span><span class="w-8 h-px bg-outline-variant/40 hidden sm:block"></span><span class="font-label text-[11px] text-tertiary font-medium hidden sm:inline">Vol. 01 — 2025</span></div>
+      <h1 class="font-headline text-2xl sm:text-5xl lg:text-6xl text-on-surface font-normal leading-[1.15] tracking-tight"><span data-typing='["Menyulam Logika Kode,","Merangkai Algoritma,","Mengamankan Data,"]'>Menyulam Logika Kode,</span> Mengamankan Masa Depan Data.</h1>
+      <p class="font-body text-base sm:text-lg text-on-surface-variant mt-6 leading-relaxed max-w-2xl"><strong class="font-semibold text-on-surface">{{ site_profile.hero_name }}</strong> — {{ site_profile.about_quote|safe }}</p>
+      <div class="hidden sm:flex mt-6 sm:mt-8 pt-6 border-t border-outline-variant/25 w-full flex-wrap items-center gap-6 sm:gap-10 font-label text-xs text-on-surface-variant">
+        <div><div class="text-outline uppercase text-[10px] tracking-wider mb-0.5">Konsentrasi Utama</div><div class="font-medium text-on-surface">RPL &amp; Keamanan Jaringan</div></div>
+        <div><div class="text-outline uppercase text-[10px] tracking-wider mb-0.5">Fokus Studi Lanjutan</div><div class="font-medium text-on-surface">Sains Data &amp; Forensik Digital</div></div>
+        <div><div class="text-outline uppercase text-[10px] tracking-wider mb-0.5">Basis Operasional</div><div class="font-medium text-on-surface">Jawa Timur, Indonesia</div></div>
+      </div>
+      <div class="mt-8 flex flex-wrap items-center gap-4"><a class="px-6 py-3 rounded-full bg-primary text-on-primary font-label text-xs font-semibold tracking-wider uppercase shadow-xs hover:bg-primary-container transition-all flex items-center gap-2 group" href="#narasi"><span>Pelajari Filosofi Saya</span><span class="material-symbols-outlined text-sm group-hover:translate-y-0.5 transition-transform">arrow_downward</span></a><a class="px-6 py-3 rounded-full bg-surface-container text-on-surface font-label text-xs font-semibold tracking-wider uppercase hover:bg-surface-container-high transition-all flex items-center gap-2" href="{% url 'project_list' %}"><span>Eksplorasi Karya</span><span class="material-symbols-outlined text-sm text-primary">arrow_forward</span></a></div>
+    </div>
+    <div class="lg:col-span-5 relative order-1 lg:order-2 flex justify-center">
+      <div class="relative w-full max-w-sm sm:max-w-md">
+        <div class="absolute -top-4 -right-4 w-full h-full rounded-3xl bg-secondary-container/40 -z-10 transform rotate-2"></div>
+        <div class="absolute -bottom-4 -left-4 w-full h-full rounded-3xl bg-tertiary-fixed/30 -z-10 transform -rotate-2"></div>
+        <div class="relative rounded-3xl overflow-hidden bg-surface-container-lowest shadow-[0_20px_50px_rgba(9,76,178,0.08)]">
+          <div class="absolute top-4 left-4 z-20"><span class="px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-[10px] font-label uppercase tracking-widest text-on-surface font-semibold shadow-xs">Archival Folio 01</span></div>
+          <div class="aspect-square w-full overflow-hidden bg-surface-container-low flex items-center justify-center relative">
+            {% if site_profile.hero_image_effective %}
+              <img alt="Areta Y. Radjawali" class="w-full h-full object-cover object-center" src="{{ site_profile.hero_image_effective }}">
+            {% else %}
+              <img alt="Areta Y. Radjawali" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida/AEtjO1UEoiyjmRKUBIc9t_Fndn02qah9zD4YxMOclwvCsw3RgF04tBa7qBJtB3e-J04xQLKcvUDjFs3W9OGpRH2ONio9YqP3AFOlbnf_VADprquwDe9nBnqaSBN4w2LlKcPBqpkEODL3pzu4GkgxG44ucGQRBvUR2HQGWMBjGgDsHFLRA1U1NAfAjAKRmAirn9ZaUcwEP-OH1rfpqF-1S_JV3Za18csDTh8B6C7BX43cPLUS05jJpemociIHRQPo">
+            {% endif %}
+          </div>
+          <div class="p-5 bg-surface-container-lowest"><div class="flex items-center justify-between"><div class="flex items-center gap-2.5"><span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span></span><span class="font-label text-xs font-semibold text-on-surface">Tersedia untuk Kolaborasi &amp; Proyek</span></div><span class="font-label text-[11px] text-outline font-medium">Q2/Q3 2025</span></div><p class="font-body text-xs text-on-surface-variant mt-2 leading-relaxed">Menerima inisiatif riset perangkat lunak, evaluasi celah keamanan, dan arsitektur analitika web.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="w-full bg-surface-container-low/40 py-12 sm:py-20 lg:py-24" id="narasi">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-16 gap-4 sm:gap-6 reveal"><div><div class="inline-flex items-center gap-2 font-label text-xs font-semibold uppercase tracking-widest text-primary mb-2"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Manifesto &amp; Visi Masa Depan</div><h2 class="font-headline text-2xl sm:text-3xl lg:text-4xl text-on-surface font-normal tracking-tight">Fondasi Intelektual &amp; Panggilan Profesi</h2></div><p class="hidden sm:block font-body text-xs sm:text-sm text-on-surface-variant max-w-sm leading-relaxed">Refleksi perjalanan akademis dari pesantren teknologi menuju lanskap komputasi modern yang aman dan berintegritas.</p></div>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+      <div class="lg:col-span-7 bg-surface-container-lowest rounded-3xl p-8 sm:p-12 shadow-[0_4px_24px_rgba(0,0,0,0.03)] flex flex-col justify-between h-full">
+        <div><div class="flex items-center gap-2 text-tertiary mb-6"><span class="material-symbols-outlined text-lg">format_quote</span><span class="font-label text-[11px] uppercase tracking-widest font-semibold">Catatan Diri Perjalanan</span></div>
+          <blockquote class="font-headline text-xl sm:text-2xl text-on-surface font-normal leading-relaxed italic mb-8">{{ site_profile.about_quote }}</blockquote>
+          <div class="space-y-4 font-body text-sm text-on-surface-variant leading-relaxed"><p>Menjalani proses pembelajaran di lingkungan SMK Nurul Jadid menanamkan etos kedisiplinan ganda: ketahanan spiritual yang kokoh serta ketajaman nalar komputasional.</p><p>Kombinasi antara perancangan aplikasi web (Django &amp; Tailwind) serta audit pertahanan siber membentuk paradigma rekayasa yang komprehensif.</p></div></div>
+        <div class="pt-8 mt-8 border-t border-outline-variant/20 flex items-center justify-between"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-headline font-semibold text-sm">AYR</div><div><div class="font-headline text-sm font-semibold text-on-surface">Areta Y. Radjawali</div><div class="font-label text-[11px] text-outline">Siswa Kejuruan RPL — Angkatan 2023/2026</div></div></div><span class="font-label text-xs uppercase tracking-widest text-tertiary font-semibold">Probolinggo, Jatim</span></div>
+      </div>
+      <div class="lg:col-span-5 flex flex-col gap-6">
+        <div class="bg-surface-container-lowest rounded-3xl p-8 shadow-[0_4px_24px_rgba(0,0,0,0.03)] relative overflow-hidden"><div class="absolute top-0 right-0 w-32 h-32 bg-primary-fixed/30 rounded-bl-full pointer-events-none"></div><div class="flex items-center gap-2 mb-3"><span class="w-2 h-2 rounded-full bg-primary"></span><span class="font-label text-xs uppercase tracking-widest text-primary font-semibold">Visi Jangka Panjang</span></div><h3 class="font-headline text-xl text-on-surface font-semibold leading-snug mb-3">Kedaulatan Wawasan &amp; Ketahanan Siber</h3><p class="font-body text-sm text-on-surface-variant leading-relaxed">{{ site_profile.about_vision }}</p></div>
+        <div class="bg-surface-container-lowest rounded-3xl p-8 shadow-[0_4px_24px_rgba(0,0,0,0.03)]"><div class="flex items-center gap-2 mb-6"><span class="w-2 h-2 rounded-full bg-tertiary"></span><span class="font-label text-xs uppercase tracking-widest text-tertiary font-semibold">Misi Strategis &amp; Dedikasi</span></div><div class="space-y-6"><div class="flex items-start gap-4"><span class="font-headline text-xl text-primary font-semibold shrink-0 w-7">01</span><div><h4 class="font-headline text-sm font-semibold text-on-surface">Arsitektur Web Tangguh &amp; Efisien</h4><p class="font-body text-xs text-on-surface-variant mt-1 leading-relaxed">Mengembangkan ekosistem aplikasi berbasis standar industri dengan performa optimal.</p></div></div><div class="flex items-start gap-4"><span class="font-headline text-xl text-primary font-semibold shrink-0 w-7">02</span><div><h4 class="font-headline text-sm font-semibold text-on-surface">Riset Keamanan Siber Proaktif</h4><p class="font-body text-xs text-on-surface-variant mt-1 leading-relaxed">Mendalami pengujian penetrasi etis, konfigurasi perlindungan peladen Linux.</p></div></div><div class="flex items-start gap-4"><span class="font-headline text-xl text-primary font-semibold shrink-0 w-7">03</span><div><h4 class="font-headline text-sm font-semibold text-on-surface">Kepemimpinan Adaptif &amp; Sinergi Lintas Bidang</h4><p class="font-body text-xs text-on-surface-variant mt-1 leading-relaxed">Mengasah kapasitas koordinasi tim, mengedepankan komunikasi empatik.</p></div></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 py-12 sm:py-20 lg:py-24">
+  <div class="max-w-2xl mb-8 sm:mb-14 text-left reveal"><div class="inline-flex items-center gap-2 font-label text-xs font-semibold uppercase tracking-widest text-tertiary mb-2"><span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Etos Kerja &amp; Karakteristik Personal</div><h2 class="font-headline text-2xl sm:text-3xl lg:text-4xl text-on-surface font-normal tracking-tight">Prinsip Panduan Bertumbuh</h2><p class="font-body text-sm text-on-surface-variant mt-3 leading-relaxed hidden sm:block">Pilar kepribadian yang menuntun setiap baris instruksi program.</p></div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+    {% for trait in traits %}
+    <div class="bg-surface-container-low/60 rounded-3xl p-6 transition-all duration-300 hover:bg-surface-container-lowest hover:shadow-[0_12px_32px_rgba(9,76,178,0.06)] flex flex-col justify-between reveal {% if forloop.counter > 2 %}hidden sm:flex{% endif %}" style="transition-delay: {{ forloop.counter0 }}00ms">
+      <div><div class="w-12 h-12 rounded-2xl bg-surface-container-lowest flex items-center justify-center {% if trait.color == 'tertiary' %}text-tertiary{% else %}text-primary{% endif %} mb-5 shadow-xs"><span class="material-symbols-outlined text-2xl">{{ trait.icon }}</span></div><span class="font-label text-[10px] tracking-widest uppercase text-outline font-semibold">{{ trait.label }}</span><h3 class="font-headline text-lg font-semibold text-on-surface mt-1 mb-2.5">{{ trait.title }}</h3><p class="font-body text-xs text-on-surface-variant leading-relaxed">{{ trait.description }}</p></div>
+      <div class="mt-6 pt-4 border-t border-outline-variant/15 flex items-center justify-between font-label text-[11px] {% if trait.color == 'tertiary' %}text-tertiary{% else %}text-primary{% endif %} font-medium"><span>{{ trait.footer_label }}</span><span>{{ trait.footer_value }}</span></div>
+    </div>
+    {% empty %}
+    <div class="col-span-4 text-center py-8 text-sm text-outline">Trait belum diisi — kelola via Admin → Core → Traits.</div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="w-full bg-surface-container-low/40 py-12 sm:py-20 lg:py-24">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-16 gap-4 sm:gap-6 reveal"><div><div class="inline-flex items-center gap-2 font-label text-xs font-semibold uppercase tracking-widest text-primary mb-2"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Matriks Pengetahuan &amp; Perkakas</div><h2 class="font-headline text-2xl sm:text-3xl lg:text-4xl text-on-surface font-normal tracking-tight">Kompetensi Rekayasa Terapan</h2></div><p class="hidden sm:block font-body text-xs sm:text-sm text-on-surface-variant max-w-sm leading-relaxed">Kombinasi teknologi yang dikuasai secara praktis melalui kurikulum RPL.</p></div>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
+      {% for cat in skill_categories %}
+      <div class="bg-surface-container-lowest rounded-3xl p-6 sm:p-8 shadow-[0_4px_24px_rgba(0,0,0,0.03)] flex flex-col justify-between reveal {% if forloop.counter > 2 %}hidden lg:flex{% endif %}" style="transition-delay: {{ forloop.counter0 }}00ms">
+        <div>
+          <div class="flex items-center justify-between mb-6"><div class="w-12 h-12 rounded-2xl {% if 'Keamanan' in cat.name %}bg-tertiary-fixed/40 text-tertiary{% else %}bg-primary-fixed/40 text-primary{% endif %} flex items-center justify-center"><span class="material-symbols-outlined text-2xl">{{ cat.icon }}</span></div><span class="font-label text-[11px] uppercase tracking-wider text-outline font-semibold">{{ cat.domain_label }}</span></div>
+          <h3 class="font-headline text-xl font-semibold text-on-surface mb-2">{{ cat.name }}</h3><p class="font-body text-xs text-on-surface-variant leading-relaxed mb-6">{{ cat.description }}</p>
+          <ul class="space-y-4">
+            {% for skill in cat.skills.all %}
+            <li class="p-3.5 rounded-2xl bg-surface-container-low flex items-start justify-between gap-3"><div class="flex items-center gap-3"><span class="material-symbols-outlined {% if 'Keamanan' in cat.name %}text-tertiary{% else %}text-primary{% endif %} text-base">{{ skill.icon }}</span><div><span class="font-label text-xs font-semibold text-on-surface block">{{ skill.name }}</span><span class="font-body text-[11px] text-on-surface-variant">{{ skill.detail }}</span></div></div><span class="font-label text-[10px] font-semibold {% if 'Keamanan' in cat.name %}text-tertiary{% else %}text-primary{% endif %} px-2 py-0.5 rounded-full bg-surface-container-lowest">{{ skill.get_level_display }}</span></li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% if cat.tools_text %}<div class="mt-8 pt-4 border-t border-outline-variant/15 flex items-center justify-between font-label text-[11px] text-outline"><span>Perkakas Terkait:</span><span class="text-on-surface font-medium">{{ cat.tools_text }}</span></div>{% endif %}
+      </div>
+      {% empty %}
+      <div class="col-span-3 text-center py-8 text-sm text-outline">Skill belum diisi — kelola via Admin → Skill Categories.</div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="w-full max-w-6xl mx-auto px-6 lg:px-12 py-12 text-center"><a class="px-8 py-3.5 rounded-full bg-primary text-on-primary font-label text-xs font-semibold tracking-wider uppercase shadow-xs hover:bg-primary-container transition-all inline-flex items-center gap-2" href="{% url 'project_list' %}"><span>Eksplorasi Proyek Saya</span><span class="material-symbols-outlined text-sm">arrow_forward</span></a></section>
+</div>
+{% endblock %}

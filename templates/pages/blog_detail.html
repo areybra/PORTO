@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12 py-8 sm:py-12">
+  <a href="{% url 'blog_list' %}" class="inline-flex items-center gap-1 text-xs font-label text-outline hover:text-primary mb-4 sm:mb-6 reveal"><span class="material-symbols-outlined text-sm">arrow_back</span> Kembali ke Blog</a>
+  <div class="flex flex-wrap items-center gap-2 text-xs font-label text-outline mb-3 sm:mb-4 reveal"><span class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-fixed font-semibold uppercase tracking-wider">{{ post.category.name|default:"Esai" }}</span><span>{{ post.read_time }} menit baca</span><span>·</span><span>{{ post.published_at|date:"d M Y"|default:"2024" }}</span></div>
+  <h1 class="font-headline text-2xl sm:text-3xl lg:text-4xl text-on-surface font-normal leading-snug reveal">{{ post.title }}</h1>
+  <p class="font-body text-sm sm:text-base text-on-surface-variant mt-3 sm:mt-4 leading-relaxed reveal reveal-delay-1">{{ post.excerpt }}</p>
+  {% if post.image_url %}<img src="{{ post.image_url }}" alt="{{ post.title }}" class="w-full rounded-2xl mt-6 sm:mt-8 shadow-sm max-h-[320px] sm:max-h-[420px] object-cover reveal">{% endif %}
+  <div class="prose max-w-none font-body text-sm text-on-surface-variant leading-relaxed mt-6 sm:mt-8 whitespace-pre-line reveal">{{ post.content }}</div>
+  <div class="flex flex-wrap gap-2 mt-6 sm:mt-8 reveal">{% for tag in post.tags.all %}<span class="px-3 py-1 rounded-full bg-surface-container text-xs font-label text-on-surface-variant">#{{ tag.name }}</span>{% endfor %}</div>
+  {% if related %}
+  <div class="mt-10 sm:mt-16 pt-8 sm:pt-10 border-t border-outline-variant/20 reveal"><h3 class="font-headline text-lg sm:text-xl text-on-surface font-semibold mb-4 sm:mb-6">Tulisan Terkait</h3><div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">{% for r in related %}<a href="{% url 'blog_detail' r.slug %}" class="p-4 rounded-2xl bg-surface-container-low hover:bg-surface-container transition-colors"><div class="font-label text-xs font-semibold text-on-surface line-clamp-2">{{ r.title }}</div><div class="font-body text-xs text-outline mt-1">{{ r.category.name|default:"Esai" }}</div></a>{% endfor %}</div></div>
+  {% endif %}
+</div>
+{% endblock %}

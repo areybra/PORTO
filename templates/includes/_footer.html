@@ -1,0 +1,86 @@
+<footer class="w-full bg-surface-container-lowest border-t border-outline-variant/20 relative z-10 pt-12 sm:pt-20 pb-8 sm:pb-12">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+  <div class="rounded-3xl bg-surface-container-low/70 border border-outline-variant/30 p-6 sm:p-8 lg:p-16 relative overflow-hidden mb-10 sm:mb-20 reveal">
+    <div class="absolute -top-20 -right-20 w-80 h-80 bg-primary-fixed/40 rounded-full filter blur-3xl pointer-events-none hidden sm:block"></div>
+    <div class="absolute -bottom-20 -left-20 w-80 h-80 bg-tertiary-fixed/30 rounded-full filter blur-3xl pointer-events-none hidden sm:block"></div>
+    <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 items-center">
+      <div class="lg:col-span-7 text-left">
+        <div class="inline-flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1 rounded-full bg-surface-container-lowest border border-outline-variant/20 text-xs font-label uppercase tracking-widest text-primary font-semibold mb-3 sm:mb-4">
+          <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-primary animate-pulse"></span> Mulai Diskusi &amp; Kolaborasi
+        </div>
+        <h3 class="font-headline text-2xl sm:text-3xl lg:text-5xl font-normal text-on-surface leading-tight">Mari wujudkan karya bermakna bersama studio kami.</h3>
+        <p class="hidden sm:block font-body text-sm sm:text-base text-on-surface-variant mt-4 leading-relaxed max-w-xl">Menerima proyek komisi terpilih, konsultasi penataan sistem desain, serta kemitraan rekayasa kreatif untuk kuartal Q2/Q3 2025.</p>
+      </div>
+      <div class="lg:col-span-5 flex flex-col gap-3">
+        <form class="flex flex-col gap-3" method="post" action="{% url 'contact' %}">
+          {% csrf_token %}
+          <input type="hidden" name="footer_subscribe" value="1">
+          <input class="w-full px-4 py-3.5 rounded-xl bg-surface-container-lowest border border-outline-variant/40 text-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Masukkan alamat email Anda" required type="email" name="email">
+          <div class="flex items-center gap-2">
+            <button class="flex-1 px-6 py-3.5 rounded-xl font-label text-xs uppercase tracking-widest font-semibold text-on-primary bg-primary hover:bg-primary-container shadow-xs hover:shadow-md transition-all flex items-center justify-center gap-2" type="submit">
+              <span>Mulai Konsultasi</span><span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </button>
+            <button class="p-3.5 rounded-xl bg-surface-container-lowest border border-outline-variant/40 hover:bg-surface-container-high transition-colors text-on-surface-variant hover:text-primary flex items-center justify-center" onclick="navigator.clipboard.writeText('{{ site_profile.email|default:'aretaradjawali@gmail.com' }}'); alert('Email disalin!'); return false;" title="Salin Email" type="button"><span class="material-symbols-outlined text-base">content_copy</span></button>
+          </div>
+        </form>
+        <span class="font-label text-[11px] text-outline text-center lg:text-left mt-1">Respon resmi dalam 24-48 jam kerja studio.</span>
+      </div>
+    </div>
+  </div>
+  <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-12 gap-6 sm:gap-10 pb-10 sm:pb-16 border-b border-outline-variant/20">
+    <div class="col-span-2 lg:col-span-4 flex flex-col gap-3 sm:gap-4">
+      <div class="flex items-center gap-3">
+        <img alt="Logo" class="h-7 w-7 rounded-full object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XnXhfVVqxaZAeEGyaoT2LfLEv04NVX37MK3j5WVhT8YJDLUG9DKpvdlJGAF2sPWQG0WK3eO2kTGLGKrR_XvxmCJTKhAV7wwFnx2jorEVcj0ZWC4fGUistSj2z4hG4Bz4Wp5r6v87PoI4noQvxp3eEMhFj-xgqJs_FwAMIvS4vgBQIyWG7iLL5UTLThMV8YgjuVzH-BgjrmXB5Ls0p1AbVdR4GtF8uj9uyQ-Lgs_b5HXZs-L1uWVEsoylU6">
+        <span class="font-headline font-semibold text-base sm:text-lg tracking-tight text-on-surface">{{ site_profile.site_name|default:"AREYBRA" }}</span>
+      </div>
+      <p class="font-body text-xs text-on-surface-variant leading-relaxed max-w-sm hidden sm:block">{{ site_profile.footer_description }}</p>
+      <div class="flex items-center gap-2.5 mt-1 sm:mt-2">
+        <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span class="font-label text-xs text-on-surface font-medium">{{ site_profile.availability_text }}</span>
+      </div>
+    </div>
+    <div class="lg:col-span-2 flex flex-col gap-2 sm:gap-3">
+      <span class="font-label text-xs uppercase tracking-widest text-on-surface font-semibold">Navigasi</span>
+      <ul class="flex flex-col gap-2 font-body text-xs text-on-surface-variant">
+        <li><a class="hover:text-primary transition-colors" href="{% url 'landing' %}">Beranda</a></li>
+        <li><a class="hover:text-primary transition-colors" href="{% url 'tentang_saya' %}">Profil &amp; Tentang</a></li>
+        <li><a class="hover:text-primary transition-colors" href="{% url 'project_list' %}">Studi Kasus</a></li>
+        <li><a class="hover:text-primary transition-colors" href="{% url 'blog_list' %}">Blog &amp; Esai</a></li>
+        <li><a class="hover:text-primary transition-colors" href="{% url 'contact' %}">Kontak Studio</a></li>
+      </ul>
+    </div>
+    <div class="hidden sm:flex lg:col-span-3 flex-col gap-3">
+      <span class="font-label text-xs uppercase tracking-widest text-on-surface font-semibold">Layanan &amp; Praktik</span>
+      <ul class="flex flex-col gap-2 font-body text-xs text-on-surface-variant">
+        {% for svc in site_profile.services.all %}
+        <li>{{ svc.title }}</li>
+        {% empty %}
+        <li>Arsitektur Design Systems</li>
+        <li>Desain Antarmuka &amp; Interaksi Produk</li>
+        <li>Frontend Engineering &amp; WebGL</li>
+        <li>Tipografi &amp; Editorial Web Craft</li>
+        <li>Audit Fidelitas &amp; Aksesibilitas</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="lg:col-span-3 flex flex-col gap-2 sm:gap-3">
+      <span class="font-label text-xs uppercase tracking-widest text-on-surface font-semibold">Jejaring Profesional</span>
+      <ul class="flex flex-col gap-2 font-body text-xs text-on-surface-variant">
+        <li><a class="hover:text-primary transition-colors flex items-center justify-between" href="{{ site_profile.linkedin_url|default:'https://linkedin.com' }}" target="_blank"><span>LinkedIn</span> <span class="material-symbols-outlined text-xs">north_east</span></a></li>
+        <li><a class="hover:text-primary transition-colors flex items-center justify-between" href="{{ site_profile.github_url|default:'https://github.com' }}" target="_blank"><span>GitHub</span> <span class="material-symbols-outlined text-xs">north_east</span></a></li>
+        <li><a class="hover:text-primary transition-colors flex items-center justify-between" href="{{ site_profile.dribbble_url|default:'https://dribbble.com' }}" target="_blank"><span>Dribbble</span> <span class="material-symbols-outlined text-xs">north_east</span></a></li>
+        <li><a class="hover:text-primary transition-colors flex items-center justify-between" href="{{ site_profile.readcv_url|default:'https://read.cv' }}" target="_blank"><span>Read.cv</span> <span class="material-symbols-outlined text-xs">north_east</span></a></li>
+        <li><a class="hover:text-primary transition-colors flex items-center justify-between" href="mailto:{{ site_profile.email }}"><span class="hidden sm:inline">{{ site_profile.email }}</span><span class="sm:hidden">Email</span> <span class="material-symbols-outlined text-xs">mail</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-label text-xs text-outline">
+    <span>© 2025 {{ site_profile.site_name|default:"AREYBRA" }} Studio. Seluruh hak cipta dilindungi.</span>
+    <div class="flex items-center gap-6">
+      <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-xs text-emerald-600">schedule</span><span>{{ site_profile.timezone_label }}</span></span>
+      <span class="text-outline-variant/40">|</span>
+      <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span><span>Status Sistem Normal</span></span>
+    </div>
+  </div>
+</div>
+</footer>

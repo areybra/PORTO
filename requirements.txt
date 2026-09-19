@@ -1,0 +1,9 @@
+Django==6.1.1
+django-jazzmin==3.0.5
+python-dotenv==1.2.3
+Pillow==12.3.0
+whitenoise==6.12.0
+dj-database-url==3.1.2
+mysqlclient==2.2.7; sys_platform != "win32"
+# Vercel: mysqlclient built via apt; fallback to PyMySQL if need
+# dj-database-url already handles DATABASE_URL from Railway

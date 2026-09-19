@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 py-8 sm:py-12">
+  <a href="{% url 'project_list' %}" class="inline-flex items-center gap-1 text-xs font-label text-outline hover:text-primary mb-4 sm:mb-6 reveal"><span class="material-symbols-outlined text-sm">arrow_back</span> Kembali ke Proyek</a>
+  <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container text-primary font-label text-xs font-semibold uppercase tracking-wider mb-3 sm:mb-4 reveal">{{ project.category.name|default:"Proyek" }} · {{ project.year }}</div>
+  <h1 class="font-headline text-2xl sm:text-4xl lg:text-5xl text-on-surface font-normal leading-tight reveal">{{ project.title }}</h1>
+  <p class="font-body text-sm sm:text-base text-on-surface-variant mt-3 sm:mt-4 leading-relaxed reveal reveal-delay-1">{{ project.excerpt|default:project.description }}</p>
+  <div class="flex flex-wrap gap-2 mt-4 sm:mt-6 reveal">{% for tech in project.technologies.all %}<span class="px-3 py-1.5 rounded-xl bg-surface-container-low font-label text-xs text-on-surface-variant pop-card" style="animation-delay: {{ forloop.counter0 }}00ms">{{ tech.name }}</span>{% endfor %}</div>
+  {% if project.image_url %}<img src="{{ project.image_url }}" alt="{{ project.title }}" class="w-full rounded-2xl sm:rounded-3xl mt-6 sm:mt-8 shadow-sm max-h-[320px] sm:max-h-[420px] object-cover reveal">{% endif %}
+  <div class="prose max-w-none font-body text-sm text-on-surface-variant leading-relaxed mt-6 sm:mt-8 whitespace-pre-line reveal">{{ project.description }}</div>
+  <div class="flex flex-col sm:flex-row flex-wrap gap-3 mt-6 sm:mt-8 reveal">
+    {% if project.github_url %}<a href="{{ project.github_url }}" target="_blank" class="px-5 py-3 rounded-xl bg-primary text-on-primary font-label text-xs uppercase tracking-widest font-semibold inline-flex items-center justify-center gap-2"><span class="material-symbols-outlined text-sm">code</span> GitHub</a>{% endif %}
+    {% if project.demo_url %}<a href="{{ project.demo_url }}" target="_blank" class="px-5 py-3 rounded-xl bg-surface-container-high text-on-surface font-label text-xs uppercase tracking-widest font-semibold inline-flex items-center justify-center gap-2"><span class="material-symbols-outlined text-sm">open_in_new</span> Live Demo</a>{% endif %}
+  </div>
+  {% if related %}
+  <div class="mt-10 sm:mt-16 pt-8 sm:pt-10 border-t border-outline-variant/20 reveal"><h3 class="font-headline text-lg sm:text-xl text-on-surface font-semibold mb-4 sm:mb-6">Proyek Terkait</h3><div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">{% for r in related %}<a href="{% url 'project_detail' r.slug %}" class="p-4 rounded-2xl bg-surface-container-low hover:bg-surface-container transition-colors"><div class="font-label text-xs font-semibold text-on-surface line-clamp-2">{{ r.title }}</div><div class="font-body text-xs text-outline mt-1">{{ r.category.name|default:"Proyek" }}</div></a>{% endfor %}</div></div>
+  {% endif %}
+</div>
+{% endblock %}

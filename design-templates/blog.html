@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_standard" name="shell-type"/>
+<title>AREYBRA — Areta Y. Radjawali</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Noto+Serif:ital,wght@0,400;0,600;1,400&amp;family=Public+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+@layer base {
+  html, body { margin: 0; padding: 0; }
+  body { overscroll-behavior: none; }
+}
+::-webkit-scrollbar { display: none; }
+</style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "secondary-fixed-dim": "#c2c7cc",
+        "on-secondary": "#ffffff",
+        "surface-bright": "#faf9fa",
+        "on-primary": "#ffffff",
+        "background": "#faf9fa",
+        "on-error-container": "#93000a",
+        "on-primary-container": "#e7ebff",
+        "inverse-primary": "#b1c5ff",
+        "surface-container-high": "#e9e8e9",
+        "on-secondary-container": "#606569",
+        "on-tertiary": "#ffffff",
+        "on-error": "#ffffff",
+        "outline-variant": "#c3c6d5",
+        "surface-variant": "#e3e2e3",
+        "tertiary-container": "#bfab49",
+        "primary-fixed-dim": "#b1c5ff",
+        "surface-container-highest": "#e3e2e3",
+        "on-primary-fixed": "#001946",
+        "on-tertiary-fixed": "#211b00",
+        "tertiary-fixed": "#f9e37a",
+        "primary": "#094cb2",
+        "on-surface-variant": "#434653",
+        "surface-container-low": "#f5f3f4",
+        "on-background": "#1b1c1d",
+        "primary-fixed": "#d9e2ff",
+        "inverse-on-surface": "#f2f0f1",
+        "surface-container": "#efedee",
+        "error-container": "#ffdad6",
+        "tertiary": "#6d5e00",
+        "inverse-surface": "#303031",
+        "on-tertiary-container": "#4a3f00",
+        "surface-dim": "#dbdadb",
+        "on-primary-fixed-variant": "#00419d",
+        "surface": "#faf9fa",
+        "on-surface": "#1b1c1d",
+        "surface-container-lowest": "#ffffff",
+        "on-secondary-fixed": "#171c20",
+        "surface-tint": "#2259bf",
+        "outline": "#737784",
+        "secondary-container": "#dfe3e8",
+        "tertiary-fixed-dim": "#dcc661",
+        "secondary": "#5a5f63",
+        "primary-container": "#3366cc",
+        "on-tertiary-fixed-variant": "#524600",
+        "error": "#ba1a1a",
+        "secondary-fixed": "#dfe3e8",
+        "on-secondary-fixed-variant": "#42474b"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.125rem",
+        "lg": "0.25rem",
+        "xl": "0.5rem",
+        "full": "0.75rem"
+      },
+      "fontFamily": {
+        "headline": ["Noto Serif"],
+        "display": ["Noto Serif"],
+        "body": ["Inter"],
+        "label": ["Public Sans"]
+      }
+    }
+  }
+}
+</script>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased relative selection:bg-primary-fixed selection:text-primary">
+<!-- Ambient Dynamic Background -->
+<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+<div class="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-primary-fixed/35 to-transparent blur-3xl"></div>
+<div class="absolute top-[28%] -right-48 w-[650px] h-[650px] rounded-full bg-gradient-to-bl from-tertiary-fixed/20 to-transparent blur-3xl"></div>
+<div class="absolute top-[65%] -left-36 w-[550px] h-[550px] rounded-full bg-gradient-to-tr from-primary-container/10 via-transparent to-transparent blur-3xl"></div>
+<div class="absolute bottom-0 right-10 w-[700px] h-[500px] rounded-full bg-gradient-to-t from-primary-fixed/25 to-transparent blur-3xl"></div>
+<svg class="absolute inset-0 w-full h-full opacity-[0.035]" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="64" id="editorialGrid" patternunits="userSpaceOnUse" width="64">
+<path d="M 64 0 L 0 0 0 64" fill="none" stroke="#1b1c1d" stroke-width="1"></path>
+<circle cx="0" cy="0" fill="#094cb2" r="1.5"></circle>
+</pattern>
+</defs>
+<rect fill="url(#editorialGrid)" height="100%" width="100%"></rect>
+</svg>
+</div>
+<!-- FLOATING CENTERED PILL NAVBAR -->
+<header class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-4xl">
+<div class="h-14 bg-surface-container-lowest/85 backdrop-blur-xl border border-outline-variant/30 shadow-[0_8px_30px_rgb(0,0,0,0.06)] rounded-full px-4 sm:px-6 flex items-center justify-between gap-4 transition-all duration-300">
+<!-- Brand Monogram & Name -->
+<a class="flex items-center gap-2.5 group shrink-0" data-path="beranda-areta-y-radjawali" href="#">
+<img alt="Alexandria Logo" class="h-7 w-7 rounded-full object-contain shadow-xs group-hover:scale-105 transition-transform" src="https://lh3.googleusercontent.com/aida/AEtjO1XnXhfVVqxaZAeEGyaoT2LfLEv04NVX37MK3j5WVhT8YJDLUG9DKpvdlJGAF2sPWQG0WK3eO2kTGLGKrR_XvxmCJTKhAV7wwFnx2jorEVcj0ZWC4fGUistSj2z4hG4Bz4Wp5r6v87PoI4noQvxp3eEMhFj-xgqJs_FwAMIvS4vgBQIyWG7iLL5UTLThMV8YgjuVzH-BgjrmXB5Ls0p1AbVdR4GtF8uj9uyQ-Lgs_b5HXZs-L1uWVEsoylU6"/>
+<span class="font-headline font-semibold text-base tracking-tight text-on-surface">AREYBRA</span>
+<span class="inline-flex items-center gap-1.5 ml-1.5 pl-2.5 border-l border-outline-variant/30" title="Available for projects">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+</span>
+</a>
+<!-- Navigation Menu Items -->
+<nav class="flex items-center gap-1 sm:gap-1.5 overflow-x-auto" data-active-classes="bg-inverse-surface text-inverse-on-surface shadow-xs font-semibold">
+<a class="px-3.5 py-1.5 rounded-full text-xs font-label tracking-wide text-on-surface-variant hover:text-on-surface hover:bg-surface-container/60 transition-colors whitespace-nowrap" data-path="beranda-areta-y-radjawali" href="#">
+Beranda
+</a>
+<a class="px-3.5 py-1.5 rounded-full text-xs font-label tracking-wide text-on-surface-variant hover:text-on-surface hover:bg-surface-container/60 transition-colors whitespace-nowrap" data-path="tentang-saya-areta-y-radjawali" href="#">
+Tentang Saya
+</a>
+<a class="px-3.5 py-1.5 rounded-full text-xs font-label tracking-wide text-on-surface-variant hover:text-on-surface hover:bg-surface-container/60 transition-colors whitespace-nowrap" data-path="koleksi-proyek-areta-y-radjawali" href="#">
+Proyek
+</a>
+<a class="px-3.5 py-1.5 rounded-full text-xs font-label tracking-wide text-on-surface-variant hover:text-on-surface hover:bg-surface-container/60 transition-colors whitespace-nowrap" data-path="blog-arsip-esai-areta-y-radjawali" href="#">
+Blog
+</a>
+<a class="px-3.5 py-1.5 rounded-full text-xs font-label tracking-wide text-on-surface-variant hover:text-on-surface hover:bg-surface-container/60 transition-colors whitespace-nowrap" data-path="hubungi-saya-areta-y-radjawali" href="#">
+Kontak
+</a>
+</nav>
+</div>
+</header>
+<main class="w-full pt-14 relative z-10 min-h-screen"><div class="flex flex-col w-full">
+<!-- SECTION 1: EDITORIAL MASTHEAD & SEARCH/FILTER -->
+<section class="w-full max-w-6xl mx-auto px-6 lg:px-12 pt-12 pb-16">
+<div class="flex flex-col gap-6">
+<!-- Archival Track Meta -->
+<div class="flex items-center gap-3">
+<span class="inline-block w-2.5 h-2.5 rounded-full bg-tertiary-container"></span>
+<span class="font-label text-xs uppercase tracking-[0.2em] text-on-surface-variant font-medium">
+          Arsip Pemikiran, Catatan Rekayasa &amp; Keamanan Siber — Areta Y. Radjawali
+        </span>
+</div>
+<!-- Main Masthead Headline -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+<div class="lg:col-span-8">
+<h1 class="font-headline text-4xl sm:text-5xl lg:text-6xl text-on-surface font-normal tracking-tight leading-[1.15]">
+            Wawasan Kode, Telaah Arsitektur &amp; Eksplorasi Data
+          </h1>
+</div>
+<div class="lg:col-span-4 flex lg:justify-end pb-2">
+<div class="px-4 py-2 rounded-xl bg-surface-container-low text-on-surface-variant font-label text-xs tracking-wider uppercase flex items-center gap-2.5 shadow-sm">
+<span class="material-symbols-outlined text-sm text-primary">auto_stories</span>
+<span>Edisi Kolektif Vol. III • 18 Naskah</span>
+</div>
+</div>
+</div>
+<!-- Editorial Summary -->
+<p class="font-body text-base sm:text-lg text-on-surface-variant max-w-3xl leading-relaxed font-light mt-2">
+        Kumpulan tulisan teknis, catatan riset kerentanan siber, optimasi framework Django, hingga refleksi metodologi data analitis yang ditulis secara berkala selama proses eksplorasi dan rekayasa di SMK Nurul Jadid.
+      </p>
+<!-- Filter & Search Console -->
+<div class="mt-8 pt-8 bg-surface-container-low/60 rounded-2xl p-6 shadow-sm flex flex-col gap-6">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-lg">search</span>
+<input class="w-full pl-12 pr-4 py-3.5 rounded-xl bg-surface-container-lowest text-on-surface text-sm placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/40 shadow-xs transition-all" id="blogSearchInput" placeholder="Cari artikel atau kata kunci teknis (contoh: Django, SQLi, Redis, Linux)..." type="text"/>
+</div>
+<!-- Topic Badges Chips -->
+<div class="flex flex-wrap items-center gap-2 pt-1 font-label text-xs">
+<span class="text-outline uppercase tracking-wider text-[11px] mr-2">Topik Bahasan:</span>
+<button class="px-4 py-2 rounded-full bg-primary text-on-primary font-medium tracking-wide shadow-xs transition-transform active:scale-95">
+            Semua Tulisan (18)
+          </button>
+<button class="px-4 py-2 rounded-full bg-surface-container-lowest text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all">
+            Django &amp; Backend (6)
+          </button>
+<button class="px-4 py-2 rounded-full bg-surface-container-lowest text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all">
+            Keamanan Siber (5)
+          </button>
+<button class="px-4 py-2 rounded-full bg-surface-container-lowest text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all">
+            Linux &amp; DevOps (4)
+          </button>
+<button class="px-4 py-2 rounded-full bg-surface-container-lowest text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all">
+            Data Analytics (3)
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: FEATURED LONGFORM ESSAY (TWO-COLUMN EDITORIAL SHOWCASE) -->
+<section class="w-full max-w-6xl mx-auto px-6 lg:px-12 pb-20">
+<div class="rounded-3xl bg-surface-container-lowest shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group">
+<div class="grid grid-cols-1 lg:grid-cols-12">
+<!-- Left Editorial Column -->
+<div class="lg:col-span-7 p-8 sm:p-12 lg:p-14 flex flex-col justify-between">
+<div class="flex flex-col gap-5">
+<!-- Metadata Strip -->
+<div class="flex flex-wrap items-center gap-3">
+<span class="px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label text-xs uppercase tracking-wider font-semibold">
+                Esai Unggulan
+              </span>
+<span class="text-xs font-label text-outline flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xs">schedule</span>
+                12 Menit Membaca
+              </span>
+<span class="text-xs font-label text-primary font-medium">
+                Django &amp; Security
+              </span>
+</div>
+<!-- Title -->
+<h2 class="font-headline text-2xl sm:text-3xl lg:text-4xl text-on-surface font-normal leading-snug group-hover:text-primary transition-colors">
+              Membangun Autentikasi Anti-Brute Force pada Django REST Framework: Dari Rate Limiting Redis hingga Analisis Log Kernel
+            </h2>
+<!-- Excerpt -->
+<p class="font-body text-sm sm:text-base text-on-surface-variant leading-relaxed font-light">
+              Bagaimana mengombinasikan middleware adaptif, integrasi fail2ban pada reverse proxy Nginx, dan hashing terisolasi untuk menangkal serangan credential stuffing skala masif tanpa mengorbankan latensi respons API.
+            </p>
+</div>
+<!-- Author & Link Bottom Block -->
+<div class="pt-10 mt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-headline font-semibold text-sm">
+                AR
+              </div>
+<div class="flex flex-col">
+<span class="font-label text-xs text-on-surface font-medium">Areta Y. Radjawali</span>
+<span class="font-label text-[11px] text-outline">Oktober 2024 • 2.4k Pembaca</span>
+</div>
+</div>
+<a class="inline-flex items-center gap-2 font-label text-xs uppercase tracking-wider font-semibold text-primary hover:text-primary-container group/link transition-colors" href="#">
+<span>Buka Dokumen Riset</span>
+<span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Right Telemetry & Code Visual Mock -->
+<div class="lg:col-span-5 bg-surface-container-high p-8 sm:p-12 flex flex-col justify-between relative overflow-hidden">
+<div class="absolute -right-12 -bottom-12 w-64 h-64 rounded-full bg-primary-fixed/20 blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-4">
+<!-- Simulated Code Header -->
+<div class="flex items-center justify-between pb-3">
+<div class="flex items-center gap-1.5">
+<div class="w-3 h-3 rounded-full bg-outline-variant/60"></div>
+<div class="w-3 h-3 rounded-full bg-outline-variant/60"></div>
+<div class="w-3 h-3 rounded-full bg-outline-variant/60"></div>
+</div>
+<span class="font-label text-[11px] text-outline uppercase tracking-wider">defense_middleware.py</span>
+</div>
+<!-- Code snippet representation -->
+<div class="p-4 rounded-xl bg-inverse-surface text-inverse-on-surface text-xs font-mono leading-relaxed overflow-x-auto shadow-inner">
+<div class="text-outline-variant text-[11px]">// Adaptive Sliding Window Redis</div>
+<p><span class="text-tertiary-fixed font-semibold">class</span> <span class="text-primary-fixed">BruteForceGuard</span>:</p>
+<p class="pl-4">def __init__(self, get_response):</p>
+<p class="pl-8 text-on-surface-variant">self.redis = get_redis_connection()</p>
+<p class="pl-4">def __call__(self, request):</p>
+<p class="pl-8">ip = request.META.get(<span class="text-tertiary-fixed">'HTTP_X_REAL_IP'</span>)</p>
+<p class="pl-8">attempts = self.redis.incr(f<span class="text-tertiary-fixed">"auth_try:{ip}"</span>)</p>
+<p class="pl-8 text-error-container">if attempts &gt; MAX_PER_WINDOW:</p>
+<p class="pl-12 text-error-container">trigger_fail2ban_sync(ip)</p>
+</div>
+</div>
+<!-- Telemetry Metric Strip -->
+<div class="relative z-10 mt-8 pt-6 grid grid-cols-2 gap-4">
+<div class="p-3.5 rounded-xl bg-surface-container-lowest/80 backdrop-blur-sm">
+<span class="font-label text-[10px] uppercase tracking-wider text-outline block">Latensi Tambahan</span>
+<span class="font-headline text-lg text-primary font-semibold">1.8 ms</span>
+<span class="text-[10px] text-on-surface-variant font-label block mt-0.5">Overhead Redis Cache</span>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container-lowest/80 backdrop-blur-sm">
+<span class="font-label text-[10px] uppercase tracking-wider text-outline block">Efektivitas Blokir</span>
+<span class="font-headline text-lg text-on-surface font-semibold">99.8%</span>
+<span class="text-[10px] text-on-surface-variant font-label block mt-0.5">Uji Penetrasi Hydra</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: BENTO & BURRITO EDITORIAL ESSAY GRID -->
+<section class="w-full max-w-6xl mx-auto px-6 lg:px-12 pb-24">
+<!-- Section Sub-header -->
+<div class="flex items-center justify-between pb-8">
+<div class="flex items-center gap-3">
+<span class="font-headline text-xl text-on-surface font-normal">Katalog Esai &amp; Catatan Teknis</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-[11px] font-label font-medium text-on-surface-variant">Terkurasi</span>
+</div>
+<span class="font-label text-xs text-outline hidden sm:inline-block">Mengurutkan: Kronologis Terbaru</span>
+</div>
+<!-- Bento Grid Container -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6">
+<!-- CARD 1: Wide Spanning Card (Span 12) -->
+<article class="lg:col-span-12 rounded-2xl bg-surface-container-lowest p-8 sm:p-10 shadow-sm hover:shadow-md transition-all group flex flex-col justify-between">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="lg:col-span-8 flex flex-col gap-3">
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 rounded-full bg-error-container text-on-error-container font-label text-[11px] font-semibold uppercase tracking-wider">
+                Keamanan Siber
+              </span>
+<span class="text-xs font-label text-outline">15 Menit Baca • September 2024</span>
+</div>
+<h3 class="font-headline text-2xl sm:text-3xl text-on-surface group-hover:text-primary transition-colors leading-snug">
+              Analisis Kerentanan SQL Injection Modern pada Database Skala Besar dan Mitigasi Query Berparameter
+            </h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed max-w-3xl font-light">
+              Mengevaluasi skenario Blind SQLi dan Second-Order Injection pada lingkungan multi-tenant. Mengupas mengapa ORM modern tetap rentan jika raw expressions dieksekusi tanpa validasi leksikal yang ketat.
+            </p>
+</div>
+<div class="lg:col-span-4 flex flex-col lg:items-end justify-between h-full gap-4">
+<div class="p-4 rounded-xl bg-surface-container-low w-full text-left">
+<span class="font-label text-[10px] uppercase text-outline tracking-wider block">Fokus Remediasi</span>
+<p class="font-body text-xs text-on-surface mt-1 font-medium">Django Q Objects &amp; Sanitasi AST Engine</p>
+</div>
+<a class="inline-flex items-center gap-2 font-label text-xs uppercase tracking-wider font-semibold text-primary group-hover:translate-x-1 transition-transform" href="#">
+<span>Baca Selengkapnya</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- CARD 2: Standard Bento Card (Span 6) -->
+<article class="lg:col-span-6 rounded-2xl bg-surface-container-lowest p-8 shadow-sm hover:shadow-md transition-all group flex flex-col justify-between">
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<span class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-fixed font-label text-[11px] font-semibold uppercase tracking-wider">
+              Linux &amp; DevOps
+            </span>
+<span class="text-xs font-label text-outline">9 Menit Baca • Agustus 2024</span>
+</div>
+<h3 class="font-headline text-xl sm:text-2xl text-on-surface group-hover:text-primary transition-colors leading-snug">
+            Mengapa Linux Server Tanpa GUI Menjadi Fondasi Terbaik untuk DevOps Pemula: Catatan Praktik 100 Hari VPS Hardening
+          </h3>
+<p class="font-body text-xs sm:text-sm text-on-surface-variant leading-relaxed font-light">
+            Refleksi mendalam tentang mengelola server Ubuntu minimalis, audit SSH port knocking, manajemen iptables tanpa dependensi panel web, dan efisiensi konsumsi memori.
+          </p>
+</div>
+<div class="pt-8 mt-6 flex items-center justify-between">
+<span class="font-label text-xs text-outline">Infrastruktur &amp; SysAdmin</span>
+<a class="inline-flex items-center gap-1.5 font-label text-xs uppercase tracking-wider font-semibold text-primary group-hover:translate-x-1 transition-transform" href="#">
+<span>Baca Selengkapnya</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- CARD 3: Standard Bento Card (Span 6) -->
+<article class="lg:col-span-6 rounded-2xl bg-surface-container-lowest p-8 shadow-sm hover:shadow-md transition-all group flex flex-col justify-between">
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<span class="px-3 py-1 rounded-full bg-tertiary-fixed-dim text-on-tertiary-fixed font-label text-[11px] font-semibold uppercase tracking-wider">
+              Data Analytics
+            </span>
+<span class="text-xs font-label text-outline">8 Menit Baca • Juli 2024</span>
+</div>
+<h3 class="font-headline text-xl sm:text-2xl text-on-surface group-hover:text-primary transition-colors leading-snug">
+            Dari Data Mentah Menuju Wawasan Strategis: Pemanfaatan Pandas dan Matplotlib untuk Telemetri Trafik Web
+          </h3>
+<p class="font-body text-xs sm:text-sm text-on-surface-variant leading-relaxed font-light">
+            Membangun pipeline visualisasi otomatis dari log mentah Nginx access log berkapasitas ribuan baris per jam untuk mendeteksi anomali crawler dan lonjakan aktivitas tak wajar.
+          </p>
+</div>
+<div class="pt-8 mt-6 flex items-center justify-between">
+<span class="font-label text-xs text-outline">Eksplorasi Data &amp; Statistik</span>
+<a class="inline-flex items-center gap-1.5 font-label text-xs uppercase tracking-wider font-semibold text-primary group-hover:translate-x-1 transition-transform" href="#">
+<span>Baca Selengkapnya</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- CARD 4: Split Bento Card (Span 7) -->
+<article class="lg:col-span-7 rounded-2xl bg-surface-container-lowest p-8 shadow-sm hover:shadow-md transition-all group flex flex-col justify-between">
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<span class="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label text-[11px] font-semibold uppercase tracking-wider">
+              Editorial Web Craft
+            </span>
+<span class="text-xs font-label text-outline">7 Menit Baca • Juni 2024</span>
+</div>
+<h3 class="font-headline text-xl sm:text-2xl text-on-surface group-hover:text-primary transition-colors leading-snug">
+            Tipografi Editorial dan Whitespace: Prinsip Mendesain Antarmuka Web Minimalis yang Tidak Membosankan
+          </h3>
+<p class="font-body text-xs sm:text-sm text-on-surface-variant leading-relaxed font-light">
+            Bagaimana memanfaatkan pergeseran kontras antar-bidang latar belakang alih-alih garis pemisah 1px kaku, serta orkestrasi perpaduan rupa huruf Noto Serif dan Inter untuk membaca teks berdensitas tinggi.
+          </p>
+</div>
+<div class="pt-8 mt-6 flex items-center justify-between">
+<span class="font-label text-xs text-outline">Teori Desain &amp; Tipografi</span>
+<a class="inline-flex items-center gap-1.5 font-label text-xs uppercase tracking-wider font-semibold text-primary group-hover:translate-x-1 transition-transform" href="#">
+<span>Baca Selengkapnya</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- CARD 5: Accent Bento Card (Span 5) -->
+<article class="lg:col-span-5 rounded-2xl bg-surface-container-low p-8 shadow-sm hover:shadow-md transition-all group flex flex-col justify-between">
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<span class="px-3 py-1 rounded-full bg-tertiary text-on-tertiary font-label text-[11px] font-semibold uppercase tracking-wider">
+              Kriptografi Terapan
+            </span>
+<span class="text-xs font-label text-outline">11 Menit Baca • Mei 2024</span>
+</div>
+<h3 class="font-headline text-xl text-on-surface group-hover:text-primary transition-colors leading-snug">
+            Studi Eksploratif: Membedah Alur Enkripsi Simetris AES-256 pada Transmisi Data Rekam Medis
+          </h3>
+<p class="font-body text-xs sm:text-sm text-on-surface-variant leading-relaxed font-light">
+            Eksperimen penerapan cipher CBC vs GCM dalam pertukaran berkas kesehatan terenkripsi, manajemen initialisation vector (IV), dan standar proteksi integritas payload HMAC.
+          </p>
+</div>
+<div class="pt-8 mt-6 flex items-center justify-between">
+<span class="font-label text-xs text-outline">Keamanan Siber • MedTech</span>
+<a class="inline-flex items-center gap-1.5 font-label text-xs uppercase tracking-wider font-semibold text-primary group-hover:translate-x-1 transition-transform" href="#">
+<span>Baca Selengkapnya</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</article>
+</div>
+</section>
+<!-- SECTION 4: BULETIN BERKALA & ARSIP TAHUNAN -->
+<section class="w-full max-w-6xl mx-auto px-6 lg:px-12 pb-24">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Newsletter Dispatch Box (Span 7) -->
+<div class="lg:col-span-7 rounded-3xl bg-surface-container-lowest p-8 sm:p-12 shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="relative z-10 flex flex-col gap-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container text-xs font-label uppercase tracking-widest text-primary font-semibold self-start">
+<span class="material-symbols-outlined text-xs">mail</span>
+            Buletin Esai Berkala
+          </div>
+<h3 class="font-headline text-2xl sm:text-3xl text-on-surface font-normal leading-tight">
+            Dapatkan kiriman catatan riset dan telaah arsitektur langsung ke surel Anda.
+          </h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed font-light">
+            Dipublikasikan sekali atau dua kali sebulan. Tanpa spam, murni naskah komputasi, dokumentasi eksploitasi terisolasi, dan arsitektur backend.
+          </p>
+<form class="mt-4 flex flex-col sm:flex-row gap-3" onsubmit="event.preventDefault(); alert('Terima kasih telah mendaftar ke Buletin Berkala Areta Y. Radjawali.');">
+<input class="flex-1 px-4 py-3 rounded-xl bg-surface-container-low text-on-surface text-sm placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/40 shadow-xs" placeholder="nama@domain.com" required="" type="email"/>
+<button class="px-6 py-3 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label text-xs uppercase tracking-wider font-semibold shadow-xs hover:shadow-md transition-all shrink-0" type="submit">
+              Langganan Buletin
+            </button>
+</form>
+<span class="font-label text-[11px] text-outline mt-1">
+            Dapat berhenti berlangganan kapan saja dengan satu klik tautan.
+          </span>
+</div>
+</div>
+<!-- Chronological Archival Explorer (Span 5) -->
+<div class="lg:col-span-5 rounded-3xl bg-surface-container-low p-8 sm:p-10 shadow-sm flex flex-col gap-6">
+<div class="flex items-center justify-between pb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-primary">folder_open</span>
+<span class="font-headline text-lg text-on-surface font-normal">Indeks Arsip Tahunan</span>
+</div>
+<span class="font-label text-[11px] text-outline uppercase tracking-wider">Arsip Total</span>
+</div>
+<!-- Year Index List -->
+<div class="flex flex-col gap-3">
+<!-- 2025 -->
+<a class="p-4 rounded-xl bg-surface-container-lowest hover:bg-surface-container-high transition-all flex items-center justify-between group shadow-xs" href="#">
+<div class="flex items-center gap-3">
+<span class="font-headline text-lg font-semibold text-on-surface group-hover:text-primary transition-colors">2025</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-[10px] font-label text-on-surface-variant font-medium">Tahun Berjalan</span>
+</div>
+<div class="flex items-center gap-2 text-outline group-hover:text-primary">
+<span class="font-label text-xs">4 Artikel</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</a>
+<!-- 2024 -->
+<a class="p-4 rounded-xl bg-surface-container-lowest hover:bg-surface-container-high transition-all flex items-center justify-between group shadow-xs" href="#">
+<div class="flex items-center gap-3">
+<span class="font-headline text-lg font-semibold text-on-surface group-hover:text-primary transition-colors">2024</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-[10px] font-label text-on-surface-variant font-medium">Volume Aktif</span>
+</div>
+<div class="flex items-center gap-2 text-outline group-hover:text-primary">
+<span class="font-label text-xs">11 Artikel</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</a>
+<!-- 2023 -->
+<a class="p-4 rounded-xl bg-surface-container-lowest hover:bg-surface-container-high transition-all flex items-center justify-between group shadow-xs" href="#">
+<div class="flex items-center gap-3">
+<span class="font-headline text-lg font-semibold text-on-surface group-hover:text-primary transition-colors">2023</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-[10px] font-label text-on-surface-variant font-medium">Fase Fondasi</span>
+</div>
+<div class="flex items-center gap-2 text-outline group-hover:text-primary">
+<span class="font-label text-xs">3 Artikel</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</a>
+</div>
+<div class="pt-2 text-center sm:text-left">
+<span class="font-label text-[11px] text-outline">
+            Semua naskah dilisensikan di bawah Creative Commons BY-NC 4.0 untuk tujuan edukasi.
+          </span>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Search Query Filter Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('blogSearchInput');
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          const query = e.target.value.toLowerCase();
+          const articles = document.querySelectorAll('article');
+          articles.forEach(article => {
+            const text = article.innerText.toLowerCase();
+            if (text.includes(query)) {
+              article.style.display = '';
+            } else {
+              article.style.display = 'none';
+            }
+          });
+        });
+      }
+    });
+  </script>
+</div></main>
+<!-- FOOTER PROFESIONAL BERGAYA STUDIO -->
+<footer class="w-full bg-surface-container-lowest border-t border-outline-variant/20 relative z-10 pt-20 pb-12" id="contact">
+<div class="max-w-6xl mx-auto px-6 lg:px-12">
+<div class="rounded-3xl bg-surface-container-low/70 border border-outline-variant/30 p-8 sm:p-12 lg:p-16 relative overflow-hidden mb-20">
+<div class="absolute -top-20 -right-20 w-80 h-80 bg-primary-fixed/40 rounded-full filter blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-20 -left-20 w-80 h-80 bg-tertiary-fixed/30 rounded-full filter blur-3xl pointer-events-none"></div>
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+<div class="lg:col-span-7 text-left">
+<div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-surface-container-lowest border border-outline-variant/20 text-xs font-label uppercase tracking-widest text-primary font-semibold mb-4">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+Mulai Diskusi &amp; Kolaborasi
+</div>
+<h3 class="font-headline text-3xl sm:text-4xl lg:text-5xl font-normal text-on-surface leading-tight">
+Mari wujudkan karya bermakna bersama studio kami.
+</h3>
+<p class="font-body text-sm sm:text-base text-on-surface-variant mt-4 leading-relaxed max-w-xl">
+Menerima proyek komisi terpilih, konsultasi arsitektur sistem desain, serta kemitraan rekayasa kreatif untuk kuartal Q2/Q3 2025.
+</p>
+</div>
+<div class="lg:col-span-5 flex flex-col gap-3">
+<form class="flex flex-col gap-3" onsubmit="event.preventDefault(); alert('Terima kasih! Pesan singkat Anda telah terkirim.');">
+<input class="w-full px-4 py-3.5 rounded-xl bg-surface-container-lowest border border-outline-variant/40 text-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Masukkan alamat email Anda" required="" type="email"/>
+<div class="flex items-center gap-2">
+<button class="flex-1 px-6 py-3.5 rounded-xl font-label text-xs uppercase tracking-widest font-semibold text-on-primary bg-primary hover:bg-primary-container shadow-xs hover:shadow-md transition-all flex items-center justify-center gap-2" type="submit">
+<span>Mulai Konsultasi</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<button class="p-3.5 rounded-xl bg-surface-container-lowest border border-outline-variant/40 hover:bg-surface-container-high transition-colors text-on-surface-variant hover:text-primary flex items-center justify-center" onclick="navigator.clipboard.writeText('aretaradjawali@gmail.com'); alert('Email disalin ke clipboard!');" title="Salin Email Studio" type="button">
+<span class="material-symbols-outlined text-base">content_copy</span>
+</button>
+</div>
+</form>
+<span class="font-label text-[11px] text-outline text-center lg:text-left mt-1">
+Respon resmi dalam 24-48 jam kerja studio.
+</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-16 border-b border-outline-variant/20">
+<div class="lg:col-span-4 flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<img alt="Alexandria Logo" class="h-7 w-7 rounded-full object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XnXhfVVqxaZAeEGyaoT2LfLEv04NVX37MK3j5WVhT8YJDLUG9DKpvdlJGAF2sPWQG0WK3eO2kTGLGKrR_XvxmCJTKhAV7wwFnx2jorEVcj0ZWC4fGUistSj2z4hG4Bz4Wp5r6v87PoI4noQvxp3eEMhFj-xgqJs_FwAMIvS4vgBQIyWG7iLL5UTLThMV8YgjuVzH-BgjrmXB5Ls0p1AbVdR4GtF8uj9uyQ-Lgs_b5HXZs-L1uWVEsoylU6"/>
+<span class="font-headline font-semibold text-lg tracking-tight text-on-surface">AREYBRA</span>
+</div>
+<p class="font-body text-xs text-on-surface-variant leading-relaxed max-w-sm">
+Studio desain produk independen yang memadukan keanggunan tipografi editorial, arsitektur perangkat lunak presisi, dan filosofi interaksi modern.
+</p>
+<div class="flex items-center gap-2.5 mt-2">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="font-label text-xs text-on-surface font-medium">Tersedia untuk proyek baru Q2/Q3 2025</span>
+</div>
+</div>
+<div class="lg:col-span-2 flex flex-col gap-3">
+<span class="font-label text-xs uppercase tracking-widest text-on-surface font-semibold">Navigasi</span>
+<ul class="flex flex-col gap-2 font-body text-xs text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" data-path="beranda-areta-y-radjawali" href="#">Beranda</a></li>
+<li><a class="hover:text-primary transition-colors" data-path="tentang-saya-areta-y-radjawali" href="#">Tentang Saya</a></li>
+<li><a class="hover:text-primary transition-colors" data-path="koleksi-proyek-areta-y-radjawali" href="#">Proyek</a></li>
+<li><a class="hover:text-primary transition-colors" data-path="blog-arsip-esai-areta-y-radjawali" href="#">Blog</a></li>
+<li><a class="hover:text-primary transition-colors" data-path="hubungi-saya-areta-y-radjawali" href="#">Kontak</a></li>
+</ul>
+</div>
+<div class="lg:col-span-3 flex flex-col gap-3">
+<span class="font-label text-xs uppercase tracking-widest text-on-surface font-semibold">Layanan &amp; Praktik</span>
+<ul class="flex flex-col gap-2 font-body text-xs text-on-surface-variant">
+<li>Arsitektur Design Systems</li>
+<li>Desain Antarmuka &amp; Interaksi Produk</li>
+<li>Frontend Engineering &amp; WebGL</li>
+<li>Tipografi &amp; Editorial Web Craft</li>
+<li>Audit Fidelitas &amp; Aksesibilitas</li>
+</ul>
+</div>
+<div class="lg:col-span-3 flex flex-col gap-3">
+<span class="font-label text-xs uppercase tracking-widest text-on-surface font-semibold">Jejaring Profesional</span>
+<ul class="flex flex-col gap-2 font-body text-xs text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors flex items-center justify-between" href="https://linkedin.com" rel="noreferrer" target="_blank"><span>LinkedIn</span> <span class="material-symbols-outlined text-xs">north_east</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center justify-between" href="https://github.com" rel="noreferrer" target="_blank"><span>GitHub</span> <span class="material-symbols-outlined text-xs">north_east</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center justify-between" href="https://dribbble.com" rel="noreferrer" target="_blank"><span>Dribbble</span> <span class="material-symbols-outlined text-xs">north_east</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center justify-between" href="https://read.cv" rel="noreferrer" target="_blank"><span>Read.cv</span> <span class="material-symbols-outlined text-xs">north_east</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center justify-between" href="mailto:aretaradjawali@gmail.com"><span>aretaradjawali@gmail.com</span> <span class="material-symbols-outlined text-xs">mail</span></a></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-label text-xs text-outline">
+<div class="flex items-center gap-3">
+<span>© 2025 Areta Y. Radjawali. Seluruh hak cipta dilindungi undang-undang.</span>
+</div>
+<div class="flex items-center gap-6">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xs text-emerald-600">schedule</span>
+<span>WIB (UTC+7) · Jakarta, Indonesia</span>
+</span>
+<span class="text-outline-variant/40">|</span>
+<span class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+<span>Status Sistem Normal</span>
+</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
