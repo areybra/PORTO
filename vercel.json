@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "pip install -r requirements.txt && python manage.py collectstatic --noinput --settings=config.settings.production",
+  "buildCommand": "npm install && npm run build && pip install -r requirements.txt && python manage.py collectstatic --noinput --settings=config.settings.production",
   "outputDirectory": "staticfiles",
   "builds": [
     { "src": "api/index.py", "use": "@vercel/python", "config": { "maxLambdaSize": "15mb", "runtime": "python3.12" } },

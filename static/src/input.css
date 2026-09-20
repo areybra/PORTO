@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base { html, body { margin:0; padding:0; } body { overscroll-behavior:none; } }
+::-webkit-scrollbar { display:none; }
+
+/* ── interactive animations (dari base.html) ── */
+@keyframes typingBlink { 0%,50% { opacity:1 } 51%,100% { opacity:0 } }
+@keyframes popIn { 0% { transform:scale(.94) translateY(12px); opacity:0 } 100% { transform:scale(1) translateY(0); opacity:1 } }
+@keyframes floatY { 0%,100% { transform:translateY(0) } 50% { transform:translateY(-6px) } }
+.typing-cursor::after { content:'\258C'; margin-left:2px; animation:typingBlink 1s step-end infinite; color:#094cb2; font-weight:300; }
+.reveal { opacity:0; transform:translateY(18px); transition:opacity .65s cubic-bezier(.22,1,.36,1), transform .65s cubic-bezier(.22,1,.36,1); }
+.reveal.active { opacity:1; transform:none; }
+.reveal-delay-1 { transition-delay:.08s } .reveal-delay-2 { transition-delay:.16s } .reveal-delay-3 { transition-delay:.24s }
+.pop-card { animation:popIn .6s cubic-bezier(.22,1,.36,1) both; }
+.float-slow { animation:floatY 6s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .reveal, .pop-card, .float-slow { animation:none; transition:none; opacity:1; transform:none } }
