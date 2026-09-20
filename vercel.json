@@ -2,12 +2,6 @@
   "version": 2,
   "buildCommand": "pip install -r requirements.txt && python manage.py collectstatic --noinput --settings=config.settings.production",
   "outputDirectory": "staticfiles",
-  "functions": {
-    "api/index.py": {
-      "runtime": "python3.12",
-      "maxDuration": 10
-    }
-  },
   "builds": [
     { "src": "api/index.py", "use": "@vercel/python", "config": { "maxLambdaSize": "15mb", "runtime": "python3.12" } },
     { "src": "staticfiles/**", "use": "@vercel/static" }
