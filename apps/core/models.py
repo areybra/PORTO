@@ -13,6 +13,7 @@ class SiteProfile(models.Model):
     )
     hero_image_url = models.URLField(
         blank=True,
+        max_length=500,
         default="https://lh3.googleusercontent.com/aida/AEtjO1UEoiyjmRKUBIc9t_Fndn02qah9zD4YxMOclwvCsw3RgF04tBa7qBJtB3e-J04xQLKcvUDjFs3W9OGpRH2ONio9YqP3AFOlbnf_VADprquwDe9nBnqaSBN4w2LlKcPBqpkEODL3pzu4GkgxG44ucGQRBvUR2HQGWMBjGgDsHFLRA1U1NAfAjAKRmAirn9ZaUcwEP-OH1rfpqF-1S_JV3Za18csDTh8B6C7BX43cPLUS05jJpemociIHRQPo",
         help_text="URL gambar profil (gunakan URL eksternal untuk hemat storage, mis. https://...)",
         verbose_name="Foto Profil URL",
@@ -53,7 +54,7 @@ class SiteProfile(models.Model):
 
     def get_absolute_url(self):
         from django.urls import reverse
-        return reverse("project_detail", args=[self.slug])
+        return reverse("landing")
 
     class Meta:
         verbose_name = "Site Profile"

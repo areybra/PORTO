@@ -35,6 +35,9 @@ if site_host:
 # or direct: postgresql://postgres:[PASSWORD]@db.[ref].supabase.co:5432/postgres
 # Supports DATABASE_URL, POSTGRES_URL, SUPABASE_DATABASE_URL
 DATABASE_URL = os.getenv("DATABASE_URL") or os.getenv("POSTGRES_URL") or os.getenv("SUPABASE_DATABASE_URL") or os.getenv("POSTGRES_PRISMA_URL")
+# Strip ?pgbouncer=true which psycopg2 can't parse (Supabase docs add it, but we use pooler via 6543)
+if DATABASE_URL and "pgbouncer" in DATABASE_URL:
+    DATABASE_URL = DATABASE_URL.split("?")[0].split("&")[0]
 if DATABASE_URL and dj_database_url:
     DATABASES = {"default": dj_database_url.parse(DATABASE_URL, conn_max_age=600, ssl_require=True)}
 elif DATABASE_URL and not dj_database_url:
