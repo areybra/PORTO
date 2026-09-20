@@ -9,7 +9,7 @@
 
 ## 1. Executive Summary & Architecture Overview
 
-AREYBRA is a production-grade, high-performance portfolio and personal knowledge base built with **Django 6.x**, styled via **Tailwind CSS (CDN/JIT modern styling)** with custom design tokens (`#094cb2` primary, `#6d5e00` secondary, ambient radial glows), backed by **MySQL (Production / Railway)** and **SQLite (Development)**, and engineered for high-availability serverless deployment on **Vercel** via WhiteNoise and WSGI adapters.
+AREYBRA is a production-grade, high-performance portfolio and personal knowledge base built with **Django 6.x**, styled via **Tailwind CSS (CDN/JIT modern styling)** with custom design tokens (`#094cb2` primary, `#6d5e00` secondary, ambient radial glows), backed by **PostgreSQL on Supabase (Production - Pooled PgBouncer)** and **SQLite (Development)**, and engineered for high-availability serverless deployment on **Vercel** via WhiteNoise and WSGI adapters.
 
 ### Architectural Pillars
 1. **Modular Monolith (4 Core Apps):**
@@ -72,4 +72,4 @@ AREYBRA is a production-grade, high-performance portfolio and personal knowledge
 
 ### Database Flexibility
 - **Development:** SQLite (`db.sqlite3`).
-- **Production:** MySQL on Railway via `dj-database-url` parsing `DATABASE_URL`.
+- **Production:** PostgreSQL on **Supabase** via `dj-database-url` parsing `DATABASE_URL` (wajib pakai **pooled connection** port `6543` + `?pgbouncer=true` untuk Vercel serverless, `ssl_require=True`). Fallback `POSTGRES_*` vars didukung, dan fallback SQLite otomatis saat build tanpa DB env.

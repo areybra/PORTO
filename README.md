@@ -5,7 +5,8 @@
 
 [![Django](https://img.shields.io/badge/Django-6.1.1-092E20?style=for-the-badge&logo=django&logoColor=white)](https://djangoproject.com)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.x-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
-[![MySQL](https://img.shields.io/badge/MySQL-8.0+-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com)
+[![Supabase](https://img.shields.io/badge/Supabase-PostgreSQL-3FCF8E?style=for-the-badge&logo=supabase&logoColor=white)](https://supabase.com)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15+-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://postgresql.org)
 [![Vercel](https://img.shields.io/badge/Vercel-Serverless-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com)
 [![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 
@@ -40,7 +41,7 @@
   - Custom Tailwind design tokens (`#094cb2` primary, `#6d5e00` secondary).
   - Typewriter hero effect (`data-typing`), scroll-reveal animations (`.reveal`), and full-screen mobile hamburger drawer.
 - **☁️ Serverless & Cloud Ready:**
-  - Optimized for **Vercel** serverless deployment with WhiteNoise static asset serving and **Railway MySQL** database integration.
+  - Optimized for **Vercel** serverless deployment with WhiteNoise static asset serving and **Supabase PostgreSQL** (pooled PgBouncer) integration.
 
 ---
 
@@ -49,7 +50,7 @@
 | Layer | Technology |
 | :--- | :--- |
 | **Backend** | Python 3.12, Django 6.1.1, WSGI / WhiteNoise |
-| **Database** | SQLite (Local Dev), MySQL (Railway Production via `dj-database-url`) |
+| **Database** | SQLite (Local Dev), PostgreSQL Supabase (Production via `dj-database-url`, pooled `6543` + `pgbouncer=true`, `ssl_require=True`) |
 | **Frontend** | HTML5, Tailwind CSS, Modern Vanilla JavaScript (ES Modules) |
 | **Admin Panel** | Django Jazzmin Custom Theme |
 | **Deployment** | Vercel Serverless (`vercel.json`), Git |
